@@ -1,0 +1,444 @@
+% RDRS Bangladesh — MIS Internship Report (high-quality, locally compilable)
+% Compile: latexmk -pdf RDRS_MIS_Internship_Report.tex  (TeX Live base + graphicx/color/hyperref only)
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.5cm,headheight=15pt]{geometry}
+\renewcommand{\baselinestretch}{1.3}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textsc{RDRS Bangladesh} -- MIS Internship Report}
+\fancyhead[R]{\small Mahmud (12022065)}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.6pt}
+
+\usepackage{graphicx,color,array,longtable,multicol,amsmath,amssymb,url}
+% hyperref omitted: minimal TeX Live here lacks etoolbox.sty.
+% For Overleaf/full TeX, re-add:
+% \usepackage{hyperref}\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+% Colors via base color.sty (rgb)
+\definecolor{RDRSBlue}{rgb}{0.12,0.22,0.39}
+\definecolor{RDRSTeal}{rgb}{0.05,0.49,0.48}
+\definecolor{RDRSOrange}{rgb}{0.90,0.44,0.13}
+\definecolor{RDRSLight}{rgb}{0.95,0.96,0.97}
+\definecolor{RDRSGrey}{rgb}{0.35,0.35,0.35}
+
+% booktabs emulation (no extra package)
+\newcommand{\toprule}{\hline\hline}
+\newcommand{\midrule}{\hline}
+\newcommand{\bottomrule}{\hline\hline}
+\newcommand{\cmidrule}[1]{\hline}
+
+\title{\textbf{Evaluating MIS Practices in Project Monitoring:}\\ \textbf{A Study on RDRS Bangladesh}}
+\author{A.~R.~Mahmud\\ID: 12022065\\BBA, Department of Management Information Systems\\Begum Rokeya University, Rangpur}
+\date{}
+
+\begin{document}
+
+% ================= TITLE PAGE =================
+\begin{titlepage}
+\centering
+\vspace*{0.4cm}
+{\large\scshape Begum Rokeya University, Rangpur\par}
+{\normalsize Department of Management Information Systems\par}
+\vspace{0.4cm}
+{\color{RDRSBlue}\rule{\textwidth}{1.6pt}}\\[4pt]
+{\LARGE\bfseries\color{RDRSBlue} Internship Report\par}
+\vspace{0.2cm}
+{\Large\bfseries Evaluating MIS Practices in Project Monitoring\par}
+{\Large\bfseries A Study on RDRS Bangladesh\par}
+\vspace{0.2cm}
+{\color{RDRSBlue}\rule{\textwidth}{1.6pt}}
+\vspace{0.6cm}
+
+\colorbox{RDRSLight}{%
+\begin{minipage}{0.88\textwidth}
+\centering
+\textbf{Submitted By}\\[2pt]
+A.~R.~Mahmud \quad ID: 12022065\\
+BBA, Major in Management Information Systems\\[6pt]
+\textbf{Submitted To}\\[2pt]
+Mohammad Rakibul Islam Bhuiyan\\
+Assistant Professor, Department of MIS, BRUR\\[6pt]
+\textbf{In collaboration with}\\[2pt]
+RDRS Bangladesh, Evaluation (MEL) Department
+\end{minipage}}
+\vspace{0.5cm}
+
+\fbox{\small\bfseries Fieldwork: Rangpur \quad $\bullet$ \quad Sept 2026}
+
+\vfill
+{\small\color{RDRSGrey} Date of Submission: \underline{\hspace{4cm}} \par}
+\end{titlepage}
+
+% ================= FRONT MATTER =================
+\pagenumbering{roman}
+
+\chapter*{Letter of Transmittal}
+\addcontentsline{toc}{chapter}{Letter of Transmittal}
+[Date]\par
+Mohammad Rakibul Islam Bhuiyan\\
+Assistant Professor, Department of Management Information Systems\\
+Begum Rokeya University, Rangpur\\[6pt]
+Subject: Submission of Internship Report on ``Evaluating MIS Practices in Project Monitoring: A Study on RDRS Bangladesh''\\[6pt]
+Dear Sir,\\[4pt]
+I am pleased to submit my internship report, prepared as a partial requirement for the BBA program, based on my internship at the Evaluation Department of RDRS Bangladesh. The report examines the MIS practices used in project monitoring, drawing on direct observation, discussions with staff, and review of ongoing projects during the internship period.
+
+I tried to keep the report within the scope of my access and the time available, and I would be grateful for your guidance on further revisions. Thank you for your continuous support and supervision.
+
+Sincerely,\\
+A.~R.~Mahmud \quad ID: 12022065\\ BBA, Major in MIS
+
+\chapter*{Acknowledgement}
+\addcontentsline{toc}{chapter}{Acknowledgement}
+I thank my academic supervisor for guidance on structure and scope, and the RDRS Evaluation (MEL) Department staff who gave their time: Md.~Saiful Alam (Shekul) for a long walkthrough of baseline design, Fahmida Mostafa for explaining projects and reporting flow, and Mr.~Iftekharul Islam for tracing the microfinance MIS history. Any errors in interpretation are mine.
+
+\chapter*{Executive Summary}
+\addcontentsline{toc}{chapter}{Executive Summary}
+\fbox{%
+\begin{minipage}{0.94\textwidth}
+\small This report asks a practical question: how does monitoring data actually move from the field to a management decision at RDRS Bangladesh, and where does the system help or break?
+\end{minipage}}
+
+I spent the internship inside the MEL function. For routine work the department runs on structured Excel formats and registers; for one-off needs it uses KoBo Toolbox on mobile with direct Excel export; in office it compiles in Excel and builds some dashboards in Power BI. A monthly monitoring schedule turns this into named assignments. The September 2026 schedule I reviewed splits into ten repeat microfinance tasks (each branch visited twice) and project-specific development tasks, including the live ICPS baseline (UNICEF, 06--24 Sept, by Saiful Alam Sekul and Fahmida Mostafa).
+
+Two findings stand out. First, microfinance reporting has moved from a person-dependent process (Micro Bank, 1995--97) through South Tech (2011) to G Banker (2017/18), where branch reports such as the CO-wise Changes Report, POMIS-5 and POMIS-4 now come out with one click into an integrated dashboard. That succession is the report's core continuity lesson. Second, programme monitoring still shows a data-integrity gap: in the May 2023 Somriddhi report, MIS attendance read 100\% against 89\% in the register, 65\% of rehabilitation income records could not be found, and similar MIS-vs-field mismatches recur. Teacher turnover (11 of 74 centres in four months), low tree survival (35\% vs.\ 49\%), and patchy follow-up sit alongside real gains in housing conditions.
+
+My two practical recommendations: (1) add a register-to-MIS reconciliation check to the monthly schedule before reports are locked; (2) keep KoBo as the single capture point for ad-hoc surveys so Excel is compilation-only, not re-entry.
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\begin{center}
+\fbox{%
+\begin{minipage}{0.94\textwidth}
+\centering\small
+\textbf{Abbreviations:} MEL -- Monitoring, Evaluation and Learning; MEAL -- plus Accountability; ESS -- Environmental and Social Safeguard; TOR -- Terms of Reference; FGD -- Focus Group Discussion; KII -- Key Informant Interview; HH -- Household; IGA -- Income Generating Activity; PKSF -- Palli Karma-Sahayak Foundation; CO -- Credit Organizer; OTR -- On-Time Repayment; PAR -- Portfolio at Risk; DQA -- Data Quality Assessment; ATM -- Assistant Thana Manager (historic field role).
+\end{minipage}}
+\end{center}
+
+\clearpage
+\pagenumbering{arabic}
+
+% ================= CHAPTER 1 =================
+\chapter{Introduction}
+
+\section{Background of the Study}
+Internship reports matter for BBA/MIS students because classroom models of systems rarely survive contact with registers, branch visits, and monthly deadlines. I interned with the Evaluation Department of RDRS Bangladesh to see how a large NGO actually tracks project progress: who reports, on which form or app, who checks it, and where it is stored.
+
+\section{Objectives of the Study}
+\textbf{Broad objective.} To evaluate the MIS practices used in project monitoring at RDRS Bangladesh.
+
+\textbf{Specific objectives.}
+\begin{enumerate}
+\item To identify the MIS tools and systems used by the Evaluation Department.
+\item To examine how monitoring data flows from the field to decision-making.
+\item To assess strengths and gaps in current MIS practices.
+\item To recommend improvements based on findings.
+\end{enumerate}
+
+\section{Scope of the Study}
+The report covers the Evaluation (MEL) Department during the internship period and the projects I had access to: Jononni, SEEDS, MCGL, ICPS, the microfinance programme, and the Somriddhi monitoring report. It does not cover the full RDRS portfolio or audited financials.
+
+\section{Methodology}
+\subsection{Sources of data}
+Primary data came from three interviews and direct observation. I spoke with Md.~Saiful Alam (Shekul), now on the ICPS baseline team and formerly Technical Specialist, MEAL and GIS on the BHA project with Save the Children in Sylhet, for close to two hours on MEL work and baseline design. I spoke with Fahmida Mostafa, Senior MEL Officer, on active projects, MEL workflow, programme areas and field scale. I spoke with Mr.~Iftekharul Islam, Manager, Monitoring, on how microfinance MIS changed from manual work to the current system.
+
+Secondary data came from handwritten notes and four supporting documents I reviewed: the MEL Department September 2026 monitoring schedule, sample MIS outputs from G Banker (CO-wise Changes Report, POMIS-5, POMIS-4), the Strategic Plan 2023--2027, and the May 2023 field monitoring report on the Somriddhi Programme funded by PKSF.
+
+\subsection{Data collection method}
+I collected data through informal interviews, sitting in on explanations of forms and dashboards, and reviewing registers, schedules and reports. A field visit including an eye clinic is planned as direct observation of MEL data collection.
+
+\begin{table}[h]
+\centering\caption{Interviews conducted}\label{tab:interviews}
+\begin{tabular}{|p{3.2cm}|p{3.4cm}|p{7.0cm}|}
+\hline
+Name & Role & Focus \\ \hline\hline
+Md.~Saiful Alam (Shekul) & ICPS baseline team; ex-MEAL \& GIS, BHA/Save the Children & MEL functions; baseline design; indicators, ESS, TOR, Inception Report ({\textasciitilde}2 hrs) \\ \hline
+Fahmida Mostafa & Senior MEL Officer & Active projects; MEL workflow; five programme areas; field scale \\ \hline
+Mr.~Iftekharul Islam & Manager, Monitoring & Microfinance MIS history: manual to automated \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Limitations of the Study}
+Time was short, access to some branch-level data was restricted, and the scope is a single department. Figures move year to year, so I cite the source and date for each number.
+
+% ================= CHAPTER 2 =================
+\chapter{Organizational Overview}
+
+\section{About RDRS Bangladesh}
+RDRS started in Rangpur in February 1972 as the Bangladesh field programme of the Lutheran World Federation (Department for World Service, Geneva). The first job was relief for war-affected people in the northwest: food, shelter, medical help, seeds and tools. The name moved from Rangpur Dinajpur Relief Service to Rangpur Dinajpur Rural Service; it is now RDRS Bangladesh.
+
+The northwest was chosen deliberately: structural isolation, the seasonal hunger gap known locally as Monga, and flood and river erosion from the Teesta--Jamuna--Brahmaputra system. Work shifted in stages: emergency relief (1972--75); schools, health posts, farm advice and village groups (1976--89); handover to Bangladeshi leadership with Trust Act registration and its own Board in 1997; then livelihoods, microfinance, climate adaptation and Union Federations from 1998. RDRS marked 50 years in February 2022. Head Office is House 43, Road 10, Sector 6, Uttara, Dhaka 1230; Central Coordination Office is in Rangpur.
+
+\begin{figure}[h]
+\centering
+\setlength{\unitlength}{1mm}
+\begin{picture}(150,28)
+\put(2,8){\framebox(42,16){\shortstack{\textbf{1972: LWF}\\\small relief NW}}}
+\put(44,16){\vector(1,0){12}}
+\put(58,8){\framebox(42,16){\shortstack{\textbf{1997: Trust Act}\\\small own Board}}}
+\put(100,16){\vector(1,0){12}}
+\put(114,8){\framebox(34,16){\shortstack{\textbf{2017/18}\\\small G Banker}}}
+\put(2,2){\small\color{RDRSGrey} relief programme $\rightarrow$ national NGO $\rightarrow$ dashboard era}
+\end{picture}
+\caption{RDRS in three dates: from relief programme to national NGO to dashboard-era MIS.}
+\label{fig:timeline}
+\end{figure}
+
+\section{Mission, Vision and Objectives}
+\textbf{Vision (2021--22 annual report):} A just and peaceful society where citizens live in dignity, free from poverty, distress, and ignorance in a sustainable environment.
+
+\textbf{Mission:} RDRS works with disadvantaged and marginalized communities and their organizations to empower them, make them resilient, and ensure sustainable improvements in their lives with dignity. In practice this means rural poor households, especially women, higher incomes, stronger capacity against flood and drought, and community groups that continue without constant NGO support.
+
+\textbf{Core values (current):} Compassion, Commitment, Innovation, Adaptability, Accountability. Staff still use older field words (social justice, gender equity, clean accounts), but I quote the five official ones. For monitoring this means every project must show who it reached and what changed --- income, resilience, whether the local group can carry on. That is why registers, federation minutes and branch reports matter in Chapter~\ref{chap:analysis}.
+
+\section{Field Scale}
+\begin{center}
+\colorbox{RDRSLight}{%
+\begin{minipage}{0.94\textwidth}
+\centering
+\textbf{Scale shared by MEL (Fahmida Mostafa)}\\[4pt]
+\begin{tabular}{ccccc}
+\hline
+\textbf{406} & \textbf{33} & \textbf{183} & \textbf{872} & \textbf{{\textasciitilde}1.64m} \\
+Federations & Districts & Upazilas & Unions & People (16,42,724) \\ \hline
+\end{tabular}\\[4pt]
+\small Most work is in Rangpur Division (Kurigram, Gaibandha, Thakurgaon, Dinajpur, Nilphamari, Panchagarh, Rangpur, Lalmonirhat), plus Ukhiya/Teknaf in Cox's Bazar and smaller work in Sylhet, Mymensingh and Rajshahi.
+\end{minipage}}
+\end{center}
+
+For reference, the 2021--22 annual report cited 7 divisions, 30 districts, 165 upazilas, 1,230 unions and 1,488,071 participants; the Dec 2024 microfinance sheet lists 29 districts, 288 branches, 21,134 groups, 458,819 members and 377,250 borrowers (savings BDT 5.14bn, outstanding BDT 15.09bn, recovery 95.08\%).
+
+\section{Organizational Structure}
+A Board of Trustees governs RDRS with a General Body and senior management. Foreign-funded projects need NGO Affairs Bureau clearance (Foreign Donations Regulation Act 2016, FD6 forms, annual audited accounts). Lending falls under the Microcredit Regulatory Authority. Field work runs through regions, areas and branches (roughly 16--17 regions, 59--61 areas, 278--288 branches). The Evaluation Department cuts across all of it on monitoring and data. Union Federations are community-owned at Union Parishad level (406 federations; safety-net claims, dispute settlement, standing-committee seats).
+
+\section{The Evaluation Department}
+I was attached to the Evaluation Department. Field reports arrive here from groups, federations and branches; staff check, compile and send findings to management. What I tracked was simple: who reported, when, on which form or app, who checked it, where it is stored. A late report or vague indicator in the field becomes a gap in the monthly sheet. Chapter~\ref{chap:analysis} follows that flow; notes here stay observational.
+
+\section{Overview of Ongoing Projects}
+RDRS groups work into five areas: (1) Skills, Employment and Entrepreneurship; (2) Social Empowerment; (3) Agriculture, Food Security and Climate Change; (4) Microfinance and Employment Creation; (5) Emergency and Humanitarian Response. Monitoring Officers cover all five.
+
+\begin{table}[h]
+\centering\caption{Projects that came up repeatedly in interviews}\label{tab:projects}
+\begin{tabular}{|p{2.0cm}|p{5.0cm}|p{6.4cm}|}
+\hline
+Project & What it does & Donor / period \\ \hline\hline
+Jononni & Maternal/neonatal health; pregnant women & Save the Children, Mar 2023--Dec 2027 (Sept 2026 schedule) \\ \hline
+SEEDS & Schooling for adolescents in adibashi communities; 3,000 families & Stromme Foundation, Jan 2024--Dec 2028 \\ \hline
+MCGL & Fewer preventable deaths; maternal/newborn/child health & U.S.\ Dept.\ of State via Jhpiego \\ \hline
+ICPS & Disability-inclusive child protection (see Sec.~\ref{sec:icps}) & UNICEF, Jun 2026--Dec 2027; BDT 2,20,40,834 \\ \hline
+\end{tabular}
+\end{table}
+
+Microfinance (since 1991, now 29 districts, collateral-free loans plus savings/insurance/training, $>$92\% women accounts) and agriculture/climate work (short-duration and flood-tolerant Aman, solar pumps, sack gardening, floating beds, pooled disaster fund for 17,986 households in Kurigram 2023--24) and social work (non-formal schools, health/nutrition, WASH, anti-child-marriage and GBV campaigns) run alongside humanitarian work in Cox's Bazar.
+
+% ================= CHAPTER 3 =================
+\chapter{Literature Review}
+
+\section{Management Information Systems}
+Laudon and Laudon define MIS as the integrated set of people, processes and technology that collects, processes and distributes information for decisions. For NGOs, the point is narrower: can a manager trust the number on the monthly sheet enough to act on it? That depends less on software brand and more on capture discipline, validation, and timeliness.
+
+\section{Project Monitoring}
+The OECD-DAC tradition treats monitoring as continuous tracking against indicators, distinct from episodic evaluation. A baseline fixes the pre-intervention reference; DQA checks validity, reliability, timeliness and precision during implementation. FGD/KII cover qualitative change; household surveys cover quantitative coverage.
+
+\section{MIS in NGO and Development Settings}
+Studies of MFI and development MIS converge on three lessons I saw at RDRS: (1) person-dependent reporting is a continuity risk --- succession to formal systems matters; (2) last-mile capture (register vs.\ system) is where error enters; (3) monthly, staff-assigned schedules beat ad-hoc requests for completeness. KoBo-type mobile capture plus Excel/Power BI compilation is now the common low-cost stack, with integrated dashboards (e.g.\ G Banker) for microfinance portfolios (OTR, PAR, outstanding, write-offs).
+
+% ================= CHAPTER 4 =================
+\chapter{Analysis and Findings}\label{chap:analysis}
+This is the core chapter. It uses my daily log and the documents above as evidence.
+
+\section{MIS Tools and Systems Used in Project Monitoring}
+
+\subsection{What the Evaluation Department actually uses}
+For regular reports MEL uses structured Excel formats and registers during routine visits. For one-off needs it uses KoBo Toolbox on mobile, which allows quick question changes and exports straight to Excel. In office the team compiles in Excel and uses Power BI for some dashboards. MEL outputs then feed into MIS for management decisions. MEL means Monitoring, Evaluation and Learning; Save the Children uses MEAL, where the extra A is Accountability to beneficiaries.
+
+\begin{table}[h]
+\centering\caption{Tool stack observed}\label{tab:stack}
+\begin{tabular}{|l|l|l|}
+\hline
+Task & Tool & Why it fits \\ \hline\hline
+Routine capture & Excel formats + registers & Stable, auditable \\ \hline
+Ad-hoc surveys & KoBo Toolbox (mobile) & Dynamic Qs, Excel export \\ \hline
+Compilation & Excel & Branch-level joins \\ \hline
+Dashboards & Power BI + G Banker & Visual follow-up \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Baseline design learned through ICPS}\label{sec:icps}
+ICPS is \textit{Strengthening Disability-Inclusive Child Protection Systems to Prevent and Respond to Violence against Children with Disabilities in Selected Communities of Bangladesh}. Donor UNICEF. Period June 2026--December 2027. Budget BDT 2,20,40,834. Components Output 4.2 (social service systems) and Output 4.3 (harmful practices). Baseline was running in September 2026.
+
+UNICEF gave 21 indicators: qualitative via FGD/KII, quantitative via household survey. Baseline means measuring the target group before start against those indicators. ESS is Environmental and Social Safeguard. TOR sets scope and method; the Inception Report confirms method and work plan before fieldwork. MEL maturity --- how systematic M\&E is --- was a new phrase for me: more mature means more regular and evidence-based.
+
+\begin{figure}[h]
+\centering
+\setlength{\unitlength}{1mm}
+\begin{picture}(150,30)
+\put(0,12){\framebox(22,14){\shortstack{\tiny 1. Review\\\tiny project doc}}}
+\put(22,19){\vector(1,0){4}}
+\put(26,12){\framebox(22,14){\shortstack{\tiny 2. Select\\\tiny indicators}}}
+\put(48,19){\vector(1,0){4}}
+\put(52,12){\framebox(24,14){\shortstack{\tiny 3. Matrix\\\tiny indic--method}}}
+\put(76,19){\vector(1,0){4}}
+\put(80,12){\framebox(22,14){\shortstack{\tiny 4. Concept\\\tiny draft}}}
+\put(102,19){\vector(1,0){4}}
+\put(106,12){\framebox(18,14){\shortstack{\tiny 5. TOR}}}
+\put(124,19){\vector(1,0){4}}
+\put(128,12){\framebox(22,14){\shortstack{\tiny 6. Inception\\\tiny Report}}}
+\put(20,2){\small FGD/KII $\rightarrow$ qualitative \quad $\bullet$ \quad HH survey $\rightarrow$ quantitative}
+\end{picture}
+\caption{Baseline design in six steps as taught by Saiful Alam (ICPS at step 6, Sept 2026).}
+\label{fig:baseline}
+\end{figure}
+
+\subsection{How microfinance MIS changed: Micro Bank to South Tech to G Banker}
+Mr.~Iftekharul Islam traced this from 1995--97, when microfinance was starting and the field role was called ATM (Assistant Thana Manager). First software was Micro Bank, built with support from FAO and GTZ from Germany.\footnote{My notes say ``ZTZ''; that likely means GTZ.} A team of 27 developers worked on it, including my grandfather (Boro Abbu) with a colleague noted as Mahabub. After that my grandfather ran most MIS reporting on Micro Bank himself, and RDRS leaned on him too much. One person holding that much reporting knowledge is risky for an organization that size. In 2011 RDRS brought in South Tech to reduce that dependence; my grandfather helped set it up, then retired. Around 2017--18 RDRS moved to G Banker, a Bangladeshi product --- the current system with an integrated dashboard where routine branch reports come out with one click.
+
+\begin{figure}[h]
+\centering
+\setlength{\unitlength}{1mm}
+\begin{picture}(150,30)
+\put(4,10){\framebox(40,16){\shortstack{\textbf{Micro Bank}\\\tiny 1995--97, FAO/GTZ\\\tiny 27 developers}}}
+\put(0,27){\small PERSON-DEPENDENT}
+\put(44,18){\vector(1,0){10}}
+\put(56,10){\framebox(40,16){\shortstack{\textbf{South Tech}\\\tiny 2011\\\tiny succession}}}
+\put(56,27){\small TRANSITION}
+\put(96,18){\vector(1,0){10}}
+\put(108,10){\framebox(38,16){\shortstack{\textbf{G Banker}\\\tiny 2017/18--now\\\tiny 1-click dashboard}}}
+\put(108,27){\small AUTOMATED}
+\end{picture}
+\caption{Microfinance MIS succession: the continuity lesson of this report.}
+\label{fig:missuccession}
+\end{figure}
+
+I saw three outputs from G Banker. The Micro Finance Program Changes Report (CO-wise, Udayan office example) shows month-to-month change by CO: CO count, samity count, member balance, savings, loanee numbers, overdue, outstanding, OTR and PAR, profit/loss, disbursement and write-offs. POMIS-5 (Statement of Financial Position) is a branch balance sheet, this year vs.\ last year. POMIS-4 (Statement of Comprehensive Income and Expenditure) is a branch income statement, monthly and annual, straight from the system.
+
+\section{Data Flow: From Field to Decision-Making}
+MEL staff go to sites, watch activities and collect data, then compile in Excel and Power BI for MIS and management use. The September 2026 monitoring schedule shows how this becomes monthly assignments in two parts.
+
+\begin{figure}[h]
+\centering
+\setlength{\unitlength}{1mm}
+\begin{picture}(150,34)
+\put(0,14){\framebox(28,14){\shortstack{\tiny Field visit\\\tiny observe}}}
+\put(28,21){\vector(1,0){6}}
+\put(36,20){\framebox(28,14){\shortstack{\tiny Excel regs.\\\tiny regular}}}
+\put(36,4){\framebox(28,14){\shortstack{\tiny KoBo\\\tiny ad-hoc}}}
+\put(28,11){\vector(1,-1){6}}
+\put(64,21){\vector(1,0){6}}
+\put(64,11){\vector(1,1){6}}
+\put(72,14){\framebox(32,14){\shortstack{\tiny Compile\\\tiny Excel + Power BI}}}
+\put(104,21){\vector(1,0){6}}
+\put(112,14){\framebox(32,14){\shortstack{\tiny MIS dashboard\\\tiny decisions}}}
+\end{picture}
+\caption{MEL to MIS flow as described by Fahmida Mostafa.}
+\label{fig:dataflow}
+\end{figure}
+
+\textbf{Microfinance part:} ten repeat tasks, each assigned to one person and one branch, visited twice a month (02--15 and 16--28 Sept): group-level loan/savings verification, staff productivity, savings collection/refunds observation, loan disbursement papers, loan ceilings/overdue follow-up, write-off/rescheduled follow-up, audit/reconciliation, write-off study, misappropriation adjustments, pre-service training assessment.
+
+\textbf{Development part (that month):} C-Rangpur baseline (Rangpur, Lalmonirhat, Kurigram, Sirajganj, Gaibandha, Jamalpur); MCGL DHIS2 validation in Panchagarh; Jononni DQA + ELCO/PW listing in Lalmonirhat/Rangpur; SEEDS economic-inclusion checks in Rangpur; ICPS baseline in Mymensingh/Rajshahi/Rangpur Division 06--24 Sept by Saiful Alam Sekul and Fahmida Mostafa (the live baseline Saiful explained to me); RERP post-distribution follow-up in Cox's Bazar; CALDRI beneficiary checks in Kurigram.
+
+\section{Strengths of Current MIS Practices}
+One-click routine reporting from G Banker (CO-wise changes, POMIS-4, POMIS-5) saves branch time. A fixed monthly schedule with named staff, branches and dates makes follow-up clear. Using Excel for routine work and KoBo Toolbox for ad-hoc collection fits the task: stable formats where possible, flexible mobile forms where questions change. An integrated dashboard pulls data together for decisions.
+
+\section{Gaps and Challenges Observed}
+I read the May 2023 monitoring report on the Somriddhi Programme (PKSF) to see MEL output on paper. It covered Vojanpur and Debiduba unions in Panchagarh (since 2014) and Beruabari in Kurigram (since 2018), via questionnaires + FGDs with purposive/random sampling (2 of 3 unions that round) plus document review.
+
+\begin{figure}[h]
+\centering
+\fbox{%
+\begin{minipage}{0.94\textwidth}
+\centering\textbf{Somriddhi at a glance (May 2023)}\\[4pt]
+\begin{tabular}{p{3.4cm}p{8.6cm}}
+Competency pass: & Bangla 82\% {\color{RDRSBlue}\rule{4.1cm}{3mm}} \\
+& English 53\% {\color{RDRSBlue}\rule{2.65cm}{3mm}} \\
+& Math 61\% {\color{RDRSBlue}\rule{3.05cm}{3mm}} \\[4pt]
+Health-card cover: & Beruabari 17\% {\color{RDRSOrange}\rule{1.7cm}{3mm}} \quad Debiduba 38\% {\color{RDRSOrange}\rule{3.8cm}{3mm}} \\[4pt]
+Fruit-tree survival: & Beruabari 35\% {\color{RDRSTeal}\rule{3.5cm}{3mm}} \quad Debiduba 49\% {\color{RDRSTeal}\rule{4.9cm}{3mm}} \\
+\end{tabular}
+\end{minipage}}
+\caption{Somriddhi gaps as horizontal bars (no extra packages needed).}
+\label{fig:somriddhi}
+\end{figure}
+
+Education: 74 centres (34 Beruabari, 40 Debiduba; 1,926 students; 12 visited). MIS attendance did not match registers (Beruabari MIS 100\% vs.\ 89\% register). Pass: Bangla 82\%, English 53\%, Math 61\%, wide centre variation. Turnover was the main problem: 11 of 74 centres changed teacher in four months; materials short, no play equipment, only 45\% followed lesson plans.
+
+Health: card coverage 17\% (Beruabari) vs.\ 38\% (Debiduba). Static + twice-weekly satellite clinics plus eye camps. Fees over four months: BDT 47,620 vs.\ BDT 91,660. FGDs broadly positive; requests: more satellites, lower card cost, steadier medicines.
+
+Rehabilitation (2018--19 cohort, 4 + 8 beneficiaries, {\textasciitilde}BDT 1 lakh assets each): Beruabari incomes mostly fell (most $>$70, no reinvestment route); Debiduba 60\% rose. Follow-up patchy --- 65\% of income/expenditure records missing at visit. Housing (electricity, tubewell, sanitation) improved since baseline.
+
+Homestead (25 + 20 homes; saplings, seeds, compost rings, fencing, poultry/pigeon houses, 2018--19): fruit-tree survival 35\% vs.\ 49\% (flood, late planting, weak stock). Vermicompost, eco-stoves, pheromone traps rarely in use.
+
+\textbf{Cross-cutting issue for my topic:} MIS figures and field registers often did not match --- the same data-integrity problem as loan-record matching, at programme level.
+
+\section{Sample Findings Table}
+Field evidence: interviews above; Sept 2026 schedule; G Banker outputs (Udayan, POMIS-5/4); Somriddhi May 2023 report.
+
+\begin{table}[h]
+\centering\caption{Condensed findings}\label{tab:findings}
+\begin{tabular}{|p{3.4cm}|p{5.4cm}|p{4.4cm}|}
+\hline
+MIS practice / tool & Observation & Strength / gap \\ \hline\hline
+G Banker 1-click & CO-wise, POMIS-4/5 & Strength: time, consistency \\ \hline
+Monthly schedule & Staff $\times$ branch $\times$ date & Strength: accountability \\ \hline
+Excel + KoBo & Routine vs.\ ad-hoc & Strength: fit-for-task \\ \hline
+Register-to-MIS & 100\% vs.\ 89\%; 65\% missing & Gap: reconciliation \\ \hline
+Follow-up & 11/74 turnover; 35\% vs.\ 49\% & Gap: supervision \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Daily Log (kept live)}
+\begin{table}[h]
+\centering\caption{Daily log excerpt}\label{tab:log}
+\begin{tabular}{|p{2.0cm}|p{4.4cm}|p{3.4cm}|p{4.0cm}|}
+\hline
+Date & Activity & Met & Learning \\ \hline\hline
+Sept 2026 & ICPS walkthrough & Saiful Alam & 6 steps; 21 indic.; FGD/KII vs.\ HH \\ \hline
+Sept 2026 & MEL workflow & Fahmida Mostafa & Excel/KoBo/Power BI; scale \\ \hline
+Sept 2026 & MIS history & Iftekharul Islam & Micro Bank $\to$ G Banker \\ \hline
+May 2023 & Somriddhi review & --- & MIS-vs-register gap \\ \hline
+\end{tabular}
+\end{table}
+
+% ================= CHAPTER 5 =================
+\chapter{Recommendations}
+\begin{enumerate}
+\item \textbf{Lock reports only after reconciliation.} Add a register-to-MIS check (attendance, savings, disbursement) to the monthly schedule; the checker signs before upload. Addresses the 100-vs-89 and missing-records gaps.
+\item \textbf{Single capture in KoBo for ad-hoc work.} Keep Excel as compilation-only so field edits do not fork versions; export to Excel, never re-type.
+\item \textbf{Protect continuity.} Document G Banker definitions (OTR, PAR, write-off) and keep two trained owners per report family, so no single-person dependency recurs.
+\end{enumerate}
+
+% ================= CHAPTER 6 =================
+\chapter{Conclusion}
+The internship showed me MIS as plumbing, not software: Excel, KoBo, Power BI and G Banker matter only because a monthly schedule, a register, and a checker make the number trustworthy. RDRS has solved the harder half for microfinance through succession to an automated dashboard. The remaining work is the same everywhere --- closing the last-mile gap between what the register says and what the system shows. Watching a live baseline (ICPS) and reading a closed monitoring round (Somriddhi) gave me both ends of that chain.
+
+% ================= REFERENCES =================
+\begin{thebibliography}{9}
+\bibitem{rdrs22} RDRS Bangladesh, \textit{Annual Report 2021--22}.
+\bibitem{rdrsstrat} RDRS Bangladesh, \textit{Strategic Plan 2023--2027}.
+\bibitem{mel2026} RDRS MEL Department, \textit{Monitoring Schedule, September 2026}.
+\bibitem{som23} RDRS, \textit{Field Monitoring Report: Somriddhi Programme, May 2023 (PKSF)}.
+\bibitem{laudon} K.~Laudon and J.~Laudon, \textit{Management Information Systems}, Pearson.
+\bibitem{oecd} OECD-DAC, \textit{Glossary of Key Terms in Evaluation}.
+\end{thebibliography}
+
+% ================= APPENDIX =================
+\appendix
+\chapter{Appendix}
+\section{Interview guide (used)}
+Who reports what, when, on which form/app; who verifies; where stored; what breaks most often; what changed with G Banker/KoBo.
+
+\section{Glossary}
+MEL, MEAL, ESS, TOR, FGD, KII, HH Survey, IGA, KoBo Toolbox, PKSF, MFI, ATM, CO, OTR, PAR, DQA --- as listed in the abbreviations box.
+
+\section{Next step}
+Field visit including an eye clinic to observe MEL data collection as direct observation.
+
+\end{document}

@@ -1,0 +1,38 @@
+\contentsline {chapter}{Letter of Transmittal}{i}{}%
+\contentsline {chapter}{Acknowledgement}{ii}{}%
+\contentsline {chapter}{Executive Summary}{iii}{}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{}%
+\contentsline {section}{\numberline {1.1}Background of the Study}{1}{}%
+\contentsline {section}{\numberline {1.2}Objectives of the Study}{1}{}%
+\contentsline {section}{\numberline {1.3}Scope of the Study}{1}{}%
+\contentsline {section}{\numberline {1.4}Methodology}{2}{}%
+\contentsline {subsection}{\numberline {1.4.1}Sources of data}{2}{}%
+\contentsline {subsection}{\numberline {1.4.2}Data collection method}{2}{}%
+\contentsline {section}{\numberline {1.5}Limitations of the Study}{2}{}%
+\contentsline {chapter}{\numberline {2}Organizational Overview}{3}{}%
+\contentsline {section}{\numberline {2.1}About RDRS Bangladesh}{3}{}%
+\contentsline {section}{\numberline {2.2}Mission, Vision and Objectives}{4}{}%
+\contentsline {section}{\numberline {2.3}Field Scale}{4}{}%
+\contentsline {section}{\numberline {2.4}Organizational Structure}{4}{}%
+\contentsline {section}{\numberline {2.5}The Evaluation Department}{5}{}%
+\contentsline {section}{\numberline {2.6}Overview of Ongoing Projects}{5}{}%
+\contentsline {chapter}{\numberline {3}Literature Review}{6}{}%
+\contentsline {section}{\numberline {3.1}Management Information Systems}{6}{}%
+\contentsline {section}{\numberline {3.2}Project Monitoring}{6}{}%
+\contentsline {section}{\numberline {3.3}MIS in NGO and Development Settings}{6}{}%
+\contentsline {chapter}{\numberline {4}Analysis and Findings}{7}{}%
+\contentsline {section}{\numberline {4.1}MIS Tools and Systems Used in Project Monitoring}{7}{}%
+\contentsline {subsection}{\numberline {4.1.1}What the Evaluation Department actually uses}{7}{}%
+\contentsline {subsection}{\numberline {4.1.2}Baseline design learned through ICPS}{7}{}%
+\contentsline {subsection}{\numberline {4.1.3}How microfinance MIS changed: Micro Bank to South Tech to G Banker}{8}{}%
+\contentsline {section}{\numberline {4.2}Data Flow: From Field to Decision-Making}{9}{}%
+\contentsline {section}{\numberline {4.3}Strengths of Current MIS Practices}{10}{}%
+\contentsline {section}{\numberline {4.4}Gaps and Challenges Observed}{10}{}%
+\contentsline {section}{\numberline {4.5}Sample Findings Table}{11}{}%
+\contentsline {section}{\numberline {4.6}Daily Log (kept live)}{11}{}%
+\contentsline {chapter}{\numberline {5}Recommendations}{12}{}%
+\contentsline {chapter}{\numberline {6}Conclusion}{13}{}%
+\contentsline {chapter}{\numberline {A}Appendix}{15}{}%
+\contentsline {section}{\numberline {A.1}Interview guide (used)}{15}{}%
+\contentsline {section}{\numberline {A.2}Glossary}{15}{}%
+\contentsline {section}{\numberline {A.3}Next step}{15}{}%
