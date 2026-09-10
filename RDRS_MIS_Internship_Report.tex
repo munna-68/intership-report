@@ -1,37 +1,105 @@
-% RDRS Bangladesh — MIS Internship Report (high-quality, locally compilable)
-% Compile: latexmk -pdf RDRS_MIS_Internship_Report.tex  (TeX Live base + graphicx/color/hyperref only)
+% RDRS Bangladesh — MIS Internship Report (polished, locally + Overleaf compilable)
+% Local: TeX Live base only (color/colortbl/fancyhdr). Overleaf: auto-enables hyperref/booktabs/microtype if present.
+% Compile: latexmk -pdf RDRS_MIS_Internship_Report.tex
 \documentclass[12pt,a4paper]{report}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[a4paper,margin=2.5cm,headheight=15pt]{geometry}
-\renewcommand{\baselinestretch}{1.3}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\small\textsc{RDRS Bangladesh} -- MIS Internship Report}
-\fancyhead[R]{\small Mahmud (12022065)}
-\fancyfoot[C]{\small\thepage}
-\renewcommand{\headrulewidth}{0.6pt}
+\usepackage[a4paper,margin=2.4cm,headheight=15pt,includehead,includefoot]{geometry}
 
-\usepackage{graphicx,color,array,longtable,multicol,amsmath,amssymb,url}
-% hyperref omitted: minimal TeX Live here lacks etoolbox.sty.
-% For Overleaf/full TeX, re-add:
-% \usepackage{hyperref}\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+% ---------- Base packages (guaranteed local) ----------
+\usepackage{graphicx,color,colortbl,array,longtable,multicol,amsmath,amssymb,url}
 
-% Colors via base color.sty (rgb)
+% ---------- Colors (color.sty rgb, works everywhere) ----------
 \definecolor{RDRSBlue}{rgb}{0.12,0.22,0.39}
 \definecolor{RDRSTeal}{rgb}{0.05,0.49,0.48}
 \definecolor{RDRSOrange}{rgb}{0.90,0.44,0.13}
 \definecolor{RDRSLight}{rgb}{0.95,0.96,0.97}
 \definecolor{RDRSGrey}{rgb}{0.35,0.35,0.35}
+\definecolor{RDRSMidGrey}{rgb}{0.62,0.64,0.67}
 
-% booktabs emulation (no extra package)
-\newcommand{\toprule}{\hline\hline}
-\newcommand{\midrule}{\hline}
-\newcommand{\bottomrule}{\hline\hline}
-\newcommand{\cmidrule}[1]{\hline}
+% ---------- Optional enhancements (Overleaf/full TeX only, skipped locally) ----------
+\IfFileExists{etoolbox.sty}{\usepackage[colorlinks=true,linkcolor=RDRSBlue,citecolor=RDRSTeal,urlcolor=RDRSBlue,breaklinks=true]{hyperref}}{}
+\IfFileExists{booktabs.sty}{\usepackage{booktabs}}{%
+  \newcommand{\toprule}{\hline\hline}%
+  \newcommand{\midrule}{\hline}%
+  \newcommand{\bottomrule}{\hline\hline}%
+  \newcommand{\cmidrule}[1]{\hline}%
+}
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\IfFileExists{setspace.sty}{\usepackage{setspace}\setstretch{1.32}}{\renewcommand{\baselinestretch}{1.32}}
+
+% ---------- Typography & page discipline ----------
+\setlength{\parskip}{0.55em}
+\setlength{\parindent}{0em}
+\setlength{\emergencystretch}{3em}
+\tolerance=1200
+\clubpenalty=10000
+\widowpenalty=10000
+\raggedbottom
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.35}
+\arrayrulecolor{RDRSMidGrey}
+\setlength{\arrayrulewidth}{0.5pt}
+
+% ---------- Headers / footers ----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textsc{\color{RDRSBlue}RDRS Bangladesh} \color{RDRSMidGrey}\small$|$ \small MIS Internship Report}
+\fancyhead[R]{\small\color{RDRSGrey}Mahmud (12022065)}
+\fancyfoot[C]{\small\color{RDRSGrey}\thepage}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\footrulewidth}{0pt}
+% color the head rule blue
+\makeatletter
+\def\headrule{{\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi\color{RDRSBlue}\hrule\@height\headrulewidth\@width\headwidth \vskip-\headrulewidth}}
+\makeatother
+
+% ---------- Chapter / section styling (no titlesec needed) ----------
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{10\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    {\color{RDRSOrange}\bfseries\small\MakeUppercase{\@chapapp\ \thechapter}\par\nobreak}
+    \vskip 4\p@
+    {\color{RDRSBlue}\interlinepenalty\@M \Huge \bfseries #1\par\nobreak}%
+    \vskip 6\p@
+    {\color{RDRSBlue}\rule{\textwidth}{1.2pt}}\par
+    \vskip 14\p@
+  }}
+\def\@makeschapterhead#1{%
+  \vspace*{10\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    {\color{RDRSBlue}\interlinepenalty\@M \Huge \bfseries #1\par\nobreak}%
+    \vskip 6\p@
+    {\color{RDRSBlue}\rule{\textwidth}{1.2pt}}\par
+    \vskip 14\p@
+  }}
+\renewcommand{\section}{\@startsection{section}{1}{\z@}{-2.8ex plus -0.8ex minus -.2ex}{1.4ex plus .2ex}{\normalfont\Large\bfseries\color{RDRSBlue}}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}{-2.2ex plus -.6ex minus -.2ex}{1.0ex plus .2ex}{\normalfont\large\bfseries\color{RDRSBlue}}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}{-1.6ex plus -.4ex minus -.2ex}{0.8ex plus .2ex}{\normalfont\normalsize\bfseries\color{RDRSTeal}}}
+% captions: small, bold colored label
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{\small\textbf{\color{RDRSBlue}#1.} \small\color{RDRSGrey}#2}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\small\textbf{\color{RDRSBlue}#1.} \small\color{RDRSGrey}#2\par}%
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother
+
+% ---------- Reusable boxes (fcolorbox works with color.sty) ----------
+\setlength{\fboxsep}{10pt}
+\setlength{\fboxrule}{0.9pt}
+\newcommand{\highlightbox}[1]{\begin{center}\fcolorbox{RDRSBlue}{RDRSLight}{\begin{minipage}{0.92\textwidth}#1\end{minipage}}\end{center}}
+\newcommand{\keybox}[1]{\begin{center}\fcolorbox{RDRSTeal}{RDRSLight}{\begin{minipage}{0.92\textwidth}#1\end{minipage}}\end{center}}
+\newcommand{\warnbox}[1]{\begin{center}\fcolorbox{RDRSOrange}{RDRSLight}{\begin{minipage}{0.92\textwidth}#1\end{minipage}}\end{center}}
+\newcommand{\headercell}[1]{\textcolor{white}{\textbf{#1}}}
 
 \title{\textbf{Evaluating MIS Practices in Project Monitoring:}\\ \textbf{A Study on RDRS Bangladesh}}
 \author{A.~R.~Mahmud\\ID: 12022065\\BBA, Department of Management Information Systems\\Begum Rokeya University, Rangpur}
@@ -42,37 +110,43 @@
 % ================= TITLE PAGE =================
 \begin{titlepage}
 \centering
-\vspace*{0.4cm}
-{\large\scshape Begum Rokeya University, Rangpur\par}
-{\normalsize Department of Management Information Systems\par}
-\vspace{0.4cm}
-{\color{RDRSBlue}\rule{\textwidth}{1.6pt}}\\[4pt]
-{\LARGE\bfseries\color{RDRSBlue} Internship Report\par}
-\vspace{0.2cm}
-{\Large\bfseries Evaluating MIS Practices in Project Monitoring\par}
-{\Large\bfseries A Study on RDRS Bangladesh\par}
-\vspace{0.2cm}
-{\color{RDRSBlue}\rule{\textwidth}{1.6pt}}
-\vspace{0.6cm}
-
-\colorbox{RDRSLight}{%
-\begin{minipage}{0.88\textwidth}
-\centering
-\textbf{Submitted By}\\[2pt]
-A.~R.~Mahmud \quad ID: 12022065\\
-BBA, Major in Management Information Systems\\[6pt]
-\textbf{Submitted To}\\[2pt]
-Mohammad Rakibul Islam Bhuiyan\\
-Assistant Professor, Department of MIS, BRUR\\[6pt]
-\textbf{In collaboration with}\\[2pt]
-RDRS Bangladesh, Evaluation (MEL) Department
-\end{minipage}}
+\vspace*{0.3cm}
+{\small\scshape\color{RDRSTeal} Begum Rokeya University, Rangpur \quad $\bullet$ \quad Department of Management Information Systems\par}
+\vspace{0.35cm}
+{\color{RDRSOrange}\rule{\textwidth}{2.2pt}}\\[2pt]
+{\color{RDRSBlue}\rule{\textwidth}{0.7pt}}
 \vspace{0.5cm}
+{\small\bfseries\color{RDRSOrange} \MakeUppercase{Internship Report}\par}
+\vspace{0.15cm}
+{\LARGE\bfseries\color{RDRSBlue} Evaluating MIS Practices\\ in Project Monitoring\par}
+\vspace{0.15cm}
+{\Large\color{RDRSGrey} A Study on RDRS Bangladesh\par}
+\vspace{0.3cm}
+{\color{RDRSBlue}\rule{3cm}{2.2pt}}
+\vspace{0.55cm}
 
-\fbox{\small\bfseries Fieldwork: Rangpur \quad $\bullet$ \quad Sept 2026}
+\fcolorbox{RDRSBlue}{RDRSLight}{%
+\begin{minipage}{0.90\textwidth}
+\centering
+\small\scshape\color{RDRSBlue} Submitted By \quad $/$ \quad Submitted To \quad $/$ \quad Host\par
+\vspace{0.15cm}
+\begin{tabular}{ccc}
+\parbox{4.6cm}{\centering \textbf{A.~R.~Mahmud}\\ ID: 12022065\\ \small BBA, Major in MIS} &
+\parbox{0.6cm}{\centering \color{RDRSMidGrey}$|$} &
+\parbox{5.2cm}{\centering \textbf{Mohammad Rakibul Islam Bhuiyan}\\ \small Assistant Professor, MIS, BRUR} \\
+\end{tabular}\\[6pt]
+{\small\color{RDRSGrey} In collaboration with \textbf{\color{RDRSBlue}RDRS Bangladesh, Evaluation (MEL) Department}\par}
+\end{minipage}}
+\vspace{0.45cm}
+
+\fcolorbox{RDRSTeal}{RDRSTeal}{\textcolor{white}{\small\bfseries \quad Fieldwork: Rangpur \quad $\bullet$ \quad Sept 2026 \quad}}%
+\hspace{0.3cm}%
+\fcolorbox{RDRSOrange}{RDRSOrange}{\textcolor{white}{\small\bfseries \quad MEL $\cdot$ MIS $\cdot$ G Banker \quad}}
 
 \vfill
-{\small\color{RDRSGrey} Date of Submission: \underline{\hspace{4cm}} \par}
+{\small\color{RDRSGrey} Date of Submission: \underline{\hspace{4cm}} \qquad Place: Rangpur / Dhaka \par}
+\vspace{0.15cm}
+{\scriptsize\color{RDRSMidGrey} Sources: Sept 2026 monitoring schedule \quad $\bullet$ \quad G Banker outputs \quad $\bullet$ \quad Somriddhi May 2023 report \par}
 \end{titlepage}
 
 % ================= FRONT MATTER =================
@@ -99,28 +173,19 @@ I thank my academic supervisor for guidance on structure and scope, and the RDRS
 
 \chapter*{Executive Summary}
 \addcontentsline{toc}{chapter}{Executive Summary}
-\fbox{%
-\begin{minipage}{0.94\textwidth}
-\small This report asks a practical question: how does monitoring data actually move from the field to a management decision at RDRS Bangladesh, and where does the system help or break?
-\end{minipage}}
+\highlightbox{\small\textbf{\color{RDRSBlue} Guiding question:} how does monitoring data actually move from the field to a management decision at RDRS Bangladesh, and where does the system help or break?}
 
 I spent the internship inside the MEL function. For routine work the department runs on structured Excel formats and registers; for one-off needs it uses KoBo Toolbox on mobile with direct Excel export; in office it compiles in Excel and builds some dashboards in Power BI. A monthly monitoring schedule turns this into named assignments. The September 2026 schedule I reviewed splits into ten repeat microfinance tasks (each branch visited twice) and project-specific development tasks, including the live ICPS baseline (UNICEF, 06--24 Sept, by Saiful Alam Sekul and Fahmida Mostafa).
 
 Two findings stand out. First, microfinance reporting has moved from a person-dependent process (Micro Bank, 1995--97) through South Tech (2011) to G Banker (2017/18), where branch reports such as the CO-wise Changes Report, POMIS-5 and POMIS-4 now come out with one click into an integrated dashboard. That succession is the report's core continuity lesson. Second, programme monitoring still shows a data-integrity gap: in the May 2023 Somriddhi report, MIS attendance read 100\% against 89\% in the register, 65\% of rehabilitation income records could not be found, and similar MIS-vs-field mismatches recur. Teacher turnover (11 of 74 centres in four months), low tree survival (35\% vs.\ 49\%), and patchy follow-up sit alongside real gains in housing conditions.
 
-My two practical recommendations: (1) add a register-to-MIS reconciliation check to the monthly schedule before reports are locked; (2) keep KoBo as the single capture point for ad-hoc surveys so Excel is compilation-only, not re-entry.
+\keybox{\small\textbf{\color{RDRSTeal} Recommendations:} (1) add a register-to-MIS reconciliation check to the monthly schedule before reports are locked; (2) keep KoBo as the single capture point for ad-hoc surveys so Excel is compilation-only, not re-entry.}
 
 \tableofcontents
 \listoffigures
 \listoftables
 
-\begin{center}
-\fbox{%
-\begin{minipage}{0.94\textwidth}
-\centering\small
-\textbf{Abbreviations:} MEL -- Monitoring, Evaluation and Learning; MEAL -- plus Accountability; ESS -- Environmental and Social Safeguard; TOR -- Terms of Reference; FGD -- Focus Group Discussion; KII -- Key Informant Interview; HH -- Household; IGA -- Income Generating Activity; PKSF -- Palli Karma-Sahayak Foundation; CO -- Credit Organizer; OTR -- On-Time Repayment; PAR -- Portfolio at Risk; DQA -- Data Quality Assessment; ATM -- Assistant Thana Manager (historic field role).
-\end{minipage}}
-\end{center}
+\highlightbox{\centering\small \textbf{\color{RDRSBlue}Abbreviations:} MEL -- Monitoring, Evaluation and Learning; MEAL -- plus Accountability; ESS -- Environmental and Social Safeguard; TOR -- Terms of Reference; FGD -- Focus Group Discussion; KII -- Key Informant Interview; HH -- Household; IGA -- Income Generating Activity; PKSF -- Palli Karma-Sahayak Foundation; CO -- Credit Organizer; OTR -- On-Time Repayment; PAR -- Portfolio at Risk; DQA -- Data Quality Assessment; ATM -- Assistant Thana Manager (historic); MSDS -- Monthly Savings Deposit Scheme; WASH -- Water, Sanitation and Hygiene; LRL -- Livelihood Restoration Loan; BFIU -- Bangladesh Financial Intelligence Unit.}
 
 \clearpage
 \pagenumbering{arabic}
@@ -154,11 +219,11 @@ Secondary data came from handwritten notes and four supporting documents I revie
 \subsection{Data collection method}
 I collected data through informal interviews, sitting in on explanations of forms and dashboards, and reviewing registers, schedules and reports. A field visit including an eye clinic is planned as direct observation of MEL data collection.
 
-\begin{table}[h]
+\begin{table}[htbp]
 \centering\caption{Interviews conducted}\label{tab:interviews}
 \begin{tabular}{|p{3.2cm}|p{3.4cm}|p{7.0cm}|}
 \hline
-Name & Role & Focus \\ \hline\hline
+\rowcolor{RDRSBlue}\headercell{Name} & \headercell{Role} & \headercell{Focus} \\ \hline
 Md.~Saiful Alam (Shekul) & ICPS baseline team; ex-MEAL \& GIS, BHA/Save the Children & MEL functions; baseline design; indicators, ESS, TOR, Inception Report ({\textasciitilde}2 hrs) \\ \hline
 Fahmida Mostafa & Senior MEL Officer & Active projects; MEL workflow; five programme areas; field scale \\ \hline
 Mr.~Iftekharul Islam & Manager, Monitoring & Microfinance MIS history: manual to automated \\ \hline
@@ -176,17 +241,14 @@ RDRS started in Rangpur in February 1972 as the Bangladesh field programme of th
 
 The northwest was chosen deliberately: structural isolation, the seasonal hunger gap known locally as Monga, and flood and river erosion from the Teesta--Jamuna--Brahmaputra system. Work shifted in stages: emergency relief (1972--75); schools, health posts, farm advice and village groups (1976--89); handover to Bangladeshi leadership with Trust Act registration and its own Board in 1997; then livelihoods, microfinance, climate adaptation and Union Federations from 1998. RDRS marked 50 years in February 2022. Head Office is House 43, Road 10, Sector 6, Uttara, Dhaka 1230; Central Coordination Office is in Rangpur.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
-\setlength{\unitlength}{1mm}
-\begin{picture}(150,28)
-\put(2,8){\framebox(42,16){\shortstack{\textbf{1972: LWF}\\\small relief NW}}}
-\put(44,16){\vector(1,0){12}}
-\put(58,8){\framebox(42,16){\shortstack{\textbf{1997: Trust Act}\\\small own Board}}}
-\put(100,16){\vector(1,0){12}}
-\put(114,8){\framebox(34,16){\shortstack{\textbf{2017/18}\\\small G Banker}}}
-\put(2,2){\small\color{RDRSGrey} relief programme $\rightarrow$ national NGO $\rightarrow$ dashboard era}
-\end{picture}
+\fcolorbox{RDRSBlue}{RDRSLight}{%
+\begin{minipage}{0.92\textwidth}
+\centering
+\small\textbf{\color{RDRSBlue}1972: LWF relief (NW)} \quad \textcolor{RDRSOrange}{$\blacktriangleright$} \quad \small\textbf{\color{RDRSBlue}1997: Trust Act, own Board} \quad \textcolor{RDRSOrange}{$\blacktriangleright$} \quad \small\textbf{\color{RDRSBlue}2017/18: G Banker dashboard} \\[2pt]
+{\scriptsize\color{RDRSGrey} relief programme $\rightarrow$ national NGO $\rightarrow$ dashboard era\par}
+\end{minipage}}
 \caption{RDRS in three dates: from relief programme to national NGO to dashboard-era MIS.}
 \label{fig:timeline}
 \end{figure}
@@ -199,19 +261,12 @@ The northwest was chosen deliberately: structural isolation, the seasonal hunger
 \textbf{Core values (current):} Compassion, Commitment, Innovation, Adaptability, Accountability. Staff still use older field words (social justice, gender equity, clean accounts), but I quote the five official ones. For monitoring this means every project must show who it reached and what changed --- income, resilience, whether the local group can carry on. That is why registers, federation minutes and branch reports matter in Chapter~\ref{chap:analysis}.
 
 \section{Field Scale}
-\begin{center}
-\colorbox{RDRSLight}{%
-\begin{minipage}{0.94\textwidth}
-\centering
-\textbf{Scale shared by MEL (Fahmida Mostafa)}\\[4pt]
+\highlightbox{\centering \textbf{\color{RDRSBlue}Scale shared by MEL (Fahmida Mostafa)}\\[4pt]
 \begin{tabular}{ccccc}
-\hline
-\textbf{406} & \textbf{33} & \textbf{183} & \textbf{872} & \textbf{{\textasciitilde}1.64m} \\
+\rowcolor{RDRSBlue}\headercell{406} & \headercell{33} & \headercell{183} & \headercell{872} & \headercell{{\textasciitilde}1.64m} \\
 Federations & Districts & Upazilas & Unions & People (16,42,724) \\ \hline
 \end{tabular}\\[4pt]
-\small Most work is in Rangpur Division (Kurigram, Gaibandha, Thakurgaon, Dinajpur, Nilphamari, Panchagarh, Rangpur, Lalmonirhat), plus Ukhiya/Teknaf in Cox's Bazar and smaller work in Sylhet, Mymensingh and Rajshahi.
-\end{minipage}}
-\end{center}
+\small Most work is in Rangpur Division (Kurigram, Gaibandha, Thakurgaon, Dinajpur, Nilphamari, Panchagarh, Rangpur, Lalmonirhat), plus Ukhiya/Teknaf in Cox's Bazar and smaller work in Sylhet, Mymensingh and Rajshahi.}
 
 For reference, the 2021--22 annual report cited 7 divisions, 30 districts, 165 upazilas, 1,230 unions and 1,488,071 participants; the Dec 2024 microfinance sheet lists 29 districts, 288 branches, 21,134 groups, 458,819 members and 377,250 borrowers (savings BDT 5.14bn, outstanding BDT 15.09bn, recovery 95.08\%).
 
@@ -224,11 +279,11 @@ I was attached to the Evaluation Department. Field reports arrive here from grou
 \section{Overview of Ongoing Projects}
 RDRS groups work into five areas: (1) Skills, Employment and Entrepreneurship; (2) Social Empowerment; (3) Agriculture, Food Security and Climate Change; (4) Microfinance and Employment Creation; (5) Emergency and Humanitarian Response. Monitoring Officers cover all five.
 
-\begin{table}[h]
+\begin{table}[htbp]
 \centering\caption{Projects that came up repeatedly in interviews}\label{tab:projects}
 \begin{tabular}{|p{2.0cm}|p{5.0cm}|p{6.4cm}|}
 \hline
-Project & What it does & Donor / period \\ \hline\hline
+\rowcolor{RDRSBlue}\headercell{Project} & \headercell{What it does} & \headercell{Donor / period} \\ \hline
 Jononni & Maternal/neonatal health; pregnant women & Save the Children, Mar 2023--Dec 2027 (Sept 2026 schedule) \\ \hline
 SEEDS & Schooling for adolescents in adibashi communities; 3,000 families & Stromme Foundation, Jan 2024--Dec 2028 \\ \hline
 MCGL & Fewer preventable deaths; maternal/newborn/child health & U.S.\ Dept.\ of State via Jhpiego \\ \hline
@@ -237,6 +292,21 @@ ICPS & Disability-inclusive child protection (see Sec.~\ref{sec:icps}) & UNICEF,
 \end{table}
 
 Microfinance (since 1991, now 29 districts, collateral-free loans plus savings/insurance/training, $>$92\% women accounts) and agriculture/climate work (short-duration and flood-tolerant Aman, solar pumps, sack gardening, floating beds, pooled disaster fund for 17,986 households in Kurigram 2023--24) and social work (non-formal schools, health/nutrition, WASH, anti-child-marriage and GBV campaigns) run alongside humanitarian work in Cox's Bazar.
+
+\section{Microfinance Programme: Udayan, Unnoti and Savings}
+I am adding this detail because the org-profile reads flat without it. RDRS does not run one generic loan. It runs two main loans with different risk.
+
+Udayan is group-based lending for newly enrolled members. Unnoti is individual lending for members who have moved past group liability. Both sit on compulsory savings. Every member puts in at least BDT 50 a week. The monthly floor is BDT 200 for Udayan and BDT 500 for Unnoti. Compulsory savings carries 6\% profit.
+
+On top of that there are two voluntary options. General Voluntary Savings takes deposits up to BDT 10,000 at 7\% simple annual interest. The Monthly Savings Deposit Scheme (MSDS) is fixed-term: three years at 7\% and five years at 7.5\% at maturity.
+
+Two targeted products came up in the policy files I reviewed:
+
+Water Credit is a WASH-linked loan of BDT 10,000--100,000 for safe water and sanitary latrine installation. It runs in 93 branches across six districts: Dinajpur, Nilphamari, Thakurgaon, Panchagarh, Habiganj and Moulvibazar. The loan comes with technical help and hygiene training, not cash alone.
+
+The Livelihood Restoration Loan (LRL), 2nd Phase, was a COVID-19 recovery loan of up to BDT 50,000. Terms on file: six-month grace, maximum 24-month tenure, 8\% declining-balance service charge, repaid in 18 monthly installments. It targeted low-income households, farmers and micro-entrepreneurs hit by the pandemic who needed to restart an income-generating activity.
+
+Why this matters for MIS: Udayan, Unnoti, Water Credit and LRL do not carry the same risk or the same check. That difference is what the monitoring checklist in Chapter~\ref{chap:analysis} is built around. Figures here are from internal policy documents and my placement notes; I would re-check thresholds against the originals before audit use.
 
 % ================= CHAPTER 3 =================
 \chapter{Literature Review}
@@ -259,11 +329,11 @@ This is the core chapter. It uses my daily log and the documents above as eviden
 \subsection{What the Evaluation Department actually uses}
 For regular reports MEL uses structured Excel formats and registers during routine visits. For one-off needs it uses KoBo Toolbox on mobile, which allows quick question changes and exports straight to Excel. In office the team compiles in Excel and uses Power BI for some dashboards. MEL outputs then feed into MIS for management decisions. MEL means Monitoring, Evaluation and Learning; Save the Children uses MEAL, where the extra A is Accountability to beneficiaries.
 
-\begin{table}[h]
+\begin{table}[htbp]
 \centering\caption{Tool stack observed}\label{tab:stack}
 \begin{tabular}{|l|l|l|}
 \hline
-Task & Tool & Why it fits \\ \hline\hline
+\rowcolor{RDRSBlue}\headercell{Task} & \headercell{Tool} & \headercell{Why it fits} \\ \hline
 Routine capture & Excel formats + registers & Stable, auditable \\ \hline
 Ad-hoc surveys & KoBo Toolbox (mobile) & Dynamic Qs, Excel export \\ \hline
 Compilation & Excel & Branch-level joins \\ \hline
@@ -276,23 +346,14 @@ ICPS is \textit{Strengthening Disability-Inclusive Child Protection Systems to P
 
 UNICEF gave 21 indicators: qualitative via FGD/KII, quantitative via household survey. Baseline means measuring the target group before start against those indicators. ESS is Environmental and Social Safeguard. TOR sets scope and method; the Inception Report confirms method and work plan before fieldwork. MEL maturity --- how systematic M\&E is --- was a new phrase for me: more mature means more regular and evidence-based.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
-\setlength{\unitlength}{1mm}
-\begin{picture}(150,30)
-\put(0,12){\framebox(22,14){\shortstack{\tiny 1. Review\\\tiny project doc}}}
-\put(22,19){\vector(1,0){4}}
-\put(26,12){\framebox(22,14){\shortstack{\tiny 2. Select\\\tiny indicators}}}
-\put(48,19){\vector(1,0){4}}
-\put(52,12){\framebox(24,14){\shortstack{\tiny 3. Matrix\\\tiny indic--method}}}
-\put(76,19){\vector(1,0){4}}
-\put(80,12){\framebox(22,14){\shortstack{\tiny 4. Concept\\\tiny draft}}}
-\put(102,19){\vector(1,0){4}}
-\put(106,12){\framebox(18,14){\shortstack{\tiny 5. TOR}}}
-\put(124,19){\vector(1,0){4}}
-\put(128,12){\framebox(22,14){\shortstack{\tiny 6. Inception\\\tiny Report}}}
-\put(20,2){\small FGD/KII $\rightarrow$ qualitative \quad $\bullet$ \quad HH survey $\rightarrow$ quantitative}
-\end{picture}
+\fcolorbox{RDRSTeal}{RDRSLight}{%
+\begin{minipage}{0.92\textwidth}
+\centering
+\scriptsize \fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}1. Review doc}} \textcolor{RDRSBlue}{$\rightarrow$} \fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}2. Indicators}} \textcolor{RDRSBlue}{$\rightarrow$} \fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}3. Matrix}} \textcolor{RDRSBlue}{$\rightarrow$} \fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}4. Concept}} \textcolor{RDRSBlue}{$\rightarrow$} \fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}5. TOR}} \textcolor{RDRSBlue}{$\rightarrow$} \fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}6. Inception}} \\[4pt]
+{\scriptsize\color{RDRSGrey} FGD/KII $\rightarrow$ qualitative \quad $\bullet$ \quad HH survey $\rightarrow$ quantitative\par}
+\end{minipage}}
 \caption{Baseline design in six steps as taught by Saiful Alam (ICPS at step 6, Sept 2026).}
 \label{fig:baseline}
 \end{figure}
@@ -300,19 +361,14 @@ UNICEF gave 21 indicators: qualitative via FGD/KII, quantitative via household s
 \subsection{How microfinance MIS changed: Micro Bank to South Tech to G Banker}
 Mr.~Iftekharul Islam traced this from 1995--97, when microfinance was starting and the field role was called ATM (Assistant Thana Manager). First software was Micro Bank, built with support from FAO and GTZ from Germany.\footnote{My notes say ``ZTZ''; that likely means GTZ.} A team of 27 developers worked on it, including my grandfather (Boro Abbu) with a colleague noted as Mahabub. After that my grandfather ran most MIS reporting on Micro Bank himself, and RDRS leaned on him too much. One person holding that much reporting knowledge is risky for an organization that size. In 2011 RDRS brought in South Tech to reduce that dependence; my grandfather helped set it up, then retired. Around 2017--18 RDRS moved to G Banker, a Bangladeshi product --- the current system with an integrated dashboard where routine branch reports come out with one click.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
-\setlength{\unitlength}{1mm}
-\begin{picture}(150,30)
-\put(4,10){\framebox(40,16){\shortstack{\textbf{Micro Bank}\\\tiny 1995--97, FAO/GTZ\\\tiny 27 developers}}}
-\put(0,27){\small PERSON-DEPENDENT}
-\put(44,18){\vector(1,0){10}}
-\put(56,10){\framebox(40,16){\shortstack{\textbf{South Tech}\\\tiny 2011\\\tiny succession}}}
-\put(56,27){\small TRANSITION}
-\put(96,18){\vector(1,0){10}}
-\put(108,10){\framebox(38,16){\shortstack{\textbf{G Banker}\\\tiny 2017/18--now\\\tiny 1-click dashboard}}}
-\put(108,27){\small AUTOMATED}
-\end{picture}
+\fcolorbox{RDRSBlue}{RDRSLight}{%
+\begin{minipage}{0.92\textwidth}
+\centering
+{\scriptsize\color{RDRSOrange}\textbf{PERSON-DEPENDENT}} \hspace{0.4cm} {\scriptsize\color{RDRSTeal}\textbf{TRANSITION}} \hspace{0.4cm} {\scriptsize\color{RDRSBlue}\textbf{AUTOMATED}} \\[3pt]
+\small\fcolorbox{RDRSOrange}{white}{\parbox{3.6cm}{\centering \textbf{Micro Bank}\\ \scriptsize 1995--97, FAO/GTZ\\ \scriptsize 27 developers}} \textcolor{RDRSBlue}{$\longrightarrow$} \small\fcolorbox{RDRSTeal}{white}{\parbox{3.2cm}{\centering \textbf{South Tech}\\ \scriptsize 2011\\ \scriptsize succession}} \textcolor{RDRSBlue}{$\longrightarrow$} \small\fcolorbox{RDRSBlue}{white}{\parbox{3.4cm}{\centering \textbf{\color{RDRSBlue}G Banker}\\ \scriptsize 2017/18--now\\ \scriptsize 1-click dashboard}} \\
+\end{minipage}}
 \caption{Microfinance MIS succession: the continuity lesson of this report.}
 \label{fig:missuccession}
 \end{figure}
@@ -322,21 +378,14 @@ I saw three outputs from G Banker. The Micro Finance Program Changes Report (CO-
 \section{Data Flow: From Field to Decision-Making}
 MEL staff go to sites, watch activities and collect data, then compile in Excel and Power BI for MIS and management use. The September 2026 monitoring schedule shows how this becomes monthly assignments in two parts.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
-\setlength{\unitlength}{1mm}
-\begin{picture}(150,34)
-\put(0,14){\framebox(28,14){\shortstack{\tiny Field visit\\\tiny observe}}}
-\put(28,21){\vector(1,0){6}}
-\put(36,20){\framebox(28,14){\shortstack{\tiny Excel regs.\\\tiny regular}}}
-\put(36,4){\framebox(28,14){\shortstack{\tiny KoBo\\\tiny ad-hoc}}}
-\put(28,11){\vector(1,-1){6}}
-\put(64,21){\vector(1,0){6}}
-\put(64,11){\vector(1,1){6}}
-\put(72,14){\framebox(32,14){\shortstack{\tiny Compile\\\tiny Excel + Power BI}}}
-\put(104,21){\vector(1,0){6}}
-\put(112,14){\framebox(32,14){\shortstack{\tiny MIS dashboard\\\tiny decisions}}}
-\end{picture}
+\fcolorbox{RDRSBlue}{RDRSLight}{%
+\begin{minipage}{0.92\textwidth}
+\centering
+\small\fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}Field visit}} \textcolor{RDRSBlue}{$\rightarrow$} \small\fcolorbox{RDRSTeal}{white}{Excel regs. / KoBo} \textcolor{RDRSBlue}{$\rightarrow$} \small\fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}Compile: Excel + Power BI}} \textcolor{RDRSBlue}{$\rightarrow$} \small\fcolorbox{RDRSOrange}{white}{\textbf{\color{RDRSOrange}MIS dashboard}} \\[2pt]
+{\scriptsize\color{RDRSGrey} regular: Excel formats + registers \quad $\bullet$ \quad ad-hoc: KoBo mobile $\rightarrow$ Excel\par}
+\end{minipage}}
 \caption{MEL to MIS flow as described by Fahmida Mostafa.}
 \label{fig:dataflow}
 \end{figure}
@@ -345,18 +394,42 @@ MEL staff go to sites, watch activities and collect data, then compile in Excel 
 
 \textbf{Development part (that month):} C-Rangpur baseline (Rangpur, Lalmonirhat, Kurigram, Sirajganj, Gaibandha, Jamalpur); MCGL DHIS2 validation in Panchagarh; Jononni DQA + ELCO/PW listing in Lalmonirhat/Rangpur; SEEDS economic-inclusion checks in Rangpur; ICPS baseline in Mymensingh/Rajshahi/Rangpur Division 06--24 Sept by Saiful Alam Sekul and Fahmida Mostafa (the live baseline Saiful explained to me); RERP post-distribution follow-up in Cox's Bazar; CALDRI beneficiary checks in Kurigram.
 
+\section{Special Monitoring: What Gets Checked at Field Level}
+The Evaluation Department does not review portfolios ad-hoc. It works from a set checklist. I copied the headings from internal monitoring notes during placement.
+
+Overdue cases are listed with amount plus a written reason for each. The reason feeds back into the next loan-committee decision. New loans are checked before they enter the normal cycle: what the committee approved against what was actually paid out. Field staff cross-check sanctioned amounts against field records with internal monitoring tools and review the supporting papers.
+
+Loans above a set threshold get tracked on their own against two indicators: Portfolio-at-Risk (PAR) and Overdue-to-Total-Receivables (OTR). Fund misappropriation and forgery cases run on a separate track until resolved. A complaint box at branch feeds into a formal investigation procedure. Above the branch, Regional, District and Area Managers do scheduled site visits as a supervisory layer.
+
+What struck me: the numbers for PAR and OTR come from G Banker, but most of the checks still need a person on site. The system flags. A person verifies. That split --- where MIS stops and footwork starts --- is where I think the analysis should focus.
+
+\section{Risk Control Linked to MIS: Credit Shield Insurance}
+Since July 2024 RDRS has run Credit Shield Insurance with Guardian Life Insurance Limited. Coverage is mandatory and covers two people: the borrower and their nominee. On death the family gets BDT 15,000 in immediate cash help plus a waiver of the outstanding loan (principal and service charge) up to BDT 20 lakh. Premium is BDT 6 per BDT 1,000 disbursed.
+
+The claim path is fixed. The branch hears of a death. The Branch Focal verifies papers and forwards them. The Regional Focal reviews and forwards to the Central Focal at head office. The Central Focal sends verified documents to Guardian Life for decision. The decision comes back down the same chain to the branch, which must settle within five working days of notification. Timelines on file: branch to report within two working days of confirming death; settled claims paid in monthly cycles; Guardian Life has 10 days to ask for missing documents.
+
+At field level this is still paper and signatures. The software part is compiling and moving what field staff checked by hand. I include it because it shows MIS as carrier, not replacement.
+
+\section{Compliance Use of MIS: AML/CFT Data}
+The AML and CFT Policy (effective January 2022) asks for a kept database of everyone who controls or directs RDRS: board of trustees and executive committee members. The fields are fixed: full name, guardian's name, current and permanent address, date of birth, NID copy, TIN, other organizational affiliation, tenure on the board or team, photograph, and anything else the organization asks for. What counts as suspicious or unusual is defined by reference to the Money Laundering Prevention Act 2012 and the Anti-Terrorism (Amendment) Act 2012.
+
+This is not credit monitoring. It is the same database skill used for a different job: reports to Bangladesh Bank and Bangladesh Financial Intelligence Unit. I keep it short because my topic is project monitoring, but it belongs if MIS is read broadly.
+
+\section{Loan Committee and Approval Hierarchy}
+Approvals run in tiers. The branch committee clears standard loans. Loans above set thresholds go up to area or regional level. That ladder is the same one monitoring walks back down: who signs off at the top is who checks afterward in field movement and high-value tracking. I note it here to link the product detail in Chapter 2 to the checklist above.
+
 \section{Strengths of Current MIS Practices}
 One-click routine reporting from G Banker (CO-wise changes, POMIS-4, POMIS-5) saves branch time. A fixed monthly schedule with named staff, branches and dates makes follow-up clear. Using Excel for routine work and KoBo Toolbox for ad-hoc collection fits the task: stable formats where possible, flexible mobile forms where questions change. An integrated dashboard pulls data together for decisions.
 
 \section{Gaps and Challenges Observed}
 I read the May 2023 monitoring report on the Somriddhi Programme (PKSF) to see MEL output on paper. It covered Vojanpur and Debiduba unions in Panchagarh (since 2014) and Beruabari in Kurigram (since 2018), via questionnaires + FGDs with purposive/random sampling (2 of 3 unions that round) plus document review.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
-\fbox{%
-\begin{minipage}{0.94\textwidth}
-\centering\textbf{Somriddhi at a glance (May 2023)}\\[4pt]
-\begin{tabular}{p{3.4cm}p{8.6cm}}
+\fcolorbox{RDRSBlue}{RDRSLight}{%
+\begin{minipage}{0.92\textwidth}
+\centering\textbf{\color{RDRSBlue}Somriddhi at a glance (May 2023)}\\[4pt]
+\begin{tabular}{p{3.2cm}p{8.4cm}}
 Competency pass: & Bangla 82\% {\color{RDRSBlue}\rule{4.1cm}{3mm}} \\
 & English 53\% {\color{RDRSBlue}\rule{2.65cm}{3mm}} \\
 & Math 61\% {\color{RDRSBlue}\rule{3.05cm}{3mm}} \\[4pt]
@@ -378,28 +451,33 @@ Homestead (25 + 20 homes; saplings, seeds, compost rings, fencing, poultry/pigeo
 
 \textbf{Cross-cutting issue for my topic:} MIS figures and field registers often did not match --- the same data-integrity problem as loan-record matching, at programme level.
 
+\warnbox{\small\textbf{\color{RDRSOrange}Implication:} add the reconciliation check in Chapter 5 before any dashboard is trusted.}
+
 \section{Sample Findings Table}
 Field evidence: interviews above; Sept 2026 schedule; G Banker outputs (Udayan, POMIS-5/4); Somriddhi May 2023 report.
 
-\begin{table}[h]
+\begin{table}[htbp]
 \centering\caption{Condensed findings}\label{tab:findings}
 \begin{tabular}{|p{3.4cm}|p{5.4cm}|p{4.4cm}|}
 \hline
-MIS practice / tool & Observation & Strength / gap \\ \hline\hline
+\rowcolor{RDRSBlue}\headercell{MIS practice / tool} & \headercell{Observation} & \headercell{Strength / gap} \\ \hline
 G Banker 1-click & CO-wise, POMIS-4/5 & Strength: time, consistency \\ \hline
 Monthly schedule & Staff $\times$ branch $\times$ date & Strength: accountability \\ \hline
 Excel + KoBo & Routine vs.\ ad-hoc & Strength: fit-for-task \\ \hline
 Register-to-MIS & 100\% vs.\ 89\%; 65\% missing & Gap: reconciliation \\ \hline
 Follow-up & 11/74 turnover; 35\% vs.\ 49\% & Gap: supervision \\ \hline
+Special monitoring & Overdue reason, high-value PAR/OTR, document check & Strength: checklist; Gap: manual load \\ \hline
+Credit Shield & Guardian Life since Jul 2024; BDT 6 per 1,000 & Strength: clear chain; Gap: paper-heavy \\ \hline
+Udayan/Unnoti + savings & BDT 50/wk; MSDS 3-yr 7\%, 5-yr 7.5\% & Context for risk \\ \hline
 \end{tabular}
 \end{table}
 
 \section{Daily Log (kept live)}
-\begin{table}[h]
+\begin{table}[htbp]
 \centering\caption{Daily log excerpt}\label{tab:log}
 \begin{tabular}{|p{2.0cm}|p{4.4cm}|p{3.4cm}|p{4.0cm}|}
 \hline
-Date & Activity & Met & Learning \\ \hline\hline
+\rowcolor{RDRSBlue}\headercell{Date} & \headercell{Activity} & \headercell{Met} & \headercell{Learning} \\ \hline
 Sept 2026 & ICPS walkthrough & Saiful Alam & 6 steps; 21 indic.; FGD/KII vs.\ HH \\ \hline
 Sept 2026 & MEL workflow & Fahmida Mostafa & Excel/KoBo/Power BI; scale \\ \hline
 Sept 2026 & MIS history & Iftekharul Islam & Micro Bank $\to$ G Banker \\ \hline
@@ -409,15 +487,21 @@ May 2023 & Somriddhi review & --- & MIS-vs-register gap \\ \hline
 
 % ================= CHAPTER 5 =================
 \chapter{Recommendations}
+\highlightbox{\small\textbf{\color{RDRSBlue}What follows comes straight from the gaps above.} Each item names who does it and when, so it can go into the monthly schedule.}
+
 \begin{enumerate}
-\item \textbf{Lock reports only after reconciliation.} Add a register-to-MIS check (attendance, savings, disbursement) to the monthly schedule; the checker signs before upload. Addresses the 100-vs-89 and missing-records gaps.
-\item \textbf{Single capture in KoBo for ad-hoc work.} Keep Excel as compilation-only so field edits do not fork versions; export to Excel, never re-type.
-\item \textbf{Protect continuity.} Document G Banker definitions (OTR, PAR, write-off) and keep two trained owners per report family, so no single-person dependency recurs.
+\item \textbf{\color{RDRSBlue}Lock reports only after reconciliation.} Add a register-to-MIS check (attendance, savings, disbursement) to the monthly schedule; the checker signs before upload. Addresses the 100-vs-89 and missing-records gaps.
+\item \textbf{\color{RDRSBlue}Single capture in KoBo for ad-hoc work.} Keep Excel as compilation-only so field edits do not fork versions; export to Excel, never re-type.
+\item \textbf{\color{RDRSBlue}Protect continuity.} Document G Banker definitions (OTR, PAR, write-off) and keep two trained owners per report family, so no single-person dependency recurs.
 \end{enumerate}
+
+\keybox{\small\textbf{\color{RDRSTeal}If only one is done:} do (1). The register-to-MIS sign-off fixes the most repeated error in this report.}
 
 % ================= CHAPTER 6 =================
 \chapter{Conclusion}
-The internship showed me MIS as plumbing, not software: Excel, KoBo, Power BI and G Banker matter only because a monthly schedule, a register, and a checker make the number trustworthy. RDRS has solved the harder half for microfinance through succession to an automated dashboard. The remaining work is the same everywhere --- closing the last-mile gap between what the register says and what the system shows. Watching a live baseline (ICPS) and reading a closed monitoring round (Somriddhi) gave me both ends of that chain.
+\highlightbox{\small The internship showed me MIS as plumbing, not software: Excel, KoBo, Power BI and G Banker matter only because a monthly schedule, a register, and a checker make the number trustworthy.}
+
+RDRS has solved the harder half for microfinance through succession to an automated dashboard. The remaining work is the same everywhere --- closing the last-mile gap between what the register says and what the system shows. Watching a live baseline (ICPS) and reading a closed monitoring round (Somriddhi) gave me both ends of that chain.
 
 % ================= REFERENCES =================
 \begin{thebibliography}{9}
@@ -425,6 +509,9 @@ The internship showed me MIS as plumbing, not software: Excel, KoBo, Power BI an
 \bibitem{rdrsstrat} RDRS Bangladesh, \textit{Strategic Plan 2023--2027}.
 \bibitem{mel2026} RDRS MEL Department, \textit{Monitoring Schedule, September 2026}.
 \bibitem{som23} RDRS, \textit{Field Monitoring Report: Somriddhi Programme, May 2023 (PKSF)}.
+\bibitem{uday} RDRS Bangladesh, Microfinance Programme documents: Udayan/Unnoti guidelines, savings (Compulsory, General Voluntary, MSDS), Water Credit and LRL 2nd Phase notes (internal, reviewed during placement).
+\bibitem{shield} RDRS Bangladesh and Guardian Life Insurance Ltd., \textit{Credit Shield Insurance policy notes, in effect since July 2024} (internal).
+\bibitem{aml} RDRS Bangladesh, \textit{AML and CFT Policy, effective January 2022} (internal).
 \bibitem{laudon} K.~Laudon and J.~Laudon, \textit{Management Information Systems}, Pearson.
 \bibitem{oecd} OECD-DAC, \textit{Glossary of Key Terms in Evaluation}.
 \end{thebibliography}
