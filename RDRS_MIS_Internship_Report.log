@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.9.6)  10 SEP 2026 12:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.9.6)  15 SEP 2026 09:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -496,13 +496,18 @@ Chapter 1.
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 227--227
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
 []|\T1/lmr/m/n/12 ICPS base-line
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 227--227
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
 \T1/lmr/m/n/12 team; ex-MEAL
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--231
+[]|\T1/lmr/m/n/12 Md. Ajazul
  []
 
 [2] [3]
@@ -510,129 +515,505 @@ Chapter 2.
 [4
 
 ] [5]
-Underfull \hbox (badness 4205) in paragraph at lines 287--287
+Underfull \hbox (badness 4205) in paragraph at lines 289--289
 []|\T1/lmr/m/n/12 Maternal/neonatal health;
  []
 
 
-Underfull \hbox (badness 4739) in paragraph at lines 288--288
+Underfull \hbox (badness 4739) in paragraph at lines 290--290
 []|\T1/lmr/m/n/12 Schooling for ado-les-cents
  []
 
 
-Underfull \hbox (badness 5077) in paragraph at lines 288--288
+Underfull \hbox (badness 5077) in paragraph at lines 290--290
 \T1/lmr/m/n/12 in adibashi com-mu-ni-ties;
  []
 
 
-Underfull \hbox (badness 1221) in paragraph at lines 288--288
+Underfull \hbox (badness 1221) in paragraph at lines 290--290
 []|\T1/lmr/m/n/12 Stromme Foun-da-tion, Jan 2024--
  []
 
 
-Underfull \hbox (badness 1158) in paragraph at lines 289--289
+Underfull \hbox (badness 1158) in paragraph at lines 291--291
 []|\T1/lmr/m/n/12 Fewer pre-ventable deaths;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--289
+Underfull \hbox (badness 10000) in paragraph at lines 291--291
 \T1/lmr/m/n/12 ma-ter-nal/newborn/child
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--290
+Underfull \hbox (badness 10000) in paragraph at lines 292--292
 []|\T1/lmr/m/n/12 Disability-inclusive child
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--295
+Underfull \hbox (badness 10000) in paragraph at lines 293--293
+[]|\T1/lmr/m/n/12 C-
+ []
+
+
+Overfull \hbox (4.026pt too wide) in paragraph at lines 293--293
+\T1/lmr/m/n/12 RANGPUR| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--293
+[]|\T1/lmr/m/n/12 Climate re-silience and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--293
+\T1/lmr/m/n/12 poverty up-lift-ment in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 300--301
 []\T1/lmr/m/n/12 Microfinance (since 1991, now 29 dis-tricts, collateral-free l
 oans plus sav-
  []
 
-[6] [7] [8]
+[6] [7] [8] [9]
 Chapter 3.
-[9
-
-]
-Chapter 4.
 [10
 
 ]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 362.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 362.
- [11] [12] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-[]|\T1/lmr/m/n/12 Competency
+Chapter 4.
+[11
+
+]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
+68.
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Underfull \hbox (badness 2245) in paragraph at lines 368--369
+\T1/lmr/m/n/12 The C-RANGPUR base-line house-hold ques-tion-naire is the indica
+tor-measurement
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-[]|\T1/lmr/m/n/12 Health-card
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
+\T1/lmr/m/n/12 file \T1/lmr/m/it/12 Baseline_Questionnaires_of_CRANGPUR_-_Indic
+ator_Result_Measerment.docx
  []
 
 
-Underfull \hbox (badness 1642) in paragraph at lines 439--439
-[]|\T1/lmr/m/n/12 Beruabari 17% [][][]  De-biduba 38%
+Underfull \hbox (badness 10000) in paragraph at lines 377--377
+[]|\T1/lmr/m/n/10.95 Background In-for-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-[]|\T1/lmr/m/n/12 Fruit-tree sur-
+Underfull \hbox (badness 1348) in paragraph at lines 377--377
+\T1/lmr/m/n/10.95 Ward No., Vil-lage; lo-ca-tion type
  []
 
 
-Underfull \hbox (badness 8170) in paragraph at lines 439--439
-[]|\T1/lmr/m/n/12 Beruabari 35% [][][]  De-
+Underfull \hbox (badness 10000) in paragraph at lines 377--377
+\T1/lmr/m/n/10.95 multi-select: Peri-Urban, Char,
  []
 
-[15]
-Underfull \hbox (badness 3343) in paragraph at lines 469--469
-[]|\T1/lmr/m/n/12 Overdue rea-son, high-value
+
+Underfull \hbox (badness 10000) in paragraph at lines 377--377
+\T1/lmr/m/n/10.95 River-bank erosion-prone, Flood-
+ []
+
+
+Underfull \hbox (badness 2626) in paragraph at lines 379--379
+[]|\T1/lmr/m/n/10.95 Household Com-po-
+ []
+
+
+Underfull \hbox (badness 6412) in paragraph at lines 380--380
+[]|\T1/lmr/m/n/10.95 Assets, In-fras-truc-
+ []
+
+
+Underfull \hbox (badness 6125) in paragraph at lines 380--380
+\T1/lmr/m/n/10.95 con-struc-tion ma-te-ri-als, elec-tric-ity
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--381
+[]|\T1/lmr/m/n/10.95 Household Liveli-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--381
+[]|\T1/lmr/m/n/10.95 Income sources (re-peat group;
+ []
+
+
+Underfull \hbox (badness 1454) in paragraph at lines 381--381
+\T1/lmr/m/n/10.95 15-category liveli-hood code), IGA
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--381
+\T1/lmr/m/n/10.95 sup-port re-ceived, CSA aware-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--381
+\T1/lmr/m/n/10.95 ness/adoption/support (18 CSA
+ []
+
+
+Underfull \hbox (badness 7344) in paragraph at lines 382--382
+[]|\T1/lmr/m/n/10.95 2.1 (+ women
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--383
+\T1/lmr/m/n/10.95 sub-mit-ted/responded/resolved, re-
+ []
+
+
+Underfull \hbox (badness 1552) in paragraph at lines 384--384
+[]|\T1/lmr/m/n/10.95 Access to Pri-mary
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--384
+\T1/lmr/m/n/10.95 Health Care Ser-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--384
+[]|\T1/lmr/m/n/10.95 Health-seeking be-haviour, choice
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--384
+\T1/lmr/m/n/10.95 RDRS Eye Care Cen-tre/Health
+ []
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 384--384
+\T1/lmr/m/n/10.95 Camp), bar-ri-ers to ac-cess, health
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--385
+[]|\T1/lmr/m/n/10.95 Non-Communicable
+ []
+
+
+Underfull \hbox (badness 3098) in paragraph at lines 386--386
+[]|\T1/lmr/m/n/10.95 Household Cli-mate
+ []
+
+
+Underfull \hbox (badness 1253) in paragraph at lines 386--386
+\T1/lmr/m/n/10.95 Vul-ner-a-bil-ity In-dex
+ []
+
+
+LaTeX Warning: Float too large for page by 408.88759pt on input line 388.
+
+[12]
+Overfull \hbox (10.52802pt too wide) in paragraph at lines 397--397
+[]|[]\T1/lmr/bx/sc/10.95 Indicator[]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 398--398
+[]|\T1/lmr/m/n/10.95 Targeted climate-affected
+ []
+
+
+Underfull \hbox (badness 4096) in paragraph at lines 398--398
+\T1/lmr/m/n/10.95 HHs adopt-ing $\OMS/lmsy/m/n/10.95 ^^U$\T1/lmr/m/n/10.95 1 ad
+-di-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 398--398
+\T1/lmr/m/n/10.95 tional income-generating
+ []
+
+
+Underfull \hbox (badness 2452) in paragraph at lines 399--399
+[]|\T1/lmr/m/n/10.95 Num: HHs adopt-ing $\OMS/lmsy/m/n/10.95 ^^U$\T1/lmr/m/n/10
+.95 1
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--400
+[]|\T1/lmr/m/n/10.95 Disadvantaged peo-ple's
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--400
+\T1/lmr/m/n/10.95 mu-nity decision-making,
+ []
+
+
+Underfull \hbox (badness 5802) in paragraph at lines 400--400
+[]|\T1/lmr/m/n/10.95 Num: dis-ad-van-taged re-
+ []
+
+
+Underfull \hbox (badness 4556) in paragraph at lines 400--400
+\T1/lmr/m/n/10.95 spon-dents who are in-sti-
+ []
+
+
+Underfull \hbox (badness 2735) in paragraph at lines 400--400
+\T1/lmr/m/n/10.95 tu-tion mem-bers, at-tended
+ []
+
+
+Underfull \hbox (badness 4291) in paragraph at lines 400--400
+\T1/lmr/m/n/10.95 meet-ings, ex-pressed opin-
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 400--400
+\T1/lmr/m/n/10.95 sid-ered / Den: to-tal dis-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 401--401
+[]|\T1/lmr/m/n/10.95 2.1
+ []
+
+
+Overfull \hbox (1.83672pt too wide) in paragraph at lines 401--401
+\T1/lmr/m/n/10.95 (women)| 
+ []
+
+
+Underfull \hbox (badness 1803) in paragraph at lines 402--402
+[]|\T1/lmr/m/n/10.95 Claims suc-cess-fully taken
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--403
+[]|\T1/lmr/m/n/10.95 Num: re-spon-dents who
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--403
+\T1/lmr/m/n/10.95 sought care at CC /
+ []
+
+
+Underfull \hbox (badness 1910) in paragraph at lines 404--404
+\T1/lmr/m/n/10.95 stroke, chronic res-pi-ra-tory
+ []
+
+
+LaTeX Warning: Float too large for page by 117.12698pt on input line 406.
+
+[13{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}] [14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 441--441
+[]|[]\T1/lmr/bx/sc/10.95 Score
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--441
+[]|[]\T1/lmr/bx/sc/10.95 EI (Ex-po-
+ []
+
+
+Underfull \hbox (badness 1946) in paragraph at lines 441--441
+[]|[]\T1/lmr/bx/sc/10.95 SI (Sen-si-tiv-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 443--443
+[]|\T1/lmr/m/n/10.95 Low Adap-tive
+ []
+
+
+Underfull \hbox (badness 3525) in paragraph at lines 443--443
+[]|\T1/lmr/m/n/10.95 Low Vul-ner-a-bil-
+ []
+
+
+Underfull \hbox (badness 7759) in paragraph at lines 444--444
+[]|\T1/lmr/m/n/10.95 Moderate Ex-
+ []
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 444--444
+[]|\T1/lmr/m/n/10.95 Moderate Sen-
+ []
+
+
+Underfull \hbox (badness 1057) in paragraph at lines 444--444
+[]|\T1/lmr/m/n/10.95 Moderate Adap-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 444--444
+[]|\T1/lmr/m/n/10.95 Moderate Vul-
+ []
+
+
+Underfull \hbox (badness 4291) in paragraph at lines 445--445
+[]|\T1/lmr/m/n/10.95 High Sen-si-tiv-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 445--445
+[]|\T1/lmr/m/n/10.95 High Adap-tive
+ []
+
+
+Underfull \hbox (badness 2111) in paragraph at lines 446--446
+[]|\T1/lmr/m/n/10.95 Very High Vul-
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 463--463
+[]|\T1/lmr/m/n/10.95 Data needed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 468--468
+[]|\T1/lmr/m/n/10.95 Frequency (data-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 469--469
+[]|\T1/lmr/m/n/10.95 When to col-lect
+ []
+
+[17] [18]
+Underfull \hbox (badness 10000) in paragraph at lines 500--500
+\T1/lmr/m/n/10.95 sub-mit-ted, does data
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 500--500
+\T1/lmr/m/n/10.95 reach the dash-board
+ []
+
+
+Underfull \hbox (badness 1675) in paragraph at lines 500--500
+[]|\T1/lmr/m/n/10.95 Submission is auto-sent on com-ple-tion, then
+ []
+
+
+Underfull \hbox (badness 1460) in paragraph at lines 502--502
+[]|\T1/lmr/m/n/10.95 Confirmed as two sep-a-rate sys-tems: project
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 507.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 507.
+[19] [20] [21] [22] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 586--586
+[]|\T1/lmr/m/n/12 Competency
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 586--586
+[]|\T1/lmr/m/n/12 Health-card
+ []
+
+
+Underfull \hbox (badness 1642) in paragraph at lines 586--586
+[]|\T1/lmr/m/n/12 Beruabari 17% [][][]  De-biduba 38%
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 586--586
+[]|\T1/lmr/m/n/12 Fruit-tree sur-
+ []
+
+
+Underfull \hbox (badness 8170) in paragraph at lines 586--586
+[]|\T1/lmr/m/n/12 Beruabari 35% [][][]  De-
+ []
+
+[24]
+Underfull \hbox (badness 3343) in paragraph at lines 619--619
+[]|\T1/lmr/m/n/12 Overdue rea-son, high-value
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 619--619
 []|\T1/lmr/m/n/12 Strength: check-list;
  []
 
 
-Underfull \hbox (badness 1320) in paragraph at lines 470--470
+Underfull \hbox (badness 1320) in paragraph at lines 620--620
 []|\T1/lmr/m/n/12 Strength: clear chain;
  []
 
 
-Underfull \hbox (badness 4416) in paragraph at lines 481--481
+Underfull \hbox (badness 10000) in paragraph at lines 621--621
+[]|\T1/lmr/m/n/12 C-RANGPUR
+ []
+
+
+Underfull \hbox (badness 2573) in paragraph at lines 622--622
+[]|\T1/lmr/m/n/12 C-RANGPUR in-
+ []
+
+
+Underfull \hbox (badness 4492) in paragraph at lines 622--622
+[]|\T1/lmr/m/n/12 10-section ques-tion-naire; 7
+ []
+
+
+Underfull \hbox (badness 1331) in paragraph at lines 622--622
+\T1/lmr/m/n/12 in-di-ca-tors; HCVI 30/30/40;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 622--622
+[]|\T1/lmr/m/n/12 Strength: trace-able;
+ []
+
+[25]
+Underfull \hbox (badness 4416) in paragraph at lines 633--633
 []|\T1/lmr/m/n/12 6 steps; 21 in-dic.;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 482--482
+Underfull \hbox (badness 10000) in paragraph at lines 634--634
 []|\T1/lmr/m/n/12 Excel/KoBo/Power
  []
 
 
-Underfull \hbox (badness 6995) in paragraph at lines 483--483
+Underfull \hbox (badness 6995) in paragraph at lines 635--635
 []|\T1/lmr/m/n/12 Micro Bank $\OMS/lmsy/m/n/12 !$ \T1/lmr/m/n/12 G
  []
 
-[16] [17]
+[26] [27]
 Chapter 5.
-[18
+[28
 
 ]
 Chapter 6.
-[19
+[29
 
-] [20
+]
+Underfull \hbox (badness 3118) in paragraph at lines 671--672
+[]\T1/lmr/m/n/12 RDRS Bangladesh, \T1/lmr/m/it/12 F01-112 En-clo-sure ap-pli-ca
+-tion mon-i-tor-ing matrix_E1_C-
+ []
+
+[30
 
 ]
 Appendix A.
-[21
 
-] (./RDRS_MIS_Internship_Report.aux)
+Underfull \hbox (badness 10000) in paragraph at lines 690--691
+[]\T1/lmr/m/n/12 Confirm Di-vi-sion/District/Upazila/Union cov-er-age fig-ures 
+against pro-
+ []
+
+[31
+
+] [32] (./RDRS_MIS_Internship_Report.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -643,13 +1024,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 4345 strings out of 476182
- 63563 string characters out of 5795596
- 1938975 words of memory out of 5000000
- 26253 multiletter control sequences out of 15000+600000
- 642479 words of font info for 92 fonts, out of 8000000 for 9000
+ 4410 strings out of 476182
+ 64570 string characters out of 5795596
+ 1950975 words of memory out of 5000000
+ 26313 multiletter control sequences out of 15000+600000
+ 642797 words of font info for 93 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 57i,15n,65p,908b,363s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,15n,65p,1486b,363s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/p
@@ -659,11 +1040,12 @@ lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texm
 f/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.p
 fb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on RDRS_MIS_Internship_Report.pdf (30 pages, 366860 bytes).
+sr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on RDRS_MIS_Internship_Report.pdf (41 pages, 424619 bytes).
 PDF statistics:
- 179 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
+ 225 PDF objects out of 1000 (max. 8388607)
+ 147 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
