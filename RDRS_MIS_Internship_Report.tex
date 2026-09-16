@@ -42,6 +42,8 @@
 \renewcommand{\arraystretch}{1.35}
 \arrayrulecolor{RDRSMidGrey}
 \setlength{\arrayrulewidth}{0.5pt}
+\setlength{\abovecaptionskip}{6pt}
+\setlength{\belowcaptionskip}{10pt}
 
 % ---------- Headers / footers ----------
 \usepackage{fancyhdr}
@@ -135,18 +137,16 @@
 \parbox{0.6cm}{\centering \color{RDRSMidGrey}$|$} &
 \parbox{5.2cm}{\centering \textbf{Mohammad Rakibul Islam Bhuiyan}\\ \small Assistant Professor, MIS, BRUR} \\
 \end{tabular}\\[6pt]
-{\small\color{RDRSGrey} In collaboration with \textbf{\color{RDRSBlue}RDRS Bangladesh, Evaluation (MEL) Department}\par}
+{\small\color{RDRSGrey} In collaboration with \textbf{\color{RDRSBlue}RDRS Bangladesh, MEL Department}\par}
 \end{minipage}}
 \vspace{0.45cm}
 
-\fcolorbox{RDRSTeal}{RDRSTeal}{\textcolor{white}{\small\bfseries \quad Fieldwork: Rangpur \quad $\bullet$ \quad Sept 2026 \quad}}%
-\hspace{0.3cm}%
-\fcolorbox{RDRSOrange}{RDRSOrange}{\textcolor{white}{\small\bfseries \quad MEL $\cdot$ MIS $\cdot$ G Banker \quad}}
+\fcolorbox{RDRSTeal}{RDRSTeal}{\begin{minipage}{0.90\textwidth}\centering\textcolor{white}{\small\bfseries Internship at RDRS Bangladesh \quad $\bullet$ \quad Fieldwork: Rangpur \quad $\bullet$ \quad Sept}\end{minipage}}
 
 \vfill
-{\small\color{RDRSGrey} Date of Submission: \underline{\hspace{4cm}} \qquad Place: Rangpur / Dhaka \par}
+{\small\color{RDRSGrey} Date of Submission: \underline{\hspace{4cm}} \qquad Place: Rangpur \par}
 \vspace{0.15cm}
-{\scriptsize\color{RDRSMidGrey} Sources: Sept 2026 monitoring schedule \quad $\bullet$ \quad G Banker outputs \quad $\bullet$ \quad Somriddhi May 2023 report \par}
+{\scriptsize\color{RDRSMidGrey} Sources: MEL monitoring schedule \quad $\bullet$ \quad G Banker outputs \quad $\bullet$ \quad C-RANGPUR instrument \& F01-112 matrix \quad $\bullet$ \quad KII \& field notes \quad $\bullet$ \quad RDRS Annual Report \& Strategic Plan \quad $\bullet$ \quad Somriddhi report \quad $\bullet$ \quad Policy docs \par}
 \end{titlepage}
 
 % ================= FRONT MATTER =================
@@ -160,7 +160,7 @@ Assistant Professor, Department of Management Information Systems\\
 Begum Rokeya University, Rangpur\\[6pt]
 Subject: Submission of Internship Report on ``Evaluating MIS Practices in Project Monitoring: A Study on RDRS Bangladesh''\\[6pt]
 Dear Sir,\\[4pt]
-I am pleased to submit my internship report, prepared as a partial requirement for the BBA program, based on my internship at the Evaluation Department of RDRS Bangladesh. The report examines the MIS practices used in project monitoring, drawing on direct observation, discussions with staff, and review of ongoing projects during the internship period.
+I am pleased to submit my internship report, prepared as a partial requirement for the BBA program, based on my internship at the MEL Department of RDRS Bangladesh. The report examines the MIS practices used in project monitoring, drawing on direct observation, discussions with staff, and review of ongoing projects during the internship period.
 
 I tried to keep the report within the scope of my access and the time available, and I would be grateful for your guidance on further revisions. Thank you for your continuous support and supervision.
 
@@ -169,17 +169,19 @@ A.~R.~Mahmud \quad ID: 12022065\\ BBA, Major in MIS
 
 \chapter*{Acknowledgement}
 \addcontentsline{toc}{chapter}{Acknowledgement}
-I thank my academic supervisor for guidance on structure and scope, and the RDRS Evaluation (MEL) Department staff who gave their time: Md.~Saiful Alam (Shekul) for a long walkthrough of baseline design, Fahmida Mostafa for explaining projects and reporting flow, and Mr.~Iftekharul Islam for tracing the microfinance MIS history. Any errors in interpretation are mine.
+I thank my academic supervisor for guidance on structure and scope, and the RDRS MEL Department staff who gave their time: Md.~Saiful Alam (Shekul) for a long walkthrough of baseline design, Fahmida Mostafa for explaining projects and reporting flow, and Mr.~Iftekharul Islam for tracing the microfinance MIS history. Any errors in interpretation are mine.
 
 \chapter*{Executive Summary}
 \addcontentsline{toc}{chapter}{Executive Summary}
 \highlightbox{\small\textbf{\color{RDRSBlue} Guiding question:} how does monitoring data actually move from the field to a management decision at RDRS Bangladesh, and where does the system help or break?}
 
-I spent the internship inside the MEL function. For routine work the department runs on structured Excel formats and registers; for one-off needs it uses KoBo Toolbox on mobile with direct Excel export; in office it compiles in Excel and builds some dashboards in Power BI. A monthly monitoring schedule turns this into named assignments. The September 2026 schedule I reviewed splits into ten repeat microfinance tasks (each branch visited twice) and project-specific development tasks, including the live ICPS baseline (UNICEF, 06--24 Sept, by Saiful Alam Sekul and Fahmida Mostafa).
+I spent the internship inside the MEL Department. For routine work the team runs on structured Excel formats and registers; for one-off needs it uses KoBo Toolbox on mobile with direct Excel export; in office it compiles in Excel and builds some dashboards in Power BI. G Banker carries microfinance reporting. A monthly monitoring schedule turns this into named assignments. The issue I reviewed splits into ten repeat microfinance tasks (each branch twice a month) and project-specific development tasks, including the live ICPS baseline (UNICEF, 06--24 Sept, Saiful Alam Sekul and Fahmida Mostafa) and the C-RANGPUR baseline across six districts.
 
-Two findings stand out. First, microfinance reporting has moved from a person-dependent process (Micro Bank, 1995--97) through South Tech (2011) to G Banker (2017/18), where branch reports such as the CO-wise Changes Report, POMIS-5 and POMIS-4 now come out with one click into an integrated dashboard. That succession is the report's core continuity lesson. Second, programme monitoring still shows a data-integrity gap: in the May 2023 Somriddhi report, MIS attendance read 100\% against 89\% in the register, 65\% of rehabilitation income records could not be found, and similar MIS-vs-field mismatches recur. Teacher turnover (11 of 74 centres in four months), low tree survival (35\% vs.\ 49\%), and patchy follow-up sit alongside real gains in housing conditions.
+Two strands carry the findings. Microfinance has moved from a person-dependent process (Micro Bank, 1995--97, 27 developers) through South Tech (2011) to G Banker (2017/18), where the CO-wise Changes Report, POMIS-5 and POMIS-4 now come out with one click into an integrated dashboard. That succession is the continuity lesson: documenting definitions (OTR, PAR, write-off) and keeping two owners per report family matters. Programme work runs on a different stack. C-RANGPUR shows it most clearly: a ten-section KoBo questionnaire (Sections~5--9 map to Indicators~1.1--3.2, Section~10 is the 16-item vulnerability module), seven indicators with explicit numerator/denominator formulas, a MEL matrix file F01-112, and a Household Climate Vulnerability Index scored 30/30/40 as $\mathrm{HCVI}=0.30\mathrm{EI}+0.30\mathrm{SI}+0.40(100-\mathrm{ACI})$. KoBo auto-submits, passes verification, then feeds HCVI and IGA calculation across KoBo, Excel and Power BI. The project MIS stays separate from G Banker. No integration.
 
-\keybox{\small\textbf{\color{RDRSTeal} Recommendations:} (1) add a register-to-MIS reconciliation check to the monthly schedule before reports are locked; (2) keep KoBo as the single capture point for ad-hoc surveys so Excel is compilation-only, not re-entry.}
+Gaps sit at the last mile. In the May 2023 Somriddhi report (Panchagarh and Kurigram, PKSF, 2 of 3 unions) MIS attendance read 100\% against 89\% in registers, 65\% of rehabilitation income records could not be found, and similar MIS-vs-field mismatches recur. Turnover (11 of 74 centres in four months) and low tree survival (35\% vs.\ 49\%) signal thin follow-up. Special monitoring still needs a person on site for overdue reasons, high-value PAR/OTR tracking and document checks. Credit Shield (Guardian Life, since July 2024, BDT~6 per 1,000, BDT~15,000 cash plus waiver up to BDT~20 lakh) moves on paper and signatures. The C-RANGPUR instrument itself carries small label and code slips and the HCVI calculation is spread across three tools, not one pipeline. Housing and some income gains were real, but the register-to-system check was missing.
+
+\keybox{\small\textbf{\color{RDRSTeal} Recommendations:} (1) add a register-to-MIS reconciliation sign-off to the monthly schedule before any report is locked; (2) keep KoBo as single capture for ad-hoc surveys so Excel is compilation-only; (3) document G Banker definitions and keep two trained owners per report family for continuity. If only one is done, do (1).}
 
 \tableofcontents
 \listoffigures
@@ -194,21 +196,21 @@ Two findings stand out. First, microfinance reporting has moved from a person-de
 \chapter{Introduction}
 
 \section{Background of the Study}
-Internship reports matter for BBA/MIS students because classroom models of systems rarely survive contact with registers, branch visits, and monthly deadlines. I interned with the Evaluation Department of RDRS Bangladesh to see how a large NGO actually tracks project progress: who reports, on which form or app, who checks it, and where it is stored.
+Internship reports matter for BBA/MIS students because classroom models of systems rarely survive contact with registers, branch visits, and monthly deadlines. I interned with the MEL Department of RDRS Bangladesh to see how a large NGO actually tracks project progress: who reports, on which form or app, who checks it, and where it is stored.
 
 \section{Objectives of the Study}
 \textbf{Broad objective.} To evaluate the MIS practices used in project monitoring at RDRS Bangladesh.
 
 \textbf{Specific objectives.}
 \begin{enumerate}
-\item To identify the MIS tools and systems used by the Evaluation Department.
+\item To identify the MIS tools and systems used by the MEL Department.
 \item To examine how monitoring data flows from the field to decision-making.
 \item To assess strengths and gaps in current MIS practices.
 \item To recommend improvements based on findings.
 \end{enumerate}
 
 \section{Scope of the Study}
-The report covers the Evaluation (MEL) Department during the internship period and the projects I had access to: Jononni, SEEDS, MCGL, ICPS, the microfinance programme, and the Somriddhi monitoring report. It does not cover the full RDRS portfolio or audited financials.
+The report covers the MEL Department during the internship period and the projects I had access to: Jononni, SEEDS, MCGL, ICPS, the microfinance programme, and the Somriddhi monitoring report. It does not cover the full RDRS portfolio or audited financials.
 
 \section{Methodology}
 \subsection{Sources of data}
@@ -221,8 +223,8 @@ I collected data through informal interviews, sitting in on explanations of form
 % TODO VERIFY (author): insert exact date of KII with Md. Ajazul Haque, Manager (MEL). Contact held on file for citation (email/phone on record) -- confirm before printing personal details in final copy.
 
 \begin{table}[htbp]
-\centering\caption{Interviews conducted}\label{tab:interviews}
-\begin{tabular}{|p{3.2cm}|p{3.4cm}|p{7.0cm}|}
+\centering\small\caption{Interviews conducted}\label{tab:interviews}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{3.4cm}|>{\raggedright\arraybackslash}p{7.0cm}|}
 \hline
 \rowcolor{RDRSBlue}\headercell{Name} & \headercell{Role} & \headercell{Focus} \\ \hline
 Md.~Saiful Alam (Shekul) & ICPS baseline team; ex-MEAL \& GIS, BHA/Save the Children & MEL functions; baseline design; indicators, ESS, TOR, Inception Report ({\textasciitilde}2 hrs) \\ \hline
@@ -273,17 +275,17 @@ Federations & Districts & Upazilas & Unions & People (16,42,724) \\ \hline
 For reference, the 2021--22 annual report cited 7 divisions, 30 districts, 165 upazilas, 1,230 unions and 1,488,071 participants; the Dec 2024 microfinance sheet lists 29 districts, 288 branches, 21,134 groups, 458,819 members and 377,250 borrowers (savings BDT 5.14bn, outstanding BDT 15.09bn, recovery 95.08\%).
 
 \section{Organizational Structure}
-A Board of Trustees governs RDRS with a General Body and senior management. Foreign-funded projects need NGO Affairs Bureau clearance (Foreign Donations Regulation Act 2016, FD6 forms, annual audited accounts). Lending falls under the Microcredit Regulatory Authority. Field work runs through regions, areas and branches (roughly 16--17 regions, 59--61 areas, 278--288 branches). The Evaluation Department cuts across all of it on monitoring and data. Union Federations are community-owned at Union Parishad level (406 federations; safety-net claims, dispute settlement, standing-committee seats).
+A Board of Trustees governs RDRS with a General Body and senior management. Foreign-funded projects need NGO Affairs Bureau clearance (Foreign Donations Regulation Act 2016, FD6 forms, annual audited accounts). Lending falls under the Microcredit Regulatory Authority. Field work runs through regions, areas and branches (roughly 16--17 regions, 59--61 areas, 278--288 branches). The MEL Department cuts across all of it on monitoring and data. Union Federations are community-owned at Union Parishad level (406 federations; safety-net claims, dispute settlement, standing-committee seats).
 
-\section{The Evaluation Department}
-I was attached to the Evaluation Department. Field reports arrive here from groups, federations and branches; staff check, compile and send findings to management. What I tracked was simple: who reported, when, on which form or app, who checked it, where it is stored. A late report or vague indicator in the field becomes a gap in the monthly sheet. Chapter~\ref{chap:analysis} follows that flow; notes here stay observational.
+\section{The MEL Department}
+I was attached to the MEL Department. Field reports arrive here from groups, federations and branches; staff check, compile and send findings to management. What I tracked was simple: who reported, when, on which form or app, who checked it, where it is stored. A late report or vague indicator in the field becomes a gap in the monthly sheet. Chapter~\ref{chap:analysis} follows that flow; notes here stay observational.
 
 \section{Overview of Ongoing Projects}
 RDRS groups work into five areas: (1) Skills, Employment and Entrepreneurship; (2) Social Empowerment; (3) Agriculture, Food Security and Climate Change; (4) Microfinance and Employment Creation; (5) Emergency and Humanitarian Response. Monitoring Officers cover all five.
 
 \begin{table}[htbp]
-\centering\caption{Projects that came up repeatedly in interviews}\label{tab:projects}
-\begin{tabular}{|p{2.0cm}|p{5.0cm}|p{6.4cm}|}
+\centering\small\caption{Projects that came up repeatedly in interviews}\label{tab:projects}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{2.0cm}|>{\raggedright\arraybackslash}p{5.0cm}|>{\raggedright\arraybackslash}p{6.4cm}|}
 \hline
 \rowcolor{RDRSBlue}\headercell{Project} & \headercell{What it does} & \headercell{Donor / period} \\ \hline
 Jononni & Maternal/neonatal health; pregnant women & Save the Children, Mar 2023--Dec 2027 (Sept 2026 schedule) \\ \hline
@@ -332,7 +334,7 @@ This is the core chapter. It uses my daily log and the documents above as eviden
 
 \section{MIS Tools and Systems Used in Project Monitoring}
 
-\subsection{What the Evaluation Department actually uses}
+\subsection{What the MEL Department actually uses}
 For regular reports MEL uses structured Excel formats and registers during routine visits. For one-off needs it uses KoBo Toolbox on mobile, which allows quick question changes and exports straight to Excel. In office the team compiles in Excel and uses Power BI for some dashboards. MEL outputs then feed into MIS for management decisions. MEL means Monitoring, Evaluation and Learning; Save the Children uses MEAL, where the extra A is Accountability to beneficiaries.
 
 \begin{table}[htbp]
@@ -369,11 +371,19 @@ The C-RANGPUR baseline household questionnaire is the indicator-measurement inst
 
 The instrument comprises ten sections. Sections~5--9 map directly onto indicators 1.1--3.2; Sections~1--4 provide location, respondent and household controls; Section~10 is the scored vulnerability module.
 
-\begin{table}[htbp]
-\centering\small\caption{C-RANGPUR baseline questionnaire: section structure}\label{tab:crangpur-sections}
-\begin{tabular}{|p{0.7cm}|p{3.4cm}|p{6.2cm}|p{2.9cm}|}
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.7cm}|>{\raggedright\arraybackslash}p{3.4cm}|>{\raggedright\arraybackslash}p{6.2cm}|>{\raggedright\arraybackslash}p{2.9cm}|}
+\caption{C-RANGPUR baseline questionnaire: section structure}\label{tab:crangpur-sections}\\
 \hline
 \rowcolor{RDRSBlue}\headercell{\#} & \headercell{Section} & \headercell{Coverage} & \headercell{Linked indicator(s)} \\ \hline
+\endfirsthead
+\hline
+\rowcolor{RDRSBlue}\headercell{\#} & \headercell{Section} & \headercell{Coverage} & \headercell{Linked indicator(s)} \\ \hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
 1 & Background Information (Location) & District, Upazila, Union/Pouroshava, Ward No., Village; location type multi-select: Peri-Urban, Char, Riverbank erosion-prone, Flood-prone, Waterlogging-prone, Drought-prone, Other & --- \\ \hline
 2 & Respondent Identification & Name, sex, NID, age, mobile, ethnicity, religion, marital status, education, occupation, disability status/type, relationship to HH head, prior RDRS involvement (Federation / Microfinance Group / Development Projects) & --- \\ \hline
 3 & Household Composition & HH head demographics; counts of children under 5, lactating mothers, pregnant women, elderly 60+, persons with disability & --- \\ \hline
@@ -384,17 +394,25 @@ The instrument comprises ten sections. Sections~5--9 map directly onto indicator
 8 & Access to Primary Health Care Services & Health-seeking behaviour, choice among 13 service-point types (incl.\ RDRS Eye Care Centre/Health Camp), barriers to access, health education topics received & 3.1 \\ \hline
 9 & Non-Communicable Diseases (NCD) & 8 diagnosed-disease categories (incl.\ cataract, diabetic retinopathy), 15-category NCD screening/preventive services, awareness sessions, follow-up care, healthy-lifestyle practices, challenges & 3.2 \\ \hline
 10 & Household Climate Vulnerability Index (CVI) & 16-item scored module across 3 domains (Exposure, Sensitivity, Adaptive Capacity) & HCVI composite \\ \hline
-\end{tabular}
-\end{table}
+\end{longtable}
+}
 
 \subsection{Indicator definitions and measurement formulas}\label{sec:crangpur-indicators}
 Indicator numerators, denominators and formulas are reproduced exactly as specified in the source. All percentage indicators follow the form (Numerator $\div$ Denominator) $\times$ 100.
 
-\begin{table}[htbp]
-\centering\small\caption{C-RANGPUR indicator definitions and measurement}\label{tab:crangpur-indicators}
-\begin{tabular}{|p{1.4cm}|p{4.6cm}|p{4.8cm}|p{2.6cm}|}
+{\small
+\begin{longtable}{|>{\centering\arraybackslash}p{1.9cm}|>{\raggedright\arraybackslash}p{4.4cm}|>{\raggedright\arraybackslash}p{4.6cm}|>{\centering\arraybackslash}p{2.5cm}|}
+\caption{C-RANGPUR indicator definitions and measurement}\label{tab:crangpur-indicators}\\
 \hline
 \rowcolor{RDRSBlue}\headercell{Indicator} & \headercell{Definition} & \headercell{Numerator / Denominator} & \headercell{Formula} \\ \hline
+\endfirsthead
+\hline
+\rowcolor{RDRSBlue}\headercell{Indicator} & \headercell{Definition} & \headercell{Numerator / Denominator} & \headercell{Formula} \\ \hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
 1.1 & Targeted climate-affected HHs adopting $\geq$1 additional income-generating activity, +25\% from baseline & Num: HHs with $\geq$1 additional IGA / Den: total targeted HHs surveyed & (Num $\div$ Den) $\times$ 100 \\ \hline
 1.2 & $\geq$40\% of targeted HHs increased income by 20\% via Climate Smart Agriculture (CSA) & Num: HHs adopting $\geq$1 project-promoted CSA practice / Den: total targeted farming HHs surveyed & (Num $\div$ Den) $\times$ 100 \\ \hline
 2.1 & Disadvantaged people's active participation in community decision-making, +30\% from baseline & Num: disadvantaged respondents who are institution members, attended meetings, expressed opinions, AND had opinions considered / Den: total disadvantaged respondents surveyed & (Num $\div$ Den) $\times$ 100 \\ \hline
@@ -402,8 +420,8 @@ Indicator numerators, denominators and formulas are reproduced exactly as specif
 2.2 & Claims successfully taken up/responded to by local authorities & Num: claims fully or partially resolved / Den: total claims submitted in reference period & (Num $\div$ Den) $\times$ 100 \\ \hline
 3.1 & 25\% of disadvantaged community members accessing primary health care & Num: respondents who sought care at CC / UH\&FWC / UHC / FWV / CHCP / Den: respondents reporting a health care need in last 12 months & (Num $\div$ Den) $\times$ 100 \\ \hline
 3.2 & Reduction in NCD prevalence by 25\% from baseline & Num: adults diagnosed with $\geq$1 selected NCD (hypertension, diabetes, heart disease, stroke, chronic respiratory disease) / Den: total adults surveyed & (Num $\div$ Den) $\times$ 100 \\ \hline
-\end{tabular}
-\end{table}
+\end{longtable}
+}
 
 Claims in Section~7 carry five sub-measures as specified: claims submitted is the count answering ``Yes'' to submitting a claim; claims responded to is the count answering ``Yes'' to receiving a response; claims resolved is the count answering ``fully'' or ``partially resolved''; response rate is (claims responded to $\div$ total submitted) $\times$ 100; resolution rate is (claims resolved $\div$ total submitted) $\times$ 100.
 
@@ -436,9 +454,9 @@ Domain~A (Exposure, Q10.1--10.5, maximum 20) scores: (1) number of climate-relat
 
 \begin{table}[htbp]
 \centering\small\caption{HCVI interpretation bands (as specified)}\label{tab:hcvi-bands}
-\begin{tabular}{|p{2.0cm}|p{2.6cm}|p{2.6cm}|p{2.9cm}|p{2.9cm}|}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{2.0cm}|>{\raggedright\arraybackslash}p{2.6cm}|>{\raggedright\arraybackslash}p{2.6cm}|>{\raggedright\arraybackslash}p{2.9cm}|>{\raggedright\arraybackslash}p{2.9cm}|}
 \hline
-\rowcolor{RDRSBlue}\headercell{Score range} & \headercell{EI (Exposure)} & \headercell{SI (Sensitivity)} & \headercell{ACI (Adaptive Capacity)} & \headercell{HCVI (Vulnerability)} \\ \hline
+\rowcolor{RDRSBlue}\headercell{\shortstack{Score\\range}} & \headercell{\shortstack{EI\\(Exposure)}} & \headercell{\shortstack{SI\\(Sensitivity)}} & \headercell{\shortstack{ACI\\(Adaptive\\Capacity)}} & \headercell{\shortstack{HCVI\\(Vulnerability)}} \\ \hline
 0--$<$20 & Very Low Exposure & Very Low Sensitivity & Very Low Adaptive Capacity & Very Low Vulnerability \\ \hline
 20--$<$40 & Low Exposure & Low Sensitivity & Low Adaptive Capacity & Low Vulnerability \\ \hline
 40--$<$60 & Moderate Exposure & Moderate Sensitivity & Moderate Adaptive Capacity & Moderate Vulnerability \\ \hline
@@ -456,7 +474,7 @@ Table~\ref{tab:mel-11} shows the worked example for Indicator~1.1 as it appears 
 
 \begin{table}[htbp]
 \centering\small\caption{MEL matrix worked example: Indicator 1.1}\label{tab:mel-11}
-\begin{tabular}{|p{3.4cm}|p{9.8cm}|}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{3.4cm}|>{\raggedright\arraybackslash}p{9.8cm}|}
 \hline
 \rowcolor{RDRSBlue}\headercell{Field} & \headercell{Content} \\ \hline
 Indicator & Targeted climate-affected households adopting $\geq$1 additional IGA, +25\% from baseline \\ \hline
@@ -492,7 +510,7 @@ The pipeline in Figure~\ref{fig:crangpur-flow} comes from the key informant inte
 
 \begin{table}[htbp]
 \centering\small\caption{Key informant interview: Md.~Ajazul Haque, Manager (MEL) -- MIS answers}\label{tab:kii-ajazul}
-\begin{tabular}{|p{0.7cm}|p{4.2cm}|p{8.3cm}|}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{0.7cm}|>{\raggedright\arraybackslash}p{4.2cm}|>{\raggedright\arraybackslash}p{8.3cm}|}
 \hline
 \rowcolor{RDRSBlue}\headercell{\#} & \headercell{Question} & \headercell{Answer} \\ \hline
 1 & Is HCVI calculation automatic? & No single automated tool; calculation runs across a combination of KoBo, Excel and Power~BI \\ \hline
@@ -542,7 +560,7 @@ MEL staff go to sites, watch activities and collect data, then compile in Excel 
 For C-RANGPUR specifically, the field-to-decision path follows KoBo capture with auto-submission, a verification step before dashboard display, HCVI and IGA indicator calculation across KoBo, Excel and Power~BI, and Power~BI reporting (Figure~\ref{fig:crangpur-flow}). The project M\&E MIS is entirely separate from the microfinance MIS (G~Banker), with no data integration between them.
 
 \section{Special Monitoring: What Gets Checked at Field Level}
-The Evaluation Department does not review portfolios ad-hoc. It works from a set checklist. I copied the headings from internal monitoring notes during placement.
+The MEL Department does not review portfolios ad-hoc. It works from a set checklist. I copied the headings from internal monitoring notes during placement.
 
 Overdue cases are listed with amount plus a written reason for each. The reason feeds back into the next loan-committee decision. New loans are checked before they enter the normal cycle: what the committee approved against what was actually paid out. Field staff cross-check sanctioned amounts against field records with internal monitoring tools and review the supporting papers.
 
@@ -607,8 +625,8 @@ Three low-key inconsistencies surfaced in the C-RANGPUR source documents. They d
 Field evidence: interviews above; Sept 2026 schedule; G Banker outputs (Udayan, POMIS-5/4); Somriddhi May 2023 report.
 
 \begin{table}[htbp]
-\centering\caption{Condensed findings}\label{tab:findings}
-\begin{tabular}{|p{3.4cm}|p{5.4cm}|p{4.4cm}|}
+\centering\small\caption{Condensed findings}\label{tab:findings}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{3.4cm}|>{\raggedright\arraybackslash}p{5.4cm}|>{\raggedright\arraybackslash}p{4.4cm}|}
 \hline
 \rowcolor{RDRSBlue}\headercell{MIS practice / tool} & \headercell{Observation} & \headercell{Strength / gap} \\ \hline
 G Banker 1-click & CO-wise, POMIS-4/5 & Strength: time, consistency \\ \hline
@@ -626,8 +644,8 @@ Udayan/Unnoti + savings & BDT 50/wk; MSDS 3-yr 7\%, 5-yr 7.5\% & Context for ris
 
 \section{Daily Log (kept live)}
 \begin{table}[htbp]
-\centering\caption{Daily log excerpt}\label{tab:log}
-\begin{tabular}{|p{2.0cm}|p{4.4cm}|p{3.4cm}|p{4.0cm}|}
+\centering\small\caption{Daily log excerpt}\label{tab:log}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{2.0cm}|>{\raggedright\arraybackslash}p{4.4cm}|>{\raggedright\arraybackslash}p{3.4cm}|>{\raggedright\arraybackslash}p{4.0cm}|}
 \hline
 \rowcolor{RDRSBlue}\headercell{Date} & \headercell{Activity} & \headercell{Met} & \headercell{Learning} \\ \hline
 Sept 2026 & ICPS walkthrough & Saiful Alam & 6 steps; 21 indic.; FGD/KII vs.\ HH \\ \hline

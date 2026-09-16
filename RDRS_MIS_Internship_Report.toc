@@ -14,7 +14,7 @@
 \contentsline {section}{\numberline {2.2}Mission, Vision and Objectives}{5}{}%
 \contentsline {section}{\numberline {2.3}Field Scale}{5}{}%
 \contentsline {section}{\numberline {2.4}Organizational Structure}{6}{}%
-\contentsline {section}{\numberline {2.5}The Evaluation Department}{6}{}%
+\contentsline {section}{\numberline {2.5}The MEL Department}{6}{}%
 \contentsline {section}{\numberline {2.6}Overview of Ongoing Projects}{6}{}%
 \contentsline {section}{\numberline {2.7}Microfinance Programme: Udayan, Unnoti and Savings}{8}{}%
 \contentsline {chapter}{\numberline {3}Literature Review}{10}{}%
@@ -23,27 +23,27 @@
 \contentsline {section}{\numberline {3.3}MIS in NGO and Development Settings}{10}{}%
 \contentsline {chapter}{\numberline {4}Analysis and Findings}{11}{}%
 \contentsline {section}{\numberline {4.1}MIS Tools and Systems Used in Project Monitoring}{11}{}%
-\contentsline {subsection}{\numberline {4.1.1}What the Evaluation Department actually uses}{11}{}%
+\contentsline {subsection}{\numberline {4.1.1}What the MEL Department actually uses}{11}{}%
 \contentsline {subsection}{\numberline {4.1.2}Baseline design learned through ICPS}{12}{}%
 \contentsline {subsection}{\numberline {4.1.3}C-RANGPUR baseline instrument: KoBo questionnaire}{12}{}%
-\contentsline {subsection}{\numberline {4.1.4}Indicator definitions and measurement formulas}{13}{}%
-\contentsline {subsection}{\numberline {4.1.5}Household Climate Vulnerability Index (HCVI)}{13}{}%
-\contentsline {subsection}{\numberline {4.1.6}MEL matrix and C-RANGPUR data pipeline}{17}{}%
-\contentsline {subsection}{\numberline {4.1.7}How microfinance MIS changed: Micro Bank to South Tech to G Banker}{19}{}%
-\contentsline {section}{\numberline {4.2}Data Flow: From Field to Decision-Making}{21}{}%
-\contentsline {section}{\numberline {4.3}Special Monitoring: What Gets Checked at Field Level}{22}{}%
-\contentsline {section}{\numberline {4.4}Risk Control Linked to MIS: Credit Shield Insurance}{22}{}%
-\contentsline {section}{\numberline {4.5}Compliance Use of MIS: AML/CFT Data}{23}{}%
-\contentsline {section}{\numberline {4.6}Loan Committee and Approval Hierarchy}{23}{}%
-\contentsline {section}{\numberline {4.7}Strengths of Current MIS Practices}{23}{}%
-\contentsline {section}{\numberline {4.8}Gaps and Challenges Observed}{24}{}%
-\contentsline {subsection}{\numberline {4.8.1}Instrument and documentation quality: C-RANGPUR observations}{25}{}%
-\contentsline {section}{\numberline {4.9}Sample Findings Table}{26}{}%
-\contentsline {section}{\numberline {4.10}Daily Log (kept live)}{26}{}%
-\contentsline {chapter}{\numberline {5}Recommendations}{28}{}%
-\contentsline {chapter}{\numberline {6}Conclusion}{29}{}%
-\contentsline {chapter}{\numberline {A}Appendix}{31}{}%
-\contentsline {section}{\numberline {A.1}Interview guide (used)}{31}{}%
-\contentsline {section}{\numberline {A.2}Glossary}{31}{}%
-\contentsline {section}{\numberline {A.3}Next step}{31}{}%
-\contentsline {section}{\numberline {A.4}C-RANGPUR sources and verification notes}{31}{}%
+\contentsline {subsection}{\numberline {4.1.4}Indicator definitions and measurement formulas}{15}{}%
+\contentsline {subsection}{\numberline {4.1.5}Household Climate Vulnerability Index (HCVI)}{16}{}%
+\contentsline {subsection}{\numberline {4.1.6}MEL matrix and C-RANGPUR data pipeline}{19}{}%
+\contentsline {subsection}{\numberline {4.1.7}How microfinance MIS changed: Micro Bank to South Tech to G Banker}{21}{}%
+\contentsline {section}{\numberline {4.2}Data Flow: From Field to Decision-Making}{22}{}%
+\contentsline {section}{\numberline {4.3}Special Monitoring: What Gets Checked at Field Level}{23}{}%
+\contentsline {section}{\numberline {4.4}Risk Control Linked to MIS: Credit Shield Insurance}{24}{}%
+\contentsline {section}{\numberline {4.5}Compliance Use of MIS: AML/CFT Data}{24}{}%
+\contentsline {section}{\numberline {4.6}Loan Committee and Approval Hierarchy}{25}{}%
+\contentsline {section}{\numberline {4.7}Strengths of Current MIS Practices}{25}{}%
+\contentsline {section}{\numberline {4.8}Gaps and Challenges Observed}{25}{}%
+\contentsline {subsection}{\numberline {4.8.1}Instrument and documentation quality: C-RANGPUR observations}{27}{}%
+\contentsline {section}{\numberline {4.9}Sample Findings Table}{27}{}%
+\contentsline {section}{\numberline {4.10}Daily Log (kept live)}{27}{}%
+\contentsline {chapter}{\numberline {5}Recommendations}{30}{}%
+\contentsline {chapter}{\numberline {6}Conclusion}{31}{}%
+\contentsline {chapter}{\numberline {A}Appendix}{33}{}%
+\contentsline {section}{\numberline {A.1}Interview guide (used)}{33}{}%
+\contentsline {section}{\numberline {A.2}Glossary}{33}{}%
+\contentsline {section}{\numberline {A.3}Next step}{33}{}%
+\contentsline {section}{\numberline {A.4}C-RANGPUR sources and verification notes}{33}{}%
