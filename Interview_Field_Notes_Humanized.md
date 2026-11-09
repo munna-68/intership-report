@@ -137,6 +137,37 @@ CO: Credit Organizer, samity level field staff.
 OTR: On-Time Repayment rate.
 PAR: Portfolio at Risk.
 DQA: Data Quality Assessment.
+A2J: Access to Justice for Women.
+GIZ: Deutsche Gesellschaft für Internationale Zusammenarbeit.
+ADR: Alternative Dispute Resolution.
+DLAO: District Legal Aid Officer / Office.
+DLAC / UZLAC / UPLAC: District / Upazila / Union Parishad Legal Aid Committee.
+LSID: Legal Service Information Desk.
+PNGO: Partner Non-Governmental Organization.
+CDR: Community Dispute Resolution.
+GRO: General Register Officer (Court Police).
+ATT / CT / AHTT / ST: Anti-Terrorism Tribunal / Cyber Tribunal / Anti-Human Trafficking Tribunal / Special Tribunal.
+CrPC: Code of Criminal Procedure.
+DBLA: District Bar Legal Aid.
+Ejlash: The open courtroom / judge's bench where formal hearings take place.
+Serestha: The court clerk's administrative office where physical case files and registers are kept.
+Aposh-joggo: Compoundable offenses under the CrPC that can legally be settled via mediation/ADR.
+
+## Access to Justice for Women (A2J for Women) Walkthrough
+
+In late 2026, I attended a walkthrough with the A2J for Women project team (sub-titled Legal Assistance and Case Management). Present in the room were four staff members: the Project Focal (over 28 years with RDRS), the District Project Officer, and two project paralegals.
+
+The project is a bilateral G2G project between the Law and Justice Division (MoLJPA) and the German Government via GIZ. The operational period is 1 March 2024 to 31 December 2026, extending to March 2027. Budget in Rangpur District is BDT 1,82,25,931.
+
+Staffing in Rangpur: 1 Project Focal, 1 DPO, 1 Finance/Admin Officer, 6 Paralegals, and 3 Support Staff. (The discussion noted 12 roles against 13 on the handwritten slide update; flagged for HR sheet check).
+
+Institutional split: RDRS handles the formal justice system (Courts, DLAO, Police Stations, and Rangpur Central Prison for criminal and civil cases). Nijera Kori handles informal justice (Community Dispute Resolution / CDR at community level).
+
+Key outputs: assisted 6,092 justice seekers (3,348 female, 2,744 male); operates an active Legal Service Information Desk (LSID) in court; coordination across DLAC/UZLAC/UPLAC; panel mediators approved by Senior District and Sessions Judge on 18 March 2025.
+
+Physical court case audit (April 2025): counted by inspecting Ejlash (bench records) and Serestha (clerk records). Grand total 77,849 cases: 44,215 criminal (56.8%) and 33,634 civil (43.2%). Magistracy criminal 25,612 (Judicial 15,794, Metro 9,818); Sessions 11,339 (District 8,936, Metro 2,403); Tribunals 7,264 (Nari O Shishu 6,068, Others 1,196). Nari O Shishu Tribunal-1 has the highest criminal docket (3,662); Land Survey Tribunal has highest civil (5,493).
+
+Bottlenecks: 6 paralegals carrying both field service across 4 locations and manual file counts; institutional mindset in court administration.
 
 ## What is next
 
