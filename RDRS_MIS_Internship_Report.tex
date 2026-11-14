@@ -1,4 +1,4 @@
-% RDRS Bangladesh — MIS Internship Report (polished, locally + Overleaf compilable)
+% RDRS Bangladesh — MIS Internship Report (humanized, locally + Overleaf compilable)
 % Local: TeX Live base only (color/colortbl/fancyhdr). Overleaf: auto-enables hyperref/booktabs/microtype if present.
 % Compile: tectonic RDRS_MIS_Internship_Report.tex
 \documentclass[12pt,a4paper]{report}
@@ -18,6 +18,8 @@
 \definecolor{RDRSLight}{rgb}{0.95,0.96,0.97}
 \definecolor{RDRSGrey}{rgb}{0.35,0.35,0.35}
 \definecolor{RDRSMidGrey}{rgb}{0.62,0.64,0.67}
+\definecolor{ScheduleHead}{rgb}{0.47,0.76,0.93}
+\definecolor{ScheduleRow}{rgb}{0.86,0.95,0.99}
 
 % ---------- Optional enhancements (Overleaf/full TeX only, skipped locally) ----------
 \IfFileExists{etoolbox.sty}{\usepackage[colorlinks=true,linkcolor=RDRSBlue,citecolor=RDRSTeal,urlcolor=RDRSBlue,breaklinks=true]{hyperref}}{}
@@ -103,19 +105,6 @@
 \newcommand{\warnbox}[1]{\begin{center}\fcolorbox{RDRSOrange}{RDRSLight}{\begin{minipage}{0.92\textwidth}#1\end{minipage}}\end{center}}
 \newcommand{\headercell}[1]{\textcolor{white}{\textbf{#1}}}
 
-% Quick chapter summary strip for skimmers
-\newcommand{\chapterglance}[2]{%
-  \begin{center}%
-  \fcolorbox{RDRSBlue}{RDRSLight}{%
-    \begin{minipage}{0.94\textwidth}%
-      \textbf{\color{RDRSBlue}\small CHAPTER AT A GLANCE \quad $|$ \quad #1}\\[3pt]%
-      \footnotesize\color{RDRSGrey}#2%
-    \end{minipage}%
-  }%
-  \end{center}%
-  \vspace{0.25cm}%
-}
-
 % Visual formula callout card
 \newcommand{\formulacard}[4][RDRSBlue]{%
   \begin{center}%
@@ -177,7 +166,7 @@
 \vfill
 {\small\color{RDRSGrey} Date of Submission: 30 November 2026 \qquad Place: Rangpur \par}
 \vspace{0.15cm}
-{\scriptsize\color{RDRSMidGrey} Sources: MEL monitoring schedule \quad $\bullet$ \quad G~Banker outputs \quad $\bullet$ \quad C-RANGPUR instrument \& F01-112 matrix \quad $\bullet$ \quad KII \& field notes \quad $\bullet$ \quad RDRS Strategic Plan \quad $\bullet$ \quad Somriddhi report \quad $\bullet$ \quad Court audit \par}
+{\scriptsize\color{RDRSMidGrey} Sources: MEL monitoring schedule \quad $\bullet$ \quad G~Banker outputs \quad $\bullet$ \quad C-RANGPUR instrument \& F01-112 matrix \quad $\bullet$ \quad KII \& field notes \quad $\bullet$ \quad Dishari planner \quad $\bullet$ \quad Somriddhi report \quad $\bullet$ \quad Court audit \par}
 \end{titlepage}
 
 % ================= FRONT MATTER =================
@@ -192,11 +181,11 @@ Assistant Professor, Department of Management Information Systems\\
 Begum Rokeya University, Rangpur\\[4pt]
 Subject: Submission of Internship Report on ``Evaluating MIS Practices in Project Monitoring: A Study on RDRS Bangladesh''\\[4pt]
 Dear Sir,\\[2pt]
-I am pleased to submit my internship report, prepared as a mandatory requirement for completing the BBA program in Management Information Systems at Begum Rokeya University, Rangpur. The report examines the practical MIS and monitoring workflows of RDRS Bangladesh, based on my three-month placement (01 September to 30 November 2026) within the Monitoring, Evaluation, and Learning (MEL) Department at the Central Coordination Office in Rangpur.
+This is my internship report for BBA in Management Information Systems from Begum Rokeya University, Rangpur. My report discusses my findings of project monitoring and management information system practices from RDRS Bangladesh. This report is written on my three months internship experience in Monitoring, Evaluation and Learning Department (MEL), Central Coordination office of RDRS Rangpur. My internship period was from 01 Sept 2026 to 30 November 2026.
 
-Throughout this placement, I observed how field data travels from remote village groups and branch offices to central management dashboards. I had the opportunity to study the C-RANGPUR baseline survey instrument, live G~Banker microfinance reports, the ICPS child protection baseline, the Access to Justice court tracking system, and internal monitoring archives. This report summarizes the operational strengths, data integrity gaps, and practical lessons I gathered from staff interviews, document reviews, and field observations.
+In my three month internship period, I sat with different project and branch staffs and observed the flow of data in field like registered numbers in papers to mobile forms to office dashboards. I went through the C-RANGPUR baseline survey, G~Banker Microfinance report, ICPS child protection baseline survey, Access to Justice court count, Jononni field monitoring Lalmonirhat, past monitoring documents. Apart from those tools I created a simple browser based tool, Dishari, to tackle the bottleneck of creation of monthly branch visit schedule by monitoring staff manually in Word and manually calculating annual branch visits.
 
-I have made every effort to keep this analysis objective, evidence-based, and grounded in the actual documents I inspected. I am sincerely grateful for your supervision, constructive feedback, and continuous encouragement during this study.\\[6pt]
+In my report, I tried to keep myself close to the documents that I read or people with whom I interacted. Thank you for your supervision and patience and comments in the report making process.\\[6pt]
 Sincerely,\\
 \textbf{A.~R.~Mahmud} \quad (ID: 12022065)\\
 Department of Management Information Systems\\
@@ -205,44 +194,35 @@ Begum Rokeya University, Rangpur
 \chapter*{Acknowledgement}
 \addcontentsline{toc}{chapter}{Acknowledgement}
 \enlargethispage{2\baselineskip}
-I would like to express my sincere gratitude to my academic supervisor, Mohammad Rakibul Islam Bhuiyan, Assistant Professor, Department of Management Information Systems, Begum Rokeya University, Rangpur, for his guidance, structural advice, and review throughout the preparation of this report.
+Firstly I would like to express my gratitude to my academic supervisor Mohammad Rakibul Islam Bhuiyan. Assistant Professor in the Department of Management Information Systems at Begum Rokeya University, Rangpur. He helped me to understand the areas of importance and also reviewed my drafts. Also I would like to express my gratitude to Mr. Omar Faruque (Associate Professor of the Department of Accounting of Begum Rokeya University), whom I met unexpectedly in Lalmonirhat while doing the field work for Jononni project. It was really great to talk to him about NGO reporting/monitoring checks which are not so much like what we learned in a university classroom.
 
-I am deeply indebted to the management and staff of RDRS Bangladesh at the Central Coordination Office, Rangpur, for hosting my three-month placement and providing generous access to operational documents and systems:
-\begin{itemize}
-\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}
-\item \textbf{Mr.~Mamunur Rashid} (Head of MEL) and \textbf{Dabasish Mahata} (Coordinator-Monitoring) for approving my placement schedule, providing departmental orientation, and supervising my weekly learning objectives.
-\item \textbf{Md.~Saiful Alam (Shekul)} (ICPS Baseline Team; ex-MEAL \& GIS, Save the Children) for a detailed walkthrough of baseline indicator design, ESS safeguards, and MEL maturity.
-\item \textbf{Fahmida Mostafa} (Senior MEL Officer) for explaining active project portfolios, routine field reporting workflows, and institutional scale across the five core program domains.
-\item \textbf{Mr.~Iftekharul Islam} (Manager-Monitoring) for sharing the thirty-year historical evolution of microfinance software at RDRS, from early manual ledgers to Micro Bank and modern G~Banker automation.
-\item \textbf{Md.~Ajazul Haque} (Manager, MEL) for walking me through the C-RANGPUR digital survey pipeline, KoBo Toolbox architecture, and Household Climate Vulnerability Index (HCVI) scoring formulas.
-\item \textbf{Moushumi Akter}, \textbf{Maydul Islam}, \textbf{Md.~Ziaur Rahman}, \textbf{Dr.~Salah Uddin}, \textbf{Rashedul Arefeen}, \textbf{Rumana Azim Ansari}, and \textbf{Maj Shammita Kabir (Retd)} for their time and guidance during field visits and departmental rotations.
-\end{itemize}
-Finally, I thank my family and classmates for their constant encouragement. Any errors in interpretation or analysis in this report remain solely mine.
+Secondly I received signed placement schedule for RDRS Bangladesh by Mr. Mamunur Rashid (Head of MEL), Dabasish Mahata (Coordinator-Monitoring). They accepted me to the Rangpur office. Also they guided me on weekly basis. I learned baseline structure, indicators and environmental safeguards for almost 2 hours from Md. Saiful Alam (Shekul) at the ICPS baseline team. I got to know about running projects, day to day MEL work and map of organizations presence in Bangladesh from Fahmida Mostafa (Senior MEL Officer). I received insights on 30 years' micro-finance software's journey at RDRS by Mr. Iftekharul Islam (Manager-Monitoring) and even the work of my grandfather which was involved in early Micro Bank system. I got to know about C-RANGPUR KoBo survey. Vulnerability index calculation. File to Power~BI pathway from Md. Ajazul Haque (Manager, MEL).
+
+Special thanks also go to Moushumi Akter, Maydul Islam, Md. Ziaur Rahman, Dr. Salah Uddin, Pallab Goswami, Rashedul Arefeen, Rumana Azim Ansari, Maj Shammita Kabir (Retd) for their valuable time during field rotation or department brief. Also special thanks to the head of Jononni project and paralegals of Access to Justice in Rangpur for permitting me to sit and observe their activities. I also got a lot of encouragement from my family members and friends of my class throughout the term. The errors in this report, if any, are my own.
 
 \chapter*{Executive Summary}
 \addcontentsline{toc}{chapter}{Executive Summary}
-\highlightbox{\small\textbf{\color{RDRSBlue}Guiding Question:} How does monitoring data actually move from grassroots village groups to executive management decisions at RDRS Bangladesh, and where does the information chain hold or break?}
+\highlightbox{\small\textbf{\color{RDRSBlue}Guiding question} How is the monitoring data at the village level or at the branch desk communicated to the management level of RDRS Bangladesh? Where does the system fail or work?}
 
-This report documents what I observed during my three-month internship (01 September to 30 November 2026) based at the RDRS Central Coordination Office in Rangpur. Rather than relying on promotional brochures, I tracked the actual tools field staff carry: physical registers and structured Excel workbooks for weekly branch operations, KoBo Toolbox on mobile phones for ad-hoc household surveys, and central dashboards built in Power~BI and G~Banker for management review. My placement followed an official rotation sanctioned by the Head of MEL (reproduced in Appendix~\ref{sec:official-schedule}), covering baseline surveys, branch audits, and cross-departmental operations across HR, Agriculture, Social Development, Safeguarding, and General Administration.
+I worked in the MEL department of RDRS Central Coordination office Rangpur for 3 months from 01 September 2026 to 30 November 2026. I did not take the brochures as it is. Instead of that, I observed what type of records they open on their desks. For regular branch visits, which they do based on printed registers and regular excel sheets. For ad-hoc projects they use KoBo Toolbox apps in android phones for survey. For Rangpur office, they format exports in excel, make some charts using power BI, get micro finance info using G~Banker. I had a defined schedule based on an official schedule approved by Head of MEL. You can find that full schedule at the end of this report. I went to do baseline field work, branch audit, Lalmonirhat for jononni project, short term HR work, agriculture, social development, safeguarding, administration etc.
 
-The findings reveal two contrasting data realities within the organization:
+Two different stories came out of those weeks.
 
-First, microfinance operations have matured into a centralized, automated pipeline. Between 1995 and 2011, RDRS relied heavily on a legacy software system called Micro Bank, which created substantial organizational risk because reporting depended almost entirely on one or two senior individuals. The transition to South Tech in 2011 and subsequently to G~Banker in 2017/18 eliminated this vulnerability. Today, branch-level balance sheets (POMIS-5), income statements (POMIS-4), and Credit Organizer (CO) performance reports generate with a single click. The key operational lesson here is institutional continuity: software works best when indicator rules (such as Portfolio-at-Risk and On-Time Repayment) are codified and knowledge is shared across multiple officers.
+Reporting in microfinance is regular and automated. There was in-house software called Micro Bank. Which they used in their microfinance from 1995 to 2011. There were few (1 or 2 at max) senior people who knows most of the queries. It is risky for the NGO when they grow up. When they shifted to South Tech in 2011, then around 2017/18 they shifted to G~Banker. Now 1 click generation of balance sheet (POMIS-5), Income statement (POMIS-4), credit organizer change sheet (288 branches). When the rules for indicators (like portfolio at risk, on time repayment) are implemented on a shared software system, the NGO doesn't face any delays when one of the programmers is not available.
 
-Second, development projects operate on a much more fragmented stack. In projects like C-RANGPUR, field enumerators collect rich data through a 10-section KoBo digital questionnaire, calculating complex indicators and a composite Household Climate Vulnerability Index (HCVI, weighted 30\% Exposure, 30\% Sensitivity, and 40\% Adaptive Capacity Deficit). However, data processing is divided across three separate environments---KoBo servers, manual Excel clean-up, and Power~BI visualizations---with no automated connection to the core microfinance database.
+The monitoring of a development project is much more scattered. C-RANGPUR baseline is collected on 10 sections KoBo form by field staff to feed into 7 indicators and a Household Climate Vulnerability Index (Exposure 30\% + Sensitivity 30\% + Adaptive Capacity Deficit 40\%). Even when KoBo is clean on phone collection, field staff export Excel and run macros before uploading on Power~BI. Project side has no relation with G~Banker at all.
 
-The most critical vulnerabilities appear at the ``last mile'' of field reporting. A review of internal monitoring reports (such as the May 2023 Somriddhi audit) showed persistent mismatches between physical paper registers and digital central reports (e.g., 89\% actual student attendance in field registers entered as 100\% in the central MIS; missing expenditure files for 65\% of livelihood asset grants). High staff turnover and paper-heavy workflows in Credit Shield microinsurance further slow down operations.
+The friction is observed at the moment the paper meets the screen. From the May 2023 monitoring report of Somriddhi programme I found some numerical facts like: in Beruabari union, central MIS showed 100\% student attendance but classroom rollbooks showed 89\% attendance. On the field visit 65\% expenditure file were found absent in rehabilitation grant of BDT 100,000. There was high teacher turnover rate. Guardian Life insurance (Credit Shield) claims are still bundles of papers to go through 4 office levels before getting claim settlement.
 
-\keybox{\small\textbf{\color{RDRSTeal} Priority Recommendations:}
-\textbf{(1) Mandatory Register-to-MIS Reconciliation Sign-off:} Require branch supervisors to physically verify and cross-sign field registers against digital entries before monthly reports lock.
-\textbf{(2) End-to-End KoBo Pipeline:} Automate indicator scoring directly from mobile survey submissions into Power~BI to eliminate error-prone intermediate Excel copies.
-\textbf{(3) Documented Indicator Ownership:} Maintain formal standard operating procedures and dual ownership for every recurring report family to prevent single-person dependencies.}
+Within the MEL office I observed an everyday friction. Monthly microfinance branch monitoring schedule (for branches) was manually prepared by the coordinator in a Microsoft Word table, considering working days considering Friday/Saturday weekends and public holidays, by manually typing branch names in 332 branches, coverage in monthly separate files. I developed a browser app in October/November Dishari to automate this Word process and to generate multi-month coverage reports.
+
+\keybox{\small\textbf{\color{RDRSTeal}Three practical fixes} 1. Do not lock monthly branch reports till monitoring officer will do spot check of physical field registers and will match with digital numbers and confirm with signature 2. Make KoBo linked with Power~BI directly so that nobody will calculate vulnerability manually through excel again 3. Use browser scheduler like Dishari or similar which will review rules to make monthly officer roster and annual branch coverage without need of manual Word table}
 
 \tableofcontents
 \listoffigures
 \listoftables
 
-\highlightbox{\centering\small \textbf{\color{RDRSBlue}Abbreviations:} MEL -- Monitoring, Evaluation and Learning; MEAL -- plus Accountability; ESS -- Environmental and Social Safeguard; TOR -- Terms of Reference; FGD -- Focus Group Discussion; KII -- Key Informant Interview; HH -- Household; IGA -- Income Generating Activity; CSA -- Climate Smart Agriculture; HCVI -- Household Climate Vulnerability Index (EI -- Exposure Index; SI -- Sensitivity Index; ACI -- Adaptive Capacity Index); NCD -- Non-Communicable Disease; SPSS -- Statistical Package for the Social Sciences; PKSF -- Palli Karma-Sahayak Foundation; CO -- Credit Organizer; OTR -- On-Time Repayment; PAR -- Portfolio at Risk; DQA -- Data Quality Assessment; ATM -- Assistant Thana Manager (historic); MSDS -- Monthly Savings Deposit Scheme; WASH -- Water, Sanitation and Hygiene; LRL -- Livelihood Restoration Loan; BFIU -- Bangladesh Financial Intelligence Unit; A2J -- Access to Justice for Women; GIZ -- Deutsche Gesellschaft f{\"u}r Internationale Zusammenarbeit; ADR -- Alternative Dispute Resolution; DLAO -- District Legal Aid Officer / Office; DLAC / UZLAC / UPLAC -- District / Upazila / Union Parishad Legal Aid Committee; LSID -- Legal Service Information Desk; PNGO -- Partner Non-Governmental Organization; CDR -- Community Dispute Resolution; GRO -- General Register Officer (Court Police); ATT / CT / AHTT / ST -- Anti-Terrorism / Cyber / Anti-Human Trafficking / Special Tribunal; CrPC -- Code of Criminal Procedure; DBLA -- District Bar Legal Aid.}
+\highlightbox{\centering\small \textbf{\color{RDRSBlue}Abbreviations} MEL -- Monitoring, Evaluation and Learning; MEAL -- Monitoring, Evaluation, Accountability and Learning; ESS -- Environmental and Social Safeguard; TOR -- Terms of Reference; FGD -- Focus Group Discussion; KII -- Key Informant Interview; HH -- Household; IGA -- Income Generating Activity; CSA -- Climate Smart Agriculture; HCVI -- Household Climate Vulnerability Index (EI -- Exposure Index; SI -- Sensitivity Index; ACI -- Adaptive Capacity Index); NCD -- Non-Communicable Disease; SPSS -- Statistical Package for the Social Sciences; PKSF -- Palli Karma-Sahayak Foundation; CO -- Credit Organizer; OTR -- On-Time Repayment; PAR -- Portfolio at Risk; DQA -- Data Quality Assessment; ELCO -- Eligible Couple; PW -- Pregnant Woman; ATM -- Assistant Thana Manager (historic); MSDS -- Monthly Savings Deposit Scheme; WASH -- Water, Sanitation and Hygiene; LRL -- Livelihood Restoration Loan; BFIU -- Bangladesh Financial Intelligence Unit; A2J -- Access to Justice for Women; GIZ -- Deutsche Gesellschaft f{\"u}r Internationale Zusammenarbeit; ADR -- Alternative Dispute Resolution; DLAO -- District Legal Aid Officer / Office; DLAC / UZLAC / UPLAC -- District / Upazila / Union Parishad Legal Aid Committee; LSID -- Legal Service Information Desk; PNGO -- Partner Non-Governmental Organization; CDR -- Community Dispute Resolution; GRO -- General Register Officer (Court Police); ATT / CT / AHTT / ST -- Anti-Terrorism / Cyber / Anti-Human Trafficking / Special Tribunal; CrPC -- Code of Criminal Procedure; DBLA -- District Bar Legal Aid.}
 
 \clearpage
 \pagenumbering{arabic}
@@ -250,227 +230,178 @@ The most critical vulnerabilities appear at the ``last mile'' of field reporting
 % ================= CHAPTER 1 =================
 \chapter{Introduction}
 
-\chapterglance{Background, Objectives \& Methodology}{Evaluates how monitoring data is collected, verified, and utilized across RDRS Bangladesh projects. Grounded in a structured 3-month field placement (01 Sept -- 30 Nov 2026) following the official MEL internship schedule (Appendix~\ref{sec:official-schedule}).}
-
 \section{Background of the Study}
-When studying Management Information Systems in a BBA classroom, textbooks describe seamless databases where transactions flow instantly into executive dashboards. Real-world development work in rural Bangladesh is far messier. Systems must survive intermittent mobile networks, handwritten field registers, tight donor deadlines, and staff turnover across hundreds of remote branch offices.
+My understanding in the BBA classes of Begum Rokeya University that MIS books always provide the diagrams where transactions are directly feeding in the executive dashboard. However, the scenario of NGO in northern Bangladesh is completely different. It has to maintain MIS operation in the midst of poor mobile coverage in the river islands, handwritten passbooks, donor's strict timelines, and staff rotation in more than hundreds of distant offices.
 
-I chose to intern with the Monitoring, Evaluation, and Learning (MEL) Department of RDRS Bangladesh to observe how a major non-governmental organization actually monitors field progress. RDRS operates across 33 districts and reaches over 1.6 million people. Tracking interventions across that scale requires a delicate balance between field registers, mobile data collection, and central management dashboards. This report investigates that information plumbing: who records the numbers, which forms or apps they use, how data gets validated, and where reporting breakdowns occur before reaching executive decision-makers.
+My study in Monitoring, Evaluation and Learning (MEL) Department of RDRS Bangladesh was to understand the flow of monitoring data in a big NGO. RDRS Bangladesh has presence in 33 districts where more than 1.6 million people are served. There are a number of paper-registers, mobile apps, excel sheets and central databases that maintain data related to loans, health clinics, climate survey, legal support etc. I wanted to know: Who records the data? What tools they use? How do they manage mistakes? Where in the process I can use software to help mitigate the common bottleneck?
 
 \section{Objectives of the Study}
-\textbf{Broad Objective:} To evaluate the practical management information system (MIS) practices, tools, and workflows used in project monitoring at RDRS Bangladesh.
-
-\textbf{Specific Objectives:}
-\begin{enumerate}
-\item To identify the specific digital and manual MIS tools used by the MEL Department.
-\item To map how monitoring data travels from grassroots field units to central management dashboards.
-\item To examine operational strengths, data integrity gaps, and structural bottlenecks in current monitoring practices.
-\item To formulate practical, field-grounded recommendations for strengthening data reliability and institutional continuity.
-\end{enumerate}
+My overall objective was to study the MIS tools and practices used by RDRS Bangladesh in monitoring their projects and microfinance branches. My specific objective was to identify the manual and digital tools that MEL Department is using. To identify the data flow from village groups to management in Rangpur and Dhaka. To detect where and how mistake or latency is introduced in the process. To develop a software prototype for the manual monthly schedule issue that I observed in the office. To provide practical recommendations based on site realities.
 
 \section{Scope of the Study}
-The study focuses on the practices observed during my three-month placement (01 September to 30 November 2026) at the RDRS Central Coordination Office in Rangpur. I had direct access to files, schedules, and personnel connected to several active initiatives: the C-RANGPUR climate resilience baseline survey, the ICPS child protection project, maternal health monitoring under Jononni, adolescent education under SEEDS, the formal justice audit under Access to Justice for Women (A2J), the core microfinance portfolio (Udayan and Unnoti programs), and archived monitoring reports from the PKSF-funded Somriddhi project. The study does not assess external financial audits, statutory governance reviews, or projects outside the MEL Department's active monitoring mandate.
+This report contains information about my observation through my 3-month internship from 01 September to 30 November 2026 at RDRS Central Coordination Office Rangpur and also through field visit. I worked on files and people under C-RANGPUR, ICPS CP baseline, Jononni MH Lalmonirhat, SEEDS, A2J, Udayan, Unnoti Microfinance Portfolio, May 2023 Somriddhi monitoring archive report, Microfinance monthly monitoring schedule. No external audit of financial statement, statutory governance board and beyond MEL office regular monitor programme.
 
 \section{Methodology}
-\subsection{Placement structure and field exposure}
-My internship followed a formal three-month training plan sanctioned by Mr.~Mamunur Rashid, Head of MEL (see Appendix~\ref{sec:official-schedule} for the complete 13-stage program). The placement was organized into six distinct phases:
-\begin{enumerate}
-\item \textbf{Orientation and Guidelines (01--10 Sept 2026):} Overview of RDRS organizational history, five core program domains, and departmental reporting procedures with Mr.~Mamunur Rashid, Dabasish Mahata, Mr.~Iftekharul Islam, and Fahmida Mostafa.
-\item \textbf{Baseline Fieldwork Rotation (13--17 Sept 2026):} Field exposure to baseline data collection under the C-RANGPUR project with Moushumi Akter (Monitoring and Documentation Officer).
-\item \textbf{Branch Monitoring and Verification (20--24 Sept 2026):} Field inspection in the Rangpur Region observing passbook audits, ledger entries, and manual-to-digital loan reconciliation with Maydul Islam (Senior Monitoring Officer) and Md.~Ziaur Rahman (Senior Officer, Admin \& MIS).
-\item \textbf{Cross-Departmental Institutional Rotations (27 Sept -- 01 Oct 2026):} Targeted briefings across Human Resources (Md.~Ziaur Rahman), Agriculture and Climate Change / Rupantar Project (Dr.~Salah Uddin and Pallab Goswami), Social Development and Union Federations (Rashedul Arefeen), Safeguarding Policy (Rumana Azim Ansari), and Admin / General Services (Maj Shammita Kabir, Retd).
-\item \textbf{Deep MIS Practice in MEL (04 Oct -- 12 Nov 2026):} Hands-on examination of mobile survey design in KoBo Toolbox, indicator formula matrices, the Household Climate Vulnerability Index (HCVI), G~Banker microfinance exports, and court case tracking files with Dabasish Mahata and Md.~Ajazul Haque.
-\item \textbf{Synthesis, Presentation, and Reporting (15--30 Nov 2026):} Report compilation, faculty consultation, internal learning presentation, and final submission to the Head of MEL.
-\end{enumerate}
+\subsection{How the three months ran}
+Mr. Mamunur Rashid, the Head of MEL has formulated 13-step internship plan for me (copied in the last section of this report (Section~\ref{sec:official-schedule})). September first 10 days were spent in Rangpur Central Coordination office learning about RDRS history, 5 program areas and MEL reports' structure. From 13th to 17th September, I was accompanied by Moushumi Akter for field observation of C-RANGPUR project baseline data collection on KoBo. From 20th to 24th September, I followed Maydul Islam and Md. Ziaur Rahman in branch visits within Rangpur region to observe passbook crosschecking, matching loan in manual to digital.
 
-\subsection{Primary data sources}
-Primary evidence came from structured walkthroughs, daily observational logs, and key informant interviews with the RDRS staff members who build, operate, and maintain these systems (Table~\ref{tab:interviews}).
+In the late September, I have had a quick one-day rotation with HR unit (Md. Ziaur Rahman) Agriculture, Rupantar project (Dr. Salah Uddin, Pallab Goswami), Social Development, Union Federation (Rashedul Arefeen), Safeguarding (Rumana Azim Ansari) and Admin, General Services (Maj Shammita Kabir-retd). For the period 04th October - 12th November, I have spent majority of the time inside the MEL office (Dabasish Mahata, Md. Ajazul Haque) - learning the rules of KoBo survey, math behind the Vulnerability Index, G~Banker exports, counting number of court dockets, etc. In the same timeframe, I have visited Lalmonirhat for a Jononni project field visit and created Dishari scheduling app for the monthly roster of officers in the department. In the last two weeks of November, I have focused on collating this report and presenting my finding to the MEL team.
+
+\subsection{People I interviewed and met}
+I have found most of the primary source material from in-depth face-to-face sessions, system walkthroughs and random field exchanges with the individuals who actually run the processes. Refer Table~\ref{tab:interviews} for the details.
 
 \begin{table}[htbp]
-\centering\small\caption{Key Informant Interviews Conducted}\label{tab:interviews}
-\begin{tabular}{|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{3.4cm}|>{\raggedright\arraybackslash}p{7.0cm}|}
+\centering\small\caption{Staff Interviews and Field Conversations}\label{tab:interviews}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{3.4cm}|>{\raggedright\arraybackslash}p{3.4cm}|>{\raggedright\arraybackslash}p{6.8cm}|}
 \hline
-\rowcolor{RDRSBlue}\headercell{Interviewee} & \headercell{Designation} & \headercell{Key Focus Area \& System Exposure} \\ \hline
-Md.~Saiful Alam (Shekul) & ICPS Baseline Team (ex-MEAL \& GIS, Save the Children) & MEL functions; 6-step baseline design lifecycle; 21 UNICEF child protection indicators; ESS safeguards. \\ \hline
-\rowcolor{RDRSLight} Fahmida Mostafa & Senior MEL Officer & Active project portfolio; departmental reporting workflow; 5 thematic areas; field scale and coverage. \\ \hline
-Mr.~Iftekharul Islam & Manager, Monitoring & Historical evolution of microfinance software: manual ATM era $\to$ Micro Bank $\to$ South Tech $\to$ G~Banker. \\ \hline
-\rowcolor{RDRSLight} Md.~Ajazul Haque & Manager (MEL) & C-RANGPUR digital pipeline; KoBo questionnaire logic; HCVI 30/30/40 scoring; Power~BI dashboard integration. \\ \hline
-Project Focal \& Paralegals & Access to Justice for Women & Formal court system monitoring; physical docket enumeration across \textit{Ejlash} and \textit{Serestha}; court-annexed ADR. \\ \hline
+\rowcolor{RDRSBlue}\headercell{Person} & \headercell{Role} & \headercell{What we covered} \\ \hline
+Md.~Saiful Alam (Shekul) & ICPS Baseline Team (ex-MEAL \& GIS, Save the Children) & Two-hour talk on MEL work, the 6-step baseline flow, 21 UNICEF indicators, and ESS rules. \\ \hline
+\rowcolor{RDRSLight} Fahmida Mostafa & Senior MEL Officer & Active projects, daily reporting chain, five program areas, and RDRS coverage counts. \\ \hline
+Mr.~Iftekharul Islam & Manager, Monitoring & Thirty years of microfinance software, from ATM ledgers and Micro Bank to South Tech and G~Banker. \\ \hline
+\rowcolor{RDRSLight} Md.~Ajazul Haque & Manager (MEL) & C-RANGPUR survey design on KoBo, HCVI 30/30/40 weights, Excel cleanup, and Power~BI charts. \\ \hline
+Jononni Project Head \& Assoc.~Prof.~Omar Faruque & Jononni Head (RDRS); Assoc.~Prof., Accounting, BRUR & Field visit in Lalmonirhat looking at maternal/neonatal tracking, ELCO/PW registers, and field verification. \\ \hline
+\rowcolor{RDRSLight} A2J Project Focal \& Paralegals & Access to Justice for Women & Rangpur court docket count across \textit{Ejlash} and \textit{Serestha}, LSID desk intake, and mediation referrals. \\ \hline
 \end{tabular}
 \end{table}
 
-\subsection{Secondary data sources}
-Secondary materials reviewed during the placement included:
-\begin{itemize}
-\item The MEL Department September 2026 Monthly Monitoring Schedule (branch and project allocations).
-\item Live G~Banker system exports: CO-wise Program Changes Report (Udayan office), POMIS-4 (Income/Expenditure Statement), and POMIS-5 (Statement of Financial Position).
-\item C-RANGPUR baseline survey instrument (\url{https://ee-eu.kobotoolbox.org/x/wzjSgzZ6} and internal questionnaire specification document).
-\item Project monitoring matrix spreadsheet file \texttt{F01-112} (tab ``Monitoring Planning'').
-\item Internal policy manuals: RDRS 6th Strategic Plan (2023--2027), Annual Report 2021--22, Credit Shield Insurance Agreement (Guardian Life, July 2024), and the AML/CFT Compliance Policy (January 2022).
-\item Internal monitoring archive: Somriddhi Programme Field Monitoring Report (May 2023, PKSF funding, covering Panchagarh and Kurigram).
-\end{itemize}
+\subsection{Documents and software I reviewed}
+In addition to interviews, I have found the department internal materials helpful: Monthly Monitoring Plan (September 2026), live G~Banker exports from Udayan office (Program Changes (CO wise), POMIS-4, POMIS-5), C-RANGPUR Enketo form (\url{https://ee-eu.kobotoolbox.org/x/wzjSgzZ6}), Word specification of the form, Monitoring matrix spreadsheet (\texttt{F01-112}), RDRS 6th Strategic Plan (2023-2027), Annual Report (2021-22), Guardian Life Credit Shield policy notes (July 2024), AML/CFT manual (Jan 2022), Somriddhi field monitoring report (Panchagarh/Kurigram -May 2023).
 
 \section{Limitations of the Study}
-While I had open access within the MEL Department, several practical constraints shaped this study. First, the evaluation was conducted during an active academic internship term, limiting total field immersion to three months. Second, direct database backend access (SQL queries or raw server configuration for G~Banker and KoBo) was restricted to IT administrators for security reasons; my analysis is based on exported operational reports, front-end user forms, and system documentation. Third, ongoing baseline surveys (such as ICPS and C-RANGPUR) were still in their preliminary stages during the placement, meaning baseline values were being established rather than compared to final project outcomes. All figures and policy thresholds are explicitly cited with their source document date.
+What I was able to check was actually limited by a few real life issues. 1. 3 months is not a very long period. Not all projects could be tracked from the beginning to the end. 2. G~Banker and KoBo IT admins don't allow access to SQL servers directly. So it was not possible to inspect data in database tables. But instead, I have used exported spreadsheets, front-end forms, user manuals. 3. C-RANGPUR and ICPS were both at the initial baseline phase during the time I was there. So, no endline to compare. For any number or policy limit I have mentioned in the report, I mentioned the exact documents/conversation where it was taken.
 
 % ================= CHAPTER 2 =================
 \chapter{Organizational Overview}
 
-\chapterglance{Institutional Scale \& Operational Structure}{Profiles RDRS Bangladesh: 50-year evolution from post-war relief to 406 Union Federations, 33 districts, 1.64M participants, and BDT 15.09B in active microfinance.}
-
 \section{About RDRS Bangladesh}
-RDRS Bangladesh traces its roots directly to the aftermath of Bangladesh's Liberation War. In February 1972, the Lutheran World Federation (Department for World Service, Geneva) launched a field program in Rangpur to provide emergency relief, medical supplies, housing, and agricultural tools to war-affected communities. Originally called the Rangpur Dinajpur Relief Service, the organization subsequently evolved into the Rangpur Dinajpur Rural Service, reflecting a shift toward long-term rural development. In 1997, it registered as an independent Bangladeshi NGO under the Trust Act, governed by its own national Board of Trustees.
+RDRS was formed post Liberation war. In February 1972, Lutheran World Federation (Department for World Service- Geneva) established a relief program in Rangpur, aimed at providing food, shelter materials, medical clinics, seeds and farm tools to the war-affected villages of NW Bangladesh. Initially, it was called Rangpur Dinajpur Relief Service. As relief operations were transformed into farming and educational programs, it was renamed Rangpur Dinajpur Rural Service. In 1997, it was registered as an independent Bangladeshi NGO under the Trust Act. The Trust has its own national Board of Trustees.
 
-Geographically, RDRS concentrated its efforts in the northwestern districts of Bangladesh. This region has historically suffered from structural isolation, recurring floods from the Teesta--Jamuna--Brahmaputra river systems, severe riverbank erosion, and the seasonal lean period known as \textit{Monga}. Over five decades, the organization's work transitioned through distinct phases: post-war relief (1972--1975); health clinics, non-formal schools, and agricultural support (1976--1989); localization and federation building (1990--1997); and integrated microfinance, climate adaptation, and community empowerment under successive strategic plans. Celebrating its 50th anniversary in February 2022, RDRS is currently executing its 6th Strategic Plan (2023--2027). The organization maintains its central executive leadership at House 43, Road 10, Sector 6, Uttara, Dhaka, while operational field management is coordinated from its Central Coordination Office on Jail Road in Rangpur.
+The choice to focus the geography on the northwest is intentional. The region has had decades of experience with periodic flooding of Teesta, Jamuna, Brahmaputra and other rivers, riverbank erosion, disconnection to Dhaka, the hunger season before harvest (called Monga locally). RDRS has evolved through over 50 years from providing relief (1972-1975) to schools and health posts (1976-1989) to local registration and community federations (1990-1997) to a wide-ranging microfinance and climate work. RDRS celebrated its 50th year in February 2022 and is in its 6th Strategic Plan (2023-2027) at the moment. The Executive offices are based in House 43, Road 10, Sector 6, Uttara of Dhaka. Field operations are managed from the Central Coordination Office on Jail Road, Rangpur.
 
 \begin{figure}[htbp]
 \centering
 \fcolorbox{RDRSBlue}{RDRSLight}{%
 \begin{minipage}{0.92\textwidth}
 \centering
-\small\textbf{\color{RDRSBlue}1972: LWF Emergency Relief} \quad \textcolor{RDRSOrange}{$\blacktriangleright$} \quad \small\textbf{\color{RDRSBlue}1997: Trust Act Localization} \quad \textcolor{RDRSOrange}{$\blacktriangleright$} \quad \small\textbf{\color{RDRSBlue}2017/18: Automated G~Banker Era} \\[3pt]
-{\scriptsize\color{RDRSGrey} Emergency War Relief $\longrightarrow$ Independent National NGO $\longrightarrow$ Integrated Digital Dashboards\par}
+\small\textbf{\color{RDRSBlue}1972: LWF Emergency Relief} \quad \textcolor{RDRSOrange}{$\blacktriangleright$} \quad \small\textbf{\color{RDRSBlue}1997: Trust Act Localization} \quad \textcolor{RDRSOrange}{$\blacktriangleright$} \quad \small\textbf{\color{RDRSBlue}2017/18: G~Banker Era} \\[3pt]
+{\scriptsize\color{RDRSGrey} War relief program $\longrightarrow$ Bangladeshi national NGO $\longrightarrow$ Centralized branch reporting\par}
 \end{minipage}}
-\caption{Historical evolution of RDRS Bangladesh across fifty years of operations.}
+\caption{Fifty years of RDRS Bangladesh across three major milestones.}
 \label{fig:timeline}
 \end{figure}
 
 \section{Mission, Vision, and Core Values}
-\textbf{Vision:} A just and peaceful society where citizens live in dignity, free from poverty, distress, and ignorance in a sustainable environment (RDRS Strategic Plan 2023--2027).
+From the 2023-2027 Strategic Plan, RDRS envisions a peaceful and just society where people can live dignified lives without any poverty, pain or ignorance in a sustainable environment. The mission of RDRS is to work with marginalized communities and their organizations to make households resilient and able to enhance their lives without continuous need of NGO help.
 
-\textbf{Mission:} RDRS works with disadvantaged and marginalized communities and their organizations to empower them, build resilience, and ensure sustainable improvements in their lives with dignity. In practice, this means directing credit, agricultural advice, and social support toward rural poor households---especially women---while helping local community institutions stand on their own without perpetual NGO aid.
-
-\textbf{Core Values:} The organization operates under five stated corporate values: \textit{Compassion, Commitment, Innovation, Adaptability, and Accountability}. During my placement, I observed that field staff often summarize these values through practical field rules: strict gender equity, transparent loan ledgers, and responsive grievance handling. For an MIS student, these values are directly relevant: every monitoring form, ledger entry, and dashboard is essentially a mechanism for institutional accountability.
+The company's official values are Compassion, Commitment, Innovation, Adaptability, Accountability. But as day to day discussions go, people in the field speak about them very simply. It's about treating women fairly, getting the loan passbook clean. About responding promptly to complaints. And for an MIS intern, it's about being accountable. Does the ledger say the same thing as the dashboard does for the month?
 
 \section{Field Scale and Geographic Coverage}
-The operational scale of RDRS Bangladesh is extensive. Table~\ref{tab:scale-summary} summarizes the footprint data provided by the MEL Department and verified against recent institutional records.
+Fahmida Mostafa showed me the current organizational structure at the orientation and I double-checked on the microfinance numbers against the December 2024 Portfolio Sheet (Table~\ref{tab:scale-summary}).
 
 \begin{table}[htbp]
-\centering\small\caption{Institutional Footprint and Program Reach}\label{tab:scale-summary}
+\centering\small\caption{Institutional Footprint and Microfinance Scale}\label{tab:scale-summary}
 \begin{tabular}{|>{\raggedright\arraybackslash}p{4.2cm}|>{\raggedright\arraybackslash}p{3.8cm}|>{\raggedright\arraybackslash}p{6.4cm}|}
 \hline
-\rowcolor{RDRSBlue}\headercell{Operational Dimension} & \headercell{Scale / Quantity} & \headercell{Coverage Details \& Field Locations} \\ \hline
-Union Federations & 406 Federations & Community-owned apex bodies at Union level \\ \hline
+\rowcolor{RDRSBlue}\headercell{Dimension} & \headercell{Scale / Count} & \headercell{Where and what it covers} \\ \hline
+Union Federations & 406 Federations & Member-run apex bodies sitting at Union level \\ \hline
 \rowcolor{RDRSLight} Administrative Reach & 33 Districts, 183 Upazilas & 872 Unions across Bangladesh \\ \hline
-Program Participants & 1,642,724 Individuals & $\approx$1.64 million direct participants reached \\ \hline
-\rowcolor{RDRSLight} Core Operations Zone & Rangpur Division & Kurigram, Gaibandha, Thakurgaon, Dinajpur, Nilphamari, Panchagarh, Rangpur, Lalmonirhat \\ \hline
-Specialized Field Areas & Humanitarian \& Regional & Ukhiya and Teknaf (Cox's Bazar); targeted pockets in Sylhet, Mymensingh, and Rajshahi \\ \hline
-\rowcolor{RDRSLight} Microfinance Network & 288 Branch Offices & 29 districts; 21,134 groups; 458,819 members; 377,250 active borrowers \\ \hline
-Microfinance Portfolio & Financial Metrics & BDT~5.14B member savings; BDT~15.09B outstanding loans; 95.08\% recovery rate \\ \hline
+Program Participants & 1,642,724 Individuals & Roughly 1.64 million people reached directly \\ \hline
+\rowcolor{RDRSLight} Main Working Belt & Rangpur Division & Kurigram, Gaibandha, Thakurgaon, Dinajpur, Nilphamari, Panchagarh, Rangpur, Lalmonirhat \\ \hline
+Other Field Areas & Humanitarian \& Regional & Ukhiya and Teknaf in Cox's Bazar; smaller offices in Sylhet, Mymensingh, and Rajshahi \\ \hline
+\rowcolor{RDRSLight} Microfinance Branches & 288 Branch Offices & 29 districts; 21,134 samity groups; 458,819 members; 377,250 borrowers \\ \hline
+Portfolio Numbers & Financial Totals & BDT~5.14B member savings; BDT~15.09B outstanding loans; 95.08\% recovery rate \\ \hline
 \end{tabular}
 \end{table}
 
 \section{Governance and Departmental Organization}
-Governance is provided by an independent Board of Trustees and General Body, with executive execution headed by the Executive Director. Foreign-funded development projects comply with statutory oversight under the Foreign Donations Regulation Act 2016 through the NGO Affairs Bureau (FD-6 approvals and mandatory annual audits). Microcredit operations are licensed and regulated by the Microcredit Regulatory Authority (MRA).
+There is an independent Board of Trustees and General Body and day-to-day management is done by an Executive Director. For any foreign-funded project we must get approval from NGO Affairs Bureau for Foreign Donations Regulation Act 2016 (FD-6 etc.) plus annual external audit. Microfinance lending is licensed by Microcredit Regulatory Authority (MRA).
 
-The field operational pyramid flows through three tiers: Regions (16--17 regional offices), Areas (59--61 area offices), and Branches (278--288 branch offices). Union Federations operate at the grassroots Union Parishad level as autonomous, member-run organizations that negotiate government safety-net claims, conduct local mediation, and hold seats on local standing committees.
+Field management runs through 3-layers of management: 16-17 regional offices > 59-61 area offices > 278-288 (depending on size of sub-units that are counted in a given year) branch offices. Then on village level we have 406 autonomous Union Federations for local mediation/government safety net allowances demand/participation in local committees etc.
 
 \section{The MEL Department}
-The Monitoring, Evaluation, and Learning (MEL) Department serves as the central data and quality assurance engine of RDRS. Led by the Head of MEL at the Rangpur Central Coordination Office, the department operates independently of direct program implementation teams to preserve objectivity.
+This team of staff is stationed in Rangpur and reports to the Head of MEL. They are like an internal data auditing unit for RDRS. Monitoring officers are stationed outside of the project implementation teams to provide unbiased audits.
 
-Monitoring Officers receive regular reporting feeds from branch managers, credit organizers, project field officers, and community federations. Their core responsibility is straightforward: verify field registers against submitted summaries, conduct field spot-checks, compile divisional datasets, and produce monthly analytical reports for senior management. If a branch enters an erroneous figure or an enumerator skips a question in a survey, it is the MEL Department's job to catch the anomaly before reports reach the Executive Director.
+Branch managers, credit organizers, and project field officers share data with MEL on a monthly basis. MEL staff compare physical passbooks and register records to electronic summaries. They conduct random checks in the field. They consolidate spreadsheets by division. They create monthly reports for higher-level management. If a branch mistypes a sum, or a enumerator misses half of their survey, they should identify the issue before sending the data to Dhaka.
 
 \section{The Five Core Program Domains}
-RDRS organizes all operational activities across five strategic thematic domains:
-\begin{enumerate}
-\item \textbf{Skills, Employment, and Entrepreneurship:} Vocational trades, market linkages, youth skills training, and enterprise development.
-\item \textbf{Social Empowerment:} Union Federation strengthening, legal aid, gender justice, anti-child marriage advocacy, and civic participation.
-\item \textbf{Agriculture, Food Security, and Climate Change:} Flood-resilient farming, crop diversification, renewable energy, and community adaptation.
-\item \textbf{Microfinance and Employment Creation:} Collateral-free group loans, micro-enterprise credit, voluntary savings schemes, and microinsurance.
-\item \textbf{Emergency and Humanitarian Response:} Disaster relief, post-flood rehabilitation in northern chars, and refugee support in Cox's Bazar.
-\end{enumerate}
+There are five thematic areas for RDRS' activities. The monitoring officers provide support for all of them, instead of being exclusively tied to one grant. Skills, Employment, and Entrepreneurship includes vocational training, youth programs, and market linkages. Social Empowerment includes Union Federations, legal aid services, work against child marriage, and gender justice. Agriculture, Food Security, and Climate Change includes flood-resistant crops, solar irrigation, and adaptation. Microfinance and Employment Creation includes collateral-free group loans, individual business loans, savings, and microinsurance. Emergency and Humanitarian Response includes flood response in northern chars. Also, support for refugees in Cox's Bazar. Table~\ref{tab:projects} shows the common projects that I encountered in my 3-month period.
 
 \begin{table}[htbp]
-\centering\small\caption{Key Active Projects Observed During Placement}\label{tab:projects}
-\begin{tabular}{|>{\raggedright\arraybackslash}p{2.2cm}|>{\raggedright\arraybackslash}p{4.8cm}|>{\raggedright\arraybackslash}p{7.4cm}|}
+\centering\small\caption{Active Projects Observed During Placement}\label{tab:projects}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{2.3cm}|>{\raggedright\arraybackslash}p{4.7cm}|>{\raggedright\arraybackslash}p{7.4cm}|}
 \hline
-\rowcolor{RDRSBlue}\headercell{Project Name} & \headercell{Operational Focus} & \headercell{Donor Partner, Duration \& Scale} \\ \hline
-Jononni & Maternal and neonatal health; safe delivery care; pregnant women tracking & Save the Children; March 2023--December 2027; active in Rangpur and Lalmonirhat \\ \hline
-\rowcolor{RDRSLight} SEEDS & Socio-economic empowerment for adibashi adolescent girls; schooling and livelihoods & Str{\o}mme Foundation; January 2024--December 2028; 3,000 target households \\ \hline
-MCGL & Preventable maternal and child mortality; public health systems strengthening & U.S. Department of State via Jhpiego; active in Panchagarh and Rangpur \\ \hline
-\rowcolor{RDRSLight} ICPS & Disability-inclusive child protection; reducing violence against children with disabilities & UNICEF; June 2026--December 2027; Budget: BDT~2,20,40,834 (see Section~\ref{sec:icps}) \\ \hline
-C-RANGPUR & Climate resilience and poverty upliftment; CSA adoption and household vulnerability & RDRS MEL Department; baseline launched September 2026 (see Section~\ref{sec:crangpur-instrument}) \\ \hline
-\rowcolor{RDRSLight} A2J for Women & Access to Justice; formal court legal aid, court-annexed mediation, and docket audits & Law \& Justice Division (MoLJPA) \& German GIZ; 1 Mar 2024--31 Dec 2026 (extended to Mar 2027); BDT~1.82M (Section~\ref{sec:a2j}) \\ \hline
+\rowcolor{RDRSBlue}\headercell{Project} & \headercell{What it does} & \headercell{Donor, dates, and scale} \\ \hline
+Jononni & Maternal and neonatal health; ELCO/PW tracking and safe delivery & Save the Children; March 2023--December 2027; active in Rangpur and Lalmonirhat (see Section~\ref{sec:jononni-visit}) \\ \hline
+\rowcolor{RDRSLight} SEEDS & Schooling and livelihoods for adibashi adolescent girls & Str{\o}mme Foundation; January 2024--December 2028; 3,000 families \\ \hline
+MCGL & Maternal, newborn, and child health system support & U.S. Department of State via Jhpiego; active in Panchagarh and Rangpur \\ \hline
+\rowcolor{RDRSLight} ICPS & Disability-inclusive child protection systems & UNICEF; June 2026--December 2027; Budget: BDT~2,20,40,834 (Section~\ref{sec:icps}) \\ \hline
+C-RANGPUR & Climate resilience, CSA adoption, and household vulnerability & RDRS MEL Department; baseline launched September 2026 (Section~\ref{sec:crangpur-instrument}) \\ \hline
+\rowcolor{RDRSLight} A2J for Women & Formal court legal aid, court-annexed mediation, and docket audits & Law \& Justice Division (MoLJPA) \& German GIZ; 1 Mar 2024--31 Dec 2026 (extended to Mar 2027); BDT~1.82 crore (Section~\ref{sec:a2j}) \\ \hline
 \end{tabular}
 \end{table}
 
 \section{Microfinance Products: Udayan, Unnoti, and Savings Schemes}
-Understanding RDRS's monitoring systems requires understanding its microcredit structure. The organization does not issue a single generic loan; it manages specialized financial products designed for different stages of borrower graduation:
+Adding more about product. Because MIS overview would sound quite flat if every loan is the same. RDRS breaks down microcredit into borrowers depending on their stage in microcredit and purpose.
 
-\textbf{Udayan (Group-based Microcredit):} Group-liability lending designed for newly enrolled female borrowers living in rural villages. Samity members meet weekly, cross-guarantee each other's installments, and deposit mandatory weekly savings.
+Udayan is group based loan to recently joined village women. Group members meet in samity every week. They cross guarantee their loan installments. They make compulsory savings every week. When borrower has a good repayment history and wants more capital, she can go for Unnoti which is individually underwritten on household business cash flow, not group based liability.
 
-\textbf{Unnoti (Individual Enterprise Credit):} Higher-ceiling loans provided to graduated borrowers with proven repayment histories. Unlike Udayan, Unnoti loans are underwritten individually based on household business cash flow rather than joint group liability.
+Compulsory savings is common for both of them. Every member must make at least BDT 50 every week (minimum of BDT 200 per month for Udayan borrowers and BDT 500 for Unnoti clients) for a 6\% annual profit share. General Voluntary savings may be opened with up to BDT 10000. This comes with 7\% simple interest. Monthly savings deposit scheme (MSDS) may be opened to fix the amount for 3 years 7\% and 5 years 7.5\% interest rate.
 
-\textbf{Savings Architecture:} Financial discipline is anchored by compulsory member savings. Every member contributes at least BDT~50 weekly, with a mandatory monthly minimum of BDT~200 for Udayan borrowers and BDT~500 for Unnoti clients. Compulsory deposits earn a 6\% annual profit share. In addition, members can open General Voluntary Savings (flexible deposits up to BDT~10,000 earning 7\% simple interest) or the Monthly Savings Deposit Scheme (MSDS), which offers 7\% on 3-year term deposits and 7.5\% on 5-year maturities.
+Got 2 targeted loan schemes mentioned in policy papers I have read. Water Credit - for deep tube well and sanitary latrine. (BDT 10,000 to 100,000). Running in 93 branches - Dinajpur, Nilphamari, Thakurgaon, Panchagarh, Habiganj, Moulvibazar. Not only cash, but also hygiene training and technical installation check. Livelihood Restoration Loan (LRL Phase 2) - a loan scheme for post Covid-19 recovery. Max up to BDT 50,000. 6 months grace period. Max 24 months. 8\% declining-balance service charge, repaid in 18 monthly installments.
 
-\textbf{Targeted Credit Lines:}
-\begin{itemize}
-\item \textbf{Water Credit:} A WASH-focused loan ranging from BDT~10,000 to 100,000, operating in 93 branches across Dinajpur, Nilphamari, Thakurgaon, Panchagarh, Habiganj, and Moulvibazar. The loan is tied directly to technical assistance for installing deep tube-wells and sanitary latrines.
-\item \textbf{Livelihood Restoration Loan (LRL Phase 2):} A post-COVID recovery credit line of up to BDT~50,000 with a 6-month grace period, 24-month maximum tenure, and an 8\% declining-balance charge, repaid in 18 monthly installments to recapitalize vulnerable micro-enterprises.
-\end{itemize}
-
-\highlightbox{\small\textbf{\color{RDRSBlue}Why product differentiation matters for MIS:} A group-based Udayan loan requires tracking weekly samity collections and cross-guarantee ledgers. An individual Unnoti loan requires monitoring cash-flow solvency and individual collateral. Water Credit requires verifying physical sanitary installations before funds disburse. The field monitoring checklist analyzed in Chapter~\ref{chap:analysis} is designed around these operational distinctions.}
+\highlightbox{\small\textbf{\color{RDRSBlue}Why loan type changes monitoring} For a Udayan loan, you go and verify the weekly samity collection sheet and member's passbooks. For Unnoti loans, you go and verify the cashflow of the business and who all signed at the Area/Regional level. For water credit, you go and see if there is an actual physical latrine or tube well built. The details of how all of these are validated on the ground by the monitoring officers are presented in Chapter~\ref{chap:analysis}.}
 
 % ================= CHAPTER 3 =================
 \chapter{Literature Review}
 
-\chapterglance{Theoretical Framework \& Field Realities}{Synthesizes MIS definitions, OECD-DAC monitoring standards, and empirical findings on microfinance software continuity and data integrity.}
-
 \section{Management Information Systems in Practice}
-In academic literature, Laudon and Laudon (2020) define a Management Information System as an integrated set of components---hardware, software, human resources, and business processes---that collect, store, process, and distribute data to support organizational decision-making and managerial control. In commercial corporate environments, MIS discussions frequently center on enterprise resource planning (ERP) architectures, cloud computing, and real-time database transactions.
+Laudon and Laudon (2020) describe MIS as an assembly of people, work processes, hardware and software that records, processes and disseminates information that will enable decision making by managers~\cite{laudon}. For most courses in business schools the MIS will be discussed in terms of corporate ERP software, cloud servers, instant database updates etc.
 
-In the non-governmental and microfinance sectors, however, the practical challenge of MIS is fundamentally different. As observed during my placement, the primary challenge is not procuring sophisticated software; it is ensuring the integrity and timeliness of data entered at the grass roots. A central dashboard is only as reliable as the weekly collection sheet filled out by a Credit Organizer in a remote village or the survey submitted by a field enumerator on a smartphone. For development managers, MIS is less about raw computational power and more about verification discipline, standard operational procedures, and data quality controls that prevent corrupted numbers from corrupting decisions.
+In the NGO/microfinance world, rarely is it the cost of a fancy software that is a real hurdle. It is the confidence in the number at the bottom of a monthly table. How pristine is the central dashboard when it is constructed from the handwritten village Credit Organizer's data collection sheet or the field enumerator's data entry on a phone. In this world, what you need in terms of MIS are clear rules for verification and regular field visits to spot errors at a very early stage.
 
 \section{Project Monitoring Frameworks}
-The Organisation for Economic Co-operation and Development's Development Assistance Committee (OECD-DAC) defines project monitoring as a continuous, systematic process that tracks the implementation progress of an intervention against predefined indicator targets. Unlike periodic evaluation, which measures long-term impact and sustainability at set intervals, monitoring is an active management tool designed to identify operational deviations, resource bottlenecks, and implementation shortfalls while activities are still underway.
+The OECD-DAC framework describes monitoring as the continuous monitoring of project activities and related indicators during the implementation phase~\cite{oecd}. This is different from the periodic evaluation which assesses the long-term impact of the intervention. Through the monitoring process, managers get early alerts if the budget is straying, activities are not progressing, or the targets are not being met.
 
-A robust monitoring system relies on several core components:
-\begin{itemize}
-\item \textbf{The Baseline Study:} Establishes the empirical reference value for every project indicator before interventions begin.
-\item \textbf{Data Quality Assessments (DQA):} Structured protocols that evaluate data across five standard dimensions: validity, reliability, integrity, precision, and timeliness.
-\item \textbf{Mixed-Method Data Capture:} Combining quantitative household sample surveys (measuring statistical coverage and adoption rates) with qualitative Focus Group Discussions (FGD) and Key Informant Interviews (KII) to capture contextual nuances and beneficiary feedback.
-\end{itemize}
+The 3 habits needed for a functional monitoring system that were highlighted in RDRS: Baseline studies: document the status of households before the start of any project activity to create a genuine point of comparison for future changes. Data Quality Assessments (DQA): verify the validity, reliability, accuracy and timeliness of data reported. Mixed methods: combine these two habits by using household numbers + Focus Group Discussions (FGD) + Key Informant Interviews (KII) to explain the reasons behind data changes.
 
 \section{MIS Lessons from NGO and Microfinance Environments}
-Empirical studies of information systems within microfinance institutions (MFIs) and international NGOs highlight three recurring vulnerabilities that mirror my observations at RDRS Bangladesh:
+Microfinance and NGO monitoring team studies consistently show that there are three main issues (common to what I saw in Rangpur)
 
-\begin{enumerate}
-\item \textbf{The Risk of Person-Dependent Legacy Systems:} Early NGO computerization efforts often relied on bespoke local programs managed by a single gifted technician or developer. While functional in the short term, this structure creates existential continuity risks when that individual departs or when transaction volumes outgrow the architecture. Transitioning to documented, multi-user platforms (such as G~Banker) is essential for institutional survival.
-\item \textbf{The Last-Mile Verification Gap:} Discrepancies between physical field registers (school attendance books, passbooks, clinic logs) and digital summary reports are pervasive in rural development. When field staff face pressure to demonstrate 100\% achievement, unverified self-reporting easily leads to inflated performance figures unless independent monitoring officers conduct regular register-to-system reconciliation audits.
-\item \textbf{Structured Workplans versus Ad-Hoc Reporting:} Effective monitoring cannot rely on sporadic requests from headquarters. Organizations that succeed in maintaining high data quality do so by establishing predictable, pre-scheduled monthly monitoring routines where specific officers are assigned to inspect designated branches and project sites on fixed calendar dates.
-\end{enumerate}
+1) first, there were a lot of early NGO computerisations with custom software and usually only one or two smart staff programmers. It's fine if volumes are low, but when that staff member moves or retires it gets risky. Documented, multi-user software such as G~Banker helps keep the institutional memory intact.
+
+Secondly, errors are introduced in the last mile between the physical paper and digitised numbers. If field teams are incentivised to achieve 100\% then there is a tendency for them to report self reported numbers which differ from the classroom rolls (or passbooks) if there is no independent monitoring officer to physically verify the paper trails.
+
+Thirdly, scheduled monthly visits are better than ad hoc requests from head office. Better record keeping is achieved if you have a fixed monthly calendar in place that tells you which officer visits which branch on which days, instead of asking branches for ad hoc files at the end of the quarter.
 
 % ================= CHAPTER 4 =================
 \chapter{Analysis and Findings}\label{chap:analysis}
 
-\chapterglance{Empirical Tools, Pipelines \& Field Gaps}{Analyzes the MEL tool stack, C-RANGPUR digital survey, HCVI vulnerability formulas, G~Banker succession, A2J court docket audits, and last-mile register discrepancies.}
-
-This chapter presents the empirical core of this study. It draws directly on my field observations, system walkthroughs, document reviews, and the running daily log maintained throughout my three-month placement at the RDRS MEL Department.
+This chapter will discuss what I saw during my 3 months in Rangpur and in the field during my time in the districts. This includes what's in my daily log, interviews, system walkthroughs and internal monitoring documents.
 
 \section{MIS Tools and Systems Used in Project Monitoring}
 
 \subsection{The observed tool stack}
-Inside the MEL Department at Rangpur, data processing is divided across distinct tools based on the nature of the task. Table~\ref{tab:stack} summarizes the primary software applications and manual formats observed.
+Within the MEL department, tasks are divided into four main tools used for routine (monthly) and ad-hoc (project survey) activities (see Table~\ref{tab:stack}).
 
 \begin{table}[htbp]
-\centering\small\caption{Operational Tool Stack of the MEL Department}\label{tab:stack}
+\centering\small\caption{Tools Used Daily in the MEL Department}\label{tab:stack}
 \begin{tabular}{|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{3.8cm}|>{\raggedright\arraybackslash}p{7.4cm}|}
 \hline
-\rowcolor{RDRSBlue}\headercell{Monitoring Function} & \headercell{Primary Tool / Platform} & \headercell{Operational Fit \& Justification} \\ \hline
-Routine Field Capture & Structured Excel forms \& registers & Standardized templates; auditable paper registers for branch visits \\ \hline
-\rowcolor{RDRSLight} Ad-hoc \& Baseline Surveys & KoBo Toolbox (mobile / Enketo) & Dynamic skip logic; offline mobile collection; fast deployment; instant Excel export \\ \hline
-Central Compilation & Microsoft Excel & Pivot tables, cross-branch consolidation, and data cleaning \\ \hline
-\rowcolor{RDRSLight} Analytical Dashboards & Microsoft Power~BI & Interactive visual reporting, KPI tracking, and donor presentations \\ \hline
-Microfinance Operations & G~Banker (South Tech / local) & Centralized web-based MFI platform; single-click POMIS reports; automated PAR \\ \hline
+\rowcolor{RDRSBlue}\headercell{Job} & \headercell{Tool Used} & \headercell{Why staff use it} \\ \hline
+Routine branch work & Structured Excel sheets and paper registers & Standard templates; paper registers leave a physical audit trail at branch level \\ \hline
+\rowcolor{RDRSLight} Ad-hoc and baseline surveys & KoBo Toolbox (mobile app and Enketo) & Offline mobile forms in flood-prone chars; skip logic built in; quick export to Excel \\ \hline
+Central data cleanup & Microsoft Excel & Pivot tables, manual cleaning, and formula joins across branches \\ \hline
+\rowcolor{RDRSLight} Visual summaries & Microsoft Power~BI & KPI charts and donor-ready dashboards \\ \hline
+Microfinance books & G~Banker & Web-based MFI ledger across 288 branches; one-click POMIS reports and PAR math \\ \hline
 \end{tabular}
 \end{table}
 
-For regular branch monitoring, officers rely on structured Excel workbooks aligned with printed field registers. When launching new baseline studies or thematic surveys, the department uses KoBo Toolbox hosted on European servers. Enumerators deploy the KoBo Collect mobile app or web-based Enketo forms on Android devices, allowing offline data collection in flood-prone char areas with automatic synchronization once connectivity is restored.
+For routine branch monitoring, officers rely on typical excel templates and paper registers. If there is a new baseline study, they create the form using KoBo Toolbox software (on European servers). Data collectors use KoBo collect (or Enketo Express) through Android phones (offline) in remote chars to collect information and then upload the information when they have mobile access.
 
 \subsection{Baseline design lifecycle: lessons from ICPS}\label{sec:icps}
-To understand how the MEL Department conceptualizes project measurement from scratch, I studied the baseline design of the ICPS project (\textit{Strengthening Disability-Inclusive Child Protection Systems to Prevent and Respond to Violence against Children with Disabilities in Selected Communities of Bangladesh}). Funded by UNICEF with a budget of BDT~2,20,40,834, ICPS operates under Output 4.2 (social service systems) and Output 4.3 (harmful practices).
+I spent two hours with Md. Saiful Alam (Shekul) to understand how project baseline is created from scratch (in this case ICPS project: Strengthening Disability-Inclusive Child Protection Systems to Prevent and Respond to Violence against Children with Disabilities in Selected Communities in Bangladesh). UNICEF is the donor of this project with budget of BDT 2,20,40,834. Output 4.2 (social service systems) and Output 4.3 (harmful practices). The baseline survey fieldwork is live in September 2026.
 
-During a technical briefing, Md.~Saiful Alam (Shekul) explained that a credible baseline follows a rigorous six-step progression (Figure~\ref{fig:baseline}).
+Saiful explained six stages to any baseline before enumerators start working in the village. (Figure~\ref{fig:baseline}) A review of the project document, selection of indicators, completion of indicator matrix, baseline concept paper, formal Terms of Reference (TOR), and Inception report (with finalized sampling and tools). UNICEF provided 21 ICPS indicators. Soft indicators (like community attitudes) are assessed through FGDs and KIIs. Hard indicators (numbers of violence or service use) by Household survey. He explained Environmental and Social Safeguards (ESS) and what staff call MEL maturity (or how normal/credible NGOs have become in monitoring).
 
 \begin{figure}[htbp]
 \centering
@@ -480,62 +411,60 @@ During a technical briefing, Md.~Saiful Alam (Shekul) explained that a credible 
 \scriptsize \fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}1. Doc Review}} \textcolor{RDRSBlue}{$\rightarrow$} \fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}2. Indicators}} \textcolor{RDRSBlue}{$\rightarrow$} \fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}3. MEL Matrix}} \textcolor{RDRSBlue}{$\rightarrow$} \fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}4. Concept Paper}} \textcolor{RDRSBlue}{$\rightarrow$} \fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}5. Formal TOR}} \textcolor{RDRSBlue}{$\rightarrow$} \fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}6. Inception Report}} \\[4pt]
 {\scriptsize\color{RDRSGrey} Qualitative Track: FGDs \& KIIs \quad $\bullet$ \quad Quantitative Track: Household Sample Surveys\par}
 \end{minipage}}
-\caption{The six-step baseline design lifecycle (ICPS project baseline, September 2026).}
+\caption{The six-step baseline design process (ICPS project, September 2026).}
 \label{fig:baseline}
 \end{figure}
 
-UNICEF established 21 specific indicators for ICPS. Qualitative indicators (such as institutional responsiveness and community stigma) are captured via Focus Group Discussions (FGD) and Key Informant Interviews (KII). Quantitative indicators (such as incidence of violence and service uptake) are gathered through household surveys. The Inception Report locks the methodology and field sampling framework before field enumerators begin interviewing.
-
 \subsection{C-RANGPUR baseline survey instrument}\label{sec:crangpur-instrument}
-To evaluate digital survey architecture, I conducted a deep dive into the C-RANGPUR baseline survey instrument. The primary reference document was the departmental file \textit{Baseline\_Questionnaires\_of\_CRANGPUR\_-\_Indicator\_Result\_Measerment.docx}, deployed live via KoBo Toolbox (Enketo Express) at \url{https://ee-eu.kobotoolbox.org/x/wzjSgzZ6}.
+I looked at digital survey logic in detail. I reviewed the C-RANGPUR baseline survey questionnaire file \textit{Baseline\_Questionnaires\_of\_CRANGPUR\_-\_Indicator\_Result\_Measerment.docx} (I copied the spelling). I also viewed the live Enketo Express survey at \url{https://ee-eu.kobotoolbox.org/x/wzjSgzZ6}
 
-The digital questionnaire is organized into ten distinct sections (Table~\ref{tab:crangpur-sections}). Sections 1--4 establish household demographic and asset controls; Sections 5--9 directly measure project indicators 1.1 through 3.2; and Section 10 contains the scored Household Climate Vulnerability Index (HCVI).
+There are ten survey sections. Table~\ref{tab:crangpur-sections} Section 1-4 includes where the household is located. Respondent. Family composition. Assets. Project indicators 1.1 to 3.2 are in sections 5 to 9. And Section 10 is the 16 item Household Climate Vulnerability Index (HCVI).
 
 {\small
 \begin{longtable}{|>{\raggedright\arraybackslash}p{0.7cm}|>{\raggedright\arraybackslash}p{3.4cm}|>{\raggedright\arraybackslash}p{6.4cm}|>{\raggedright\arraybackslash}p{2.7cm}|}
-\caption{Structure of the C-RANGPUR Baseline Digital Survey Instrument}\label{tab:crangpur-sections}\\
+\caption{Structure of the C-RANGPUR Baseline Survey Instrument}\label{tab:crangpur-sections}\\
 \hline
-\rowcolor{RDRSBlue}\headercell{\#} & \headercell{Section Title} & \headercell{Core Content \& Variables Captured} & \headercell{Target Indicator} \\ \hline
+\rowcolor{RDRSBlue}\headercell{\#} & \headercell{Section Title} & \headercell{Variables Captured} & \headercell{Target Indicator} \\ \hline
 \endfirsthead
 \hline
-\rowcolor{RDRSBlue}\headercell{\#} & \headercell{Section Title} & \headercell{Core Content \& Variables Captured} & \headercell{Target Indicator} \\ \hline
+\rowcolor{RDRSBlue}\headercell{\#} & \headercell{Section Title} & \headercell{Variables Captured} & \headercell{Target Indicator} \\ \hline
 \endhead
 \hline
 \endfoot
 \hline
 \endlastfoot
 1 & Location Background & District, Upazila, Union, Ward, Village; Hazard zones: Char, Riverbank erosion, Flood, Waterlogging, Drought & Geographic controls \\ \hline
-\rowcolor{RDRSLight} 2 & Respondent Profile & Name, sex, NID, phone, ethnicity, marital status, education, occupation, disability type, prior RDRS membership & Beneficiary identity \\ \hline
-3 & Household Composition & Household head demographics; counts of children under 5, pregnant/lactating women, elderly (60+), disabled & Vulnerability profile \\ \hline
-\rowcolor{RDRSLight} 4 & Assets \& Infrastructure & Housing material, electricity, drinking water, latrines, 14 livestock/asset categories, land tenure & Baseline asset base \\ \hline
+\rowcolor{RDRSLight} 2 & Respondent Profile & Name, sex, NID, phone, ethnicity, marital status, education, occupation, disability type, prior RDRS membership & Beneficiary ID \\ \hline
+3 & Household Composition & Household head details; counts of children under 5, pregnant/lactating women, elderly (60+), disabled & Vulnerability profile \\ \hline
+\rowcolor{RDRSLight} 4 & Assets \& Infrastructure & Housing material, electricity, drinking water, latrines, 14 livestock/asset types, land tenure & Baseline asset base \\ \hline
 5 & Livelihoods \& Income & Income sources (15 codes), IGA support, CSA awareness/adoption (18 practices), 3-year income trend & Indicators 1.1, 1.2 \\ \hline
-\rowcolor{RDRSLight} 6 & Community Participation & Membership in 21 community institutions, meeting attendance, voice in decision-making, female leadership & Indicator 2.1 \\ \hline
-7 & Social Services \& Claims & Safety-net receipt (14 types), claims filed, official response received, resolution status & Indicator 2.2 \\ \hline
-\rowcolor{RDRSLight} 8 & Primary Health Access & Health-seeking behaviour, choice across 13 service facilities (incl.\ RDRS Eye Care), barriers to treatment & Indicator 3.1 \\ \hline
-9 & Non-Communicable Diseases & 8 diagnosed NCD conditions (hypertension, diabetes, cataract, etc.), screening history, lifestyle habits & Indicator 3.2 \\ \hline
-\rowcolor{RDRSLight} 10 & Climate Vulnerability & 16-item scored module across Exposure (5), Sensitivity (5), and Adaptive Capacity (6) domains & HCVI composite \\ \hline
+\rowcolor{RDRSLight} 6 & Community Participation & Membership in 21 community bodies, attendance, speaking up, female leadership & Indicator 2.1 \\ \hline
+7 & Social Services \& Claims & Safety-net receipt (14 types), claims filed, response received, resolution status & Indicator 2.2 \\ \hline
+\rowcolor{RDRSLight} 8 & Primary Health Access & Health care seeking across 13 facilities (incl.\ RDRS Eye Care), barriers to treatment & Indicator 3.1 \\ \hline
+9 & Non-Communicable Diseases & 8 diagnosed NCD conditions (hypertension, diabetes, cataract, etc.), screening history, lifestyle & Indicator 3.2 \\ \hline
+\rowcolor{RDRSLight} 10 & Climate Vulnerability & 16-item scored module: Exposure (5), Sensitivity (5), Adaptive Capacity (6) & HCVI composite \\ \hline
 \end{longtable}
 }
 
 \subsection{Indicator formulas and mathematical definitions}\label{sec:crangpur-indicators}
-In the project monitoring matrix (file \textit{F01-112}), each indicator is mathematically defined with explicit numerators and denominators.
+In excel sheet F01-112, all C-RANGPUR indicators have the explicit numerator and denominator to avoid situation where two officers use different way to compute the same rate.
 
 \formulacard[RDRSBlue]{Standard Indicator Calculation Logic}{%
 $\displaystyle \text{Indicator Result (\%)} = \left(\frac{\text{Observed Target Numerator (Eligible Population Meeting Criteria)}}{\text{Total Baseline Denominator (Surveyed Sample Group)}}\right) \times 100$
 }{%
-Standard percentage formulation applied across all C-RANGPUR indicators in the MEL matrix F01-112.
+Percentage formula used across all C-RANGPUR indicators in matrix F01-112.
 }
 
-Table~\ref{tab:crangpur-indicators} details the exact mathematical formulas, operational definitions, and target thresholds established for C-RANGPUR.
+Table~\ref{tab:crangpur-indicators} lists all seven operational formulas from the matrix.
 
 {\small
 \begin{longtable}{|>{\centering\arraybackslash}p{1.8cm}|>{\raggedright\arraybackslash}p{4.4cm}|>{\raggedright\arraybackslash}p{4.8cm}|>{\centering\arraybackslash}p{2.4cm}|}
 \caption{Mathematical Definitions of C-RANGPUR Project Indicators}\label{tab:crangpur-indicators}\\
 \hline
-\rowcolor{RDRSBlue}\headercell{Indicator} & \headercell{Operational Definition} & \headercell{Numerator / Denominator Specification} & \headercell{Formula} \\ \hline
+\rowcolor{RDRSBlue}\headercell{Indicator} & \headercell{Operational Definition} & \headercell{Numerator / Denominator} & \headercell{Formula} \\ \hline
 \endfirsthead
 \hline
-\rowcolor{RDRSBlue}\headercell{Indicator} & \headercell{Operational Definition} & \headercell{Numerator / Denominator Specification} & \headercell{Formula} \\ \hline
+\rowcolor{RDRSBlue}\headercell{Indicator} & \headercell{Operational Definition} & \headercell{Numerator / Denominator} & \headercell{Formula} \\ \hline
 \endhead
 \hline
 \endfoot
@@ -545,16 +474,16 @@ Table~\ref{tab:crangpur-indicators} details the exact mathematical formulas, ope
 \rowcolor{RDRSLight} 1.2 & $\ge$40\% of farming households increasing income by 20\% via Climate Smart Agriculture & Num: Households adopting $\ge$1 promoted CSA practice \newline Den: Total targeted farming households surveyed & $\frac{\text{Num}}{\text{Den}} \times 100$ \\ \hline
 2.1 & Active participation of disadvantaged people in local decision-making (+30\% from baseline) & Num: Disadvantaged members attending meetings, speaking, AND having opinions considered \newline Den: Total disadvantaged respondents surveyed & $\frac{\text{Num}}{\text{Den}} \times 100$ \\ \hline
 \rowcolor{RDRSLight} 2.1 (women) & Female active participation in community decision-making bodies & Num: Female respondents meeting all 2.1 criteria \newline Den: Total female respondents surveyed & $\frac{\text{Num}}{\text{Den}} \times 100$ \\ \hline
-2.2 & Proportion of citizen claims successfully resolved by local public authorities & Num: Claims fully or partially resolved by authorities \newline Den: Total formal claims submitted in period & $\frac{\text{Num}}{\text{Den}} \times 100$ \\ \hline
+2.2 & Proportion of citizen claims resolved by local public authorities & Num: Claims fully or partially resolved by authorities \newline Den: Total formal claims submitted in period & $\frac{\text{Num}}{\text{Den}} \times 100$ \\ \hline
 \rowcolor{RDRSLight} 3.1 & 25\% of disadvantaged members accessing formal primary health care & Num: Respondents receiving care at public/RDRS clinic \newline Den: Respondents reporting health need in last 12 months & $\frac{\text{Num}}{\text{Den}} \times 100$ \\ \hline
 3.2 & Reduction in selected NCD prevalence by 25\% against baseline & Num: Adults diagnosed with $\ge$1 selected NCD \newline Den: Total adult respondents surveyed & $\frac{\text{Num}}{\text{Den}} \times 100$ \\ \hline
 \end{longtable}
 }
 
-In Section 7, claims tracking is further decomposed into five sub-metrics: total claims submitted, total claims acknowledged by authorities, total claims resolved, response rate ($[\text{Responded} \div \text{Submitted}] \times 100$), and resolution rate ($[\text{Resolved} \div \text{Submitted}] \times 100$).
+In section 7, citizen claims are further broken down into 5 numbers, submitted claims, acknowledged claims, resolved claims, response rate ($[\text{Responded} \div \text{Submitted}] \times 100$), resolution rate ($[\text{Resolved} \div \text{Submitted}] \times 100$)
 
 \subsection{Household Climate Vulnerability Index (HCVI)}\label{sec:hcvi}
-The most sophisticated analytical tool developed by the MEL Department is the Household Climate Vulnerability Index (HCVI), captured in Section 10 of the questionnaire. The index builds on the international climate vulnerability framework (IPCC, 2022; Hahn et al., 2009; FAO, 2016):
+In section 10, there is Household Climate Vulnerability Index (HCVI) adapted from international climate frameworks (IPCC, 2022; Hahn et al., 2009; FAO, 2016):
 \begin{equation}
 \mathrm{Vulnerability} = \mathrm{Exposure} + \mathrm{Sensitivity} - \mathrm{Adaptive\ Capacity}
 \label{eq:hcvi-logic}
@@ -563,10 +492,10 @@ The most sophisticated analytical tool developed by the MEL Department is the Ho
 \formulacard[RDRSTeal]{Household Climate Vulnerability Index (HCVI) Master Composite Formula}{%
 $\displaystyle \mathbf{HCVI = \underbrace{(\mathrm{EI} \times 0.30)}_{\text{30\% Exposure Weight}} + \underbrace{(\mathrm{SI} \times 0.30)}_{\text{30\% Sensitivity Weight}} + \underbrace{\bigl[(100 - \mathrm{ACI}) \times 0.40\bigr]}_{\text{40\% Adaptive Capacity Deficit Weight}}}$
 }{%
-Composite index bounded between 0 and 100. Lower values reflect climate resilience; higher values indicate severe vulnerability.
+Composite score from 0 to 100. Lower numbers show resilience; higher numbers show vulnerability.
 }
 
-To calculate the composite score, the three sub-indices are normalized to a standard 0--100 percentage scale:
+You calculate the \% in 0-100 range for 3 sub-index as following:
 
 \vspace{0.15cm}
 \begin{center}
@@ -579,18 +508,13 @@ To calculate the composite score, the three sub-indices are normalized to a stan
 \end{center}
 \vspace{0.15cm}
 
-The scoring components within each domain are structured as follows:
-\begin{itemize}
-\item \textbf{Domain A: Exposure (Q10.1--10.5, Max 20 points):} Frequency of climate hazards in last 3 years (0--4); number of times affected (0--4); months per year affected (0--4); temporary evacuations (0--4); daily livelihood disruptions (0--4).
-\item \textbf{Domain B: Sensitivity (Q10.6--10.10, Max 20 points):} Months of food shortage in last year (0--4); duration of income loss during last disaster (0--4); physical asset damage level (0--4); safe drinking water crisis severity (0--4); number of dependent vulnerable members needing emergency care (0--4).
-\item \textbf{Domain C: Adaptive Capacity (Q10.11--10.16, Max 24 points):} Early warning reception (0--4); disaster preparedness measures taken (0--4); adoption of $\ge$1 CSA practice (No=0 / Yes=4); adoption of $\ge$1 new risk-reducing IGA (No=0 / Yes=4); community group participation (0--4); preventive health measures taken (No=0 / Yes=4).
-\end{itemize}
+Sub-index A. Exposure (Q10.1 to Q10.5, max. 20 points) include i) Frequency of hazard in 3 years ii) Time affected iii) Months affected per year iv) Temporary evacuation v) Daily livelihood disruptions. Value of each item is 0-4. Sub-index B. Sensitivity (Q10.6 to 10.10, max. 20 points) include i) Months of food shortage ii) Period of income loss iii) Damage to properties iv) Problem in drinking water v) Number of vulnerable dependent persons required additional support. Value of each item is 0-4. Sub-index C. Adaptive Capacity (Q10.11 to Q10.16, max. 24 points) include i) Access to early warning ii) Actions for readiness to disasters iii) Adoption at least one CSA practice iv) Initiation of risk reduction oriented IGA v) Membership in community group vi) Preventive health actions. Value of each item is 0-4 (0 or 4 binary for CSA, IGA, and preventive health).
 
 \begin{table}[htbp]
 \centering\small\caption{HCVI Score Interpretation Bands}\label{tab:hcvi-bands}
 \begin{tabular}{|>{\raggedright\arraybackslash}p{2.0cm}|>{\raggedright\arraybackslash}p{2.6cm}|>{\raggedright\arraybackslash}p{2.6cm}|>{\raggedright\arraybackslash}p{2.8cm}|>{\raggedright\arraybackslash}p{3.6cm}|}
 \hline
-\rowcolor{RDRSBlue}\headercell{Score Band} & \headercell{EI Level} & \headercell{SI Level} & \headercell{ACI Level} & \headercell{HCVI Vulnerability Status} \\ \hline
+\rowcolor{RDRSBlue}\headercell{Score Band} & \headercell{EI Level} & \headercell{SI Level} & \headercell{ACI Level} & \headercell{HCVI Status} \\ \hline
 0--$<$20 & Very Low Exposure & Very Low Sensitivity & Very Low Capacity & \textcolor{RDRSTeal}{\textbf{Very Low Vulnerability}} \\ \hline
 \rowcolor{RDRSLight} 20--$<$40 & Low Exposure & Low Sensitivity & Low Capacity & \textcolor{RDRSTeal}{\textbf{Low Vulnerability}} \\ \hline
 40--$<$60 & Moderate Exposure & Moderate Sensitivity & Moderate Capacity & \textcolor{RDRSBlue}{\textbf{Moderate Vulnerability}} \\ \hline
@@ -599,174 +523,156 @@ The scoring components within each domain are structured as follows:
 \end{tabular}
 \end{table}
 
-As Md.~Ajazul Haque explained during our walkthrough, Exposure and Sensitivity represent external environmental hazards that RDRS cannot directly stop (a family living on a char cannot easily change the river's path). Adaptive Capacity represents community resilience---the exact dimension where RDRS training, credit, and agricultural inputs intervene.
+I have discussed with Md. Ajazul Haque during our walk through why Adaptive Capacity should be considered as 40\% weighted and inverted ($100 - \mathrm{ACI}$). RDRS cannot prevent River Flood, we cannot shift char family's island. We can train farmers, can provide capital, form groups, it directly contributes Adaptive Capacity.
 
 \subsection{The MEL matrix and the C-RANGPUR digital pipeline}\label{sec:mel-matrix}
-The foundational planning tool for project monitoring is the MEL Matrix, maintained in spreadsheet file \textit{F01-112} under the tab ``Monitoring Planning''. Table~\ref{tab:mel-11} shows the worked planning matrix for Indicator 1.1.
+Ref. for the survey planning is spreadsheet F01-112, tab "Monitoring Planning". From Table~\ref{tab:mel-11} we copy complete row for Planning for Indicator 1.1.
 
 \begin{table}[htbp]
-\centering\small\caption{MEL Matrix Worked Planning Specification: Indicator 1.1}\label{tab:mel-11}
+\centering\small\caption{MEL Matrix Planning Row for Indicator 1.1}\label{tab:mel-11}
 \begin{tabular}{|>{\raggedright\arraybackslash}p{3.4cm}|>{\raggedright\arraybackslash}p{9.8cm}|}
 \hline
-\rowcolor{RDRSBlue}\headercell{Matrix Field} & \headercell{Operational Specification in File F01-112} \\ \hline
+\rowcolor{RDRSBlue}\headercell{Matrix Field} & \headercell{Specification in File F01-112} \\ \hline
 Indicator Title & Targeted climate-affected households adopting $\ge$1 additional IGA, +25\% from baseline \\ \hline
 \rowcolor{RDRSLight} Quantitative Data Needed & Household ID; baseline/current IGAs; enterprise type; launch date; monthly income earned \\ \hline
 Qualitative Data Needed & Motivation for adoption; operational challenges; market barriers; perceived household benefits \\ \hline
-\rowcolor{RDRSLight} Disaggregation Dimensions & Sex and age of household head; disability status; geographic zone; poverty classification \\ \hline
+\rowcolor{RDRSLight} Disaggregation & Sex and age of household head; disability status; geographic zone; poverty classification \\ \hline
 Data Source & Target rural households in program unions \\ \hline
-\rowcolor{RDRSLight} Collection Method & Structured household survey; individual Key Informant Interviews \\ \hline
-Reporting Schedule & Baseline survey, semi-annual progress review, and annual consolidation \\ \hline
+\rowcolor{RDRSLight} Collection Method & Structured household survey; Key Informant Interviews \\ \hline
+Reporting Schedule & Baseline survey, semi-annual review, and annual consolidation \\ \hline
 \end{tabular}
 \end{table}
 
-Figure~\ref{fig:crangpur-flow} illustrates the end-to-end data pipeline for C-RANGPUR as detailed in my technical interview with Md.~Ajazul Haque.
+Figure~\ref{fig:crangpur-flow} illustrates how data from C-RANGPUR is taken from mobile to Power~BI. Table~\ref{tab:kii-ajazul} is a summary of the five technical questions I asked Md. Ajazul Haque about the C-RANGPUR data flow.
 
 \begin{figure}[htbp]
 \centering
 \fcolorbox{RDRSBlue}{RDRSLight}{%
 \begin{minipage}{0.92\textwidth}
 \centering
-\small\fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}KoBo Mobile Capture}} \textcolor{RDRSBlue}{$\rightarrow$} \small\fcolorbox{RDRSTeal}{white}{Cloud Server} \textcolor{RDRSBlue}{$\rightarrow$} \small\fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}MEL Data Verification}} \textcolor{RDRSBlue}{$\rightarrow$} \small\fcolorbox{RDRSTeal}{white}{Excel Cleaning} \textcolor{RDRSBlue}{$\rightarrow$} \small\fcolorbox{RDRSOrange}{white}{\textbf{\color{RDRSOrange}Power~BI Dashboard}} \\[3pt]
-{\scriptsize\color{RDRSGrey} HCVI and IGA indicators calculated across tools \quad $\bullet$ \quad Completely isolated from G~Banker MFI database\par}
+\small\fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}KoBo Mobile Capture}} \textcolor{RDRSBlue}{$\rightarrow$} \small\fcolorbox{RDRSTeal}{white}{Cloud Server} \textcolor{RDRSBlue}{$\rightarrow$} \small\fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}MEL Verification}} \textcolor{RDRSBlue}{$\rightarrow$} \small\fcolorbox{RDRSTeal}{white}{Excel Cleaning} \textcolor{RDRSBlue}{$\rightarrow$} \small\fcolorbox{RDRSOrange}{white}{\textbf{\color{RDRSOrange}Power~BI Dashboard}} \\[3pt]
+{\scriptsize\color{RDRSGrey} HCVI and IGA math runs across three tools \quad $\bullet$ \quad No link to G~Banker MFI database\par}
 \end{minipage}}
-\caption{The C-RANGPUR data pipeline: from mobile survey capture to Power~BI visualization.}
+\caption{The C-RANGPUR data flow from phone capture to Power~BI.}
 \label{fig:crangpur-flow}
 \end{figure}
 
-Table~\ref{tab:kii-ajazul} summarizes the key technical clarifications obtained during this interview.
-
 \begin{table}[htbp]
-\centering\small\caption{Key Informant Interview: Md.~Ajazul Haque, Manager (MEL)}\label{tab:kii-ajazul}
+\centering\small\caption{Key Informant Interview with Md.~Ajazul Haque, Manager (MEL)}\label{tab:kii-ajazul}
 \begin{tabular}{|>{\centering\arraybackslash}p{0.8cm}|>{\raggedright\arraybackslash}p{4.2cm}|>{\raggedright\arraybackslash}p{8.2cm}|}
 \hline
-\rowcolor{RDRSBlue}\headercell{\#} & \headercell{Technical Inquiry} & \headercell{Manager's Response \& Operational Finding} \\ \hline
-1 & Is the HCVI composite calculation automated inside KoBo? & No single automated tool exists; raw survey data exports to Excel where weighting macros run before loading to Power~BI. \\ \hline
-\rowcolor{RDRSLight} 2 & What is the function of the numeric ``Code'' column in the survey? & Codes support export into SPSS for advanced statistical correlation and variance analysis. \\ \hline
-3 & Does KoBo submission update dashboards in real time? & Data auto-submits to the KoBo server, but passes a manual MEL verification and cleaning gate before entering Power~BI. \\ \hline
-\rowcolor{RDRSLight} 4 & How are baseline values tracked against end-of-project targets? & Baseline values establish the locked minimum threshold; routine monitoring surveys compare annual progress against that fixed benchmark. \\ \hline
-5 & Is project MEL integrated with microfinance software (G~Banker)? & The two systems are completely separated; development M\&E runs on KoBo/Power~BI while microfinance runs exclusively on G~Banker. \\ \hline
+\rowcolor{RDRSBlue}\headercell{\#} & \headercell{Question Asked} & \headercell{Manager's Answer} \\ \hline
+1 & Does KoBo calculate HCVI automatically? & No single tool runs it all; raw data exports to Excel for weighting macros before moving to Power~BI. \\ \hline
+\rowcolor{RDRSLight} 2 & What is the numeric ``Code'' column for? & Codes let staff load survey tables straight into SPSS for correlation and variance runs. \\ \hline
+3 & Do submissions hit the dashboard live? & Forms upload to the KoBo server right away, then wait for manual MEL checking before entering Power~BI. \\ \hline
+\rowcolor{RDRSLight} 4 & How are baselines checked against final targets? & The baseline locks the starting value; later rounds compare annual progress against that fixed point. \\ \hline
+5 & Does project MEL share data with G~Banker? & No integration exists between them. Project M\&E stays on KoBo/Power~BI while microfinance stays in G~Banker. \\ \hline
 \end{tabular}
 \end{table}
 
 \subsection{Microfinance software evolution: Micro Bank to South Tech to G~Banker}
-The evolution of microfinance software at RDRS offers a valuable case study in system continuity. During our discussions, Mr.~Iftekharul Islam (Manager-Monitoring) traced this thirty-year journey.
+Mr. Iftekharul Islam guided me to understand the evolution of MIS in micro finance for 30 years. I particularly remembered this part, because of my family relationship.
 
-In 1995--1997, when RDRS formalized its microfinance operations, field officers were called ATMs (Assistant Thana Managers). The organization developed its first computerized management system, known as Micro Bank, supported by technical assistance from FAO and GTZ. A dedicated team of 27 programmers built the platform, including my grandfather (Boro Abbu) alongside a senior programmer named Mahabub. Micro Bank successfully digitized branch ledgers, but as transaction volumes expanded, reporting became overly dependent on a handful of individuals who understood the underlying database queries. If a key programmer was unavailable, month-end consolidation stalled.
+1995-1997 (time when RDRS formally launched microfinance). Back then field people were called ATMs (Assistant Thana Managers). The first package was Micro Bank, which was developed with the help of FAO and GTZ, from Germany (my notebook has "ZTZ" but pretty sure he meant GTZ). 27 developers worked on the package including my grandfather (Boro Abbu) and his colleague Mahabub. My grandfather was mostly managing the various reporting queries in Micro Bank after it was rolled out. We were dependent on him too much as RDRS. Having one person with all the reporting knowledge is dangerous. For an org that big, everything stops if that person gets sick/retires.
 
 \begin{figure}[htbp]
 \centering
 \fcolorbox{RDRSBlue}{RDRSLight}{%
 \begin{minipage}{0.92\textwidth}
 \centering
-{\scriptsize\color{RDRSOrange}\textbf{ERA 1: PERSON-DEPENDENT}} \hspace{0.4cm} {\scriptsize\color{RDRSTeal}\textbf{ERA 2: TRANSITIONAL}} \hspace{0.4cm} {\scriptsize\color{RDRSBlue}\textbf{ERA 3: ENTERPRISE AUTOMATION}} \\[3pt]
-\small\fcolorbox{RDRSOrange}{white}{\parbox{3.6cm}{\centering \textbf{Micro Bank}\\ \scriptsize 1995--1997, FAO/GTZ\\ \scriptsize 27 programmers\\ \scriptsize High key-person risk}} \textcolor{RDRSBlue}{$\longrightarrow$} \small\fcolorbox{RDRSTeal}{white}{\parbox{3.2cm}{\centering \textbf{South Tech}\\ \scriptsize 2011 rollout\\ \scriptsize Commercial database\\ \scriptsize Reduced person risk}} \textcolor{RDRSBlue}{$\longrightarrow$} \small\fcolorbox{RDRSBlue}{white}{\parbox{3.6cm}{\centering \textbf{\color{RDRSBlue}G~Banker}\\ \scriptsize 2017/18--Present\\ \scriptsize Centralized web system\\ \scriptsize 1-click POMIS reporting}} \\
+{\scriptsize\color{RDRSOrange}\textbf{ERA 1: PERSON-DEPENDENT}} \hspace{0.4cm} {\scriptsize\color{RDRSTeal}\textbf{ERA 2: TRANSITIONAL}} \hspace{0.4cm} {\scriptsize\color{RDRSBlue}\textbf{ERA 3: ENTERPRISE SYSTEM}} \\[3pt]
+\small\fcolorbox{RDRSOrange}{white}{\parbox{3.6cm}{\centering \textbf{Micro Bank}\\ \scriptsize 1995--1997, FAO/GTZ\\ \scriptsize 27 programmers\\ \scriptsize High key-person risk}} \textcolor{RDRSBlue}{$\longrightarrow$} \small\fcolorbox{RDRSTeal}{white}{\parbox{3.2cm}{\centering \textbf{South Tech}\\ \scriptsize 2011 rollout\\ \scriptsize Commercial database\\ \scriptsize Reduced person risk}} \textcolor{RDRSBlue}{$\longrightarrow$} \small\fcolorbox{RDRSBlue}{white}{\parbox{3.6cm}{\centering \textbf{\color{RDRSBlue}G~Banker}\\ \scriptsize 2017/18--Present\\ \scriptsize Web-based system\\ \scriptsize 1-click POMIS sheets}} \\
 \end{minipage}}
-\caption{The three eras of microfinance software at RDRS Bangladesh: 1995 to 2026.}
+\caption{Three generations of microfinance MIS software at RDRS: 1995 to 2026.}
 \label{fig:missuccession}
 \end{figure}
 
-To eliminate this operational bottleneck, RDRS partnered with South Tech in 2011 to implement a commercial microfinance package. My grandfather assisted with data migration and system configuration before retiring. Between 2017 and 2018, RDRS upgraded to G~Banker, a modern web-based microfinance enterprise solution developed in Bangladesh.
+RDRS hired South Tech in 2011, to eliminate the single-person bottleneck. Data transfer was facilitated by my grandfather, he established the new process and then retired. RDRS upgraded their microfinance package to G~Banker in 2017 or 2018, G~Banker is web-based microfinance package developed in BD.
 
-Today, G~Banker operates across all 288 branches. Routine statements that once took days of manual compilation now generate instantaneously:
-\begin{itemize}
-\item \textbf{CO-wise Program Changes Report:} Displays monthly changes per Credit Organizer (active samities, borrower counts, disbursements, recoveries, overdue balances, write-offs, and PAR).
-\item \textbf{POMIS-5 (Statement of Financial Position):} Branch-level balance sheet comparing current balances against the prior financial year.
-\item \textbf{POMIS-4 (Statement of Comprehensive Income and Expenditure):} Monthly and annual branch profit-and-loss statements generated directly from daily ledger entries.
-\end{itemize}
+All 288 branches use G~Banker today. I saw 3 live outputs from the system. Micro Finance Program Changes Report (sample I checked was Udayan office) where you can see month-to-month changes by Credit Organizer. Number of COs, number of samities, member savings, number of borrowers, overdue loans, outstanding balance, OTR/PAR ratio, profit/loss, disbursement, write-offs etc. Statement of Financial Position from the branch by POMIS-5 is printed for this year vs previous year. Monthly/yearly Statement of Comprehensive Income and Expenditure is printed directly from daily inputs of the branches by POMIS-4.
 
 \section{Data Flow: From Grassroots Field Units to Management Dashboards}
-Field data reaches central management through two distinct reporting channels, coordinated via the monthly departmental monitoring schedule (Figure~\ref{fig:dataflow}).
+The monthly monitoring schedule guides the movement of field data to management along two distinct channels (Figure~\ref{fig:dataflow}).
 
 \begin{figure}[htbp]
 \centering
 \fcolorbox{RDRSBlue}{RDRSLight}{%
 \begin{minipage}{0.92\textwidth}
 \centering
-\small\fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}Field Visits}} \textcolor{RDRSBlue}{$\rightarrow$} \small\fcolorbox{RDRSTeal}{white}{Paper Registers \& KoBo} \textcolor{RDRSBlue}{$\rightarrow$} \small\fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}MEL Branch Audits}} \textcolor{RDRSBlue}{$\rightarrow$} \small\fcolorbox{RDRSOrange}{white}{\textbf{\color{RDRSOrange}Executive MIS Dashboards}} \\[3pt]
-{\scriptsize\color{RDRSGrey} Routine microfinance: bi-monthly branch visits \quad $\bullet$ \quad Development projects: monthly indicator schedules\par}
+\small\fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}Field Visits}} \textcolor{RDRSBlue}{$\rightarrow$} \small\fcolorbox{RDRSTeal}{white}{Paper Registers \& KoBo} \textcolor{RDRSBlue}{$\rightarrow$} \small\fcolorbox{RDRSBlue}{white}{\textbf{\color{RDRSBlue}MEL Branch Audits}} \textcolor{RDRSBlue}{$\rightarrow$} \small\fcolorbox{RDRSOrange}{white}{\textbf{\color{RDRSOrange}MIS Dashboards}} \\[3pt]
+{\scriptsize\color{RDRSGrey} Microfinance: twice-monthly branch visits \quad $\bullet$ \quad Development projects: monthly indicator tasks\par}
 \end{minipage}}
-\caption{The dual-track field monitoring flow coordinated by the MEL Department.}
+\caption{Dual-track monitoring flow coordinated by the MEL Department.}
 \label{fig:dataflow}
 \end{figure}
 
-The September 2026 monitoring schedule illustrates how departmental duties are structured:
-\begin{itemize}
-\item \textbf{Microfinance Track:} Ten recurring supervisory tasks assigned to designated officers visiting branches twice monthly (02--15 Sept and 16--28 Sept). Tasks include cross-checking borrower passbooks against samity registers, verifying cash collections, auditing loan disbursement vouchers, inspecting overdue recovery plans, and verifying write-off documentation.
-\item \textbf{Development Project Track:} Time-bound indicator tracking across active donor grants. In September 2026, this covered C-RANGPUR baseline data collection across six districts; MCGL health data validation in Panchagarh; Jononni maternal health DQA in Lalmonirhat; SEEDS education monitoring in Rangpur; and the live ICPS baseline across Mymensingh, Rajshahi, and Rangpur Divisions.
-\end{itemize}
+Figure~\ref{fig:dataflow} demonstrates how the two distinct channels translate into field staff responsibilities. For microfinance, monthly monitoring 02-15 and 16-28 September 2026 for two sets of ten repeat audits of branch performance are assigned to named monitoring officers. They audit group loans and savings, evaluate staff productivity, monitor cash collection and refunds, audit loan disbursement documents, supervise loan ceilings and delinquent accounts, audit write-off and rescheduling, perform 100\% audit reconciliation, examine write-off, adjust for misappropriation, and review pre-service training.
+
+September development responsibilities were defined by donor grants. These included: Baseline for C-RANGPUR (six districts), DHIS2 validation of data in MCGL (Panchagarh), DQA and ELCO and Pregnant Women checks for Jononni (Lalmonirhat and Rangpur), SEEDS Education checks in Rangpur, Live ICPS baseline (Saiful Alam Sekul and Fahmida Mostafa) in Mymensingh, Rajshahi, and Rangpur divisions, RERP Post-Distribution in Cox's Bazar, and CALDRI beneficiary checks in Kurigram.
+
+\section{Field Visit to Lalmonirhat: Watching the Jononni Project}\label{sec:jononni-visit}
+Just reading the schedule in Rangpur will be a limited approach. So, I went out to Lalmonirhat for Jononni field visit for development monitoring. The 'Jononni' (strengthening maternal and neonatal health system in Rangpur project with Save the Children from March 2023 to Dec 2027 officially), was listed on the schedule for monitoring in September (DQA and beneficiaries' verification).
+
+Went to see the head of the Jononni project at RDRS before leaving. Forgot to put his full name down in my field notebook that day, but he gave me a rundown of how the project follows maternal health data across clinics and village clusters. I observed field people in Lalmonirhat checking off Eligible Couple (ELCO) lists and Pregnant Women (PW) registers against monthly clinic summaries and Data Quality Assessment (DQA) sheets. For maternal health, unlike microfinance where G~Banker 'forces' column totals to be even every night, a lot of the monitoring depends on keeping the handwritten follow-up cards for pregnancy and safe delivery and postnatal visits nice and orderly by community workers. If the outreach worker misses an update for a household move, or puts a date down on ELCO card that doesn't quite match up, the monthly count can start to slip further away from reality until some monitoring officer comes to check the registers in the union by hand.
+
+At this Lalmonirhat, one incident was quite surprising. There I met with my one university teacher at Begum Rokeya University (BRUR). The name is Mr. Omar Faruque. The position is the Assoc. Professor, Department of Accounting, BRUR. He was also involved in Jononni's project activities in that place. I never thought that I will meet with a university teacher in this kind of project field. We had a long conversation about the actual behavior of NGO project documentation / expense voucher / monitoring checks at the rural union as against accounting and MIS classes. I was assured by the fact that university teacher is looking at these field register books. That means, verification culture is practiced across financial accounting and project MIS.
 
 \section{Special Monitoring Protocols: Where MIS Meets Physical Verification}\label{sec:special-monitoring}
-A core insight from my placement is that digital dashboards cannot replace physical inspection. The MEL Department enforces a strict ``special monitoring'' checklist:
-\begin{enumerate}
-\item \textbf{Overdue Loan Investigations:} When G~Banker flags a delinquent account, an officer must physically visit the borrower's home, record a written reason for default, and submit that finding to the branch loan committee.
-\item \textbf{Disbursement Paper Audits:} Comparing loan amounts approved by committees against actual cash disburse\-ment receipts and passbook entries to detect phantom loans.
-\item \textbf{High-Value Tracking:} Independent monthly tracking of high-exposure accounts using Portfolio-at-Risk (PAR) and Overdue-to-Total-Receivables (OTR) metrics.
-\item \textbf{Misappropriation and Fraud Tracking:} Dedicated investigation procedures for suspected cash skimming, with formal grievance boxes installed at every branch office.
-\end{enumerate}
+Yes, software warns of anomaly. But people must go and investigate villages to look at papers. There is a special monitoring fixed checklist for MEL Dept. when they go for branch visit. The checklist is copied from departmental internal papers.
 
-Software identifies anomalies, but human investigators verify the ground reality. The strength of RDRS's system lies in this division of labor.
+If G~Banker raises alert for loan overdue, the monitoring officer will visit borrower's residence, record exact note for nonpayment and hand over the note to the branch loan committee. Before new loans get regularized, the officers are cross-checking the sanction sheets by the loan committees. This is done by cross checking with cash disbursement slips and borrower's pass book. This way we can find out phantom loans. We are also keeping track with high risk loans which is over the threshold. The tracking will be on a monthly basis against Portfolio At Risk (PAR) and Overdue To Total Receivables (OTR). We will create a separate tracking file if we find any suspects of cash skimming / forgery. It will be based on branch complaint boxes. Area Manager, Regional manager and District manager also make unannounced visit at higher level than branch.
 
-\section{Risk Mitigation Systems: Credit Shield Microinsurance}
-Since July 2024, RDRS has operated Credit Shield Insurance in partnership with Guardian Life Insurance Limited. Microcredit borrowers pay a mandatory premium of BDT~6 per BDT~1,000 borrowed. In the event of a borrower's or co-borrower's death, the policy waives the entire outstanding loan balance (principal plus accrued service charges up to BDT~20 lakh) and provides an immediate cash funeral grant of BDT~15,000 to the bereaved family.
+\section{Risk Control Linked to MIS: Credit Shield Microinsurance}
+We have been doing Credit Shield Insurance through Guardian Life Insurance Limited since July 2024 with RDRS. In this, borrower needs to pay a compulsory premium of BDT 6 per BDT 1,000 disbursement. In case of death of borrower or co-borrower this Insurance will wipe out the rest loan amount(principal + service charge accrued up to BDT 20 lakh) and it will also provide immediate BDT 15,000 funeral cash grant to the family.
 
-From an MIS perspective, the claim workflow reveals a paper-heavy bottleneck:
+Though at the end G~Banker will do the write off of the loan, the claim process is slow paper based.
 \begin{center}
-\small\textbf{Death Confirmed at Branch} $\longrightarrow$ \textbf{Branch Focal Verifies Dossier (2 days)} $\longrightarrow$ \textbf{Regional Focal Review} $\longrightarrow$ \textbf{Central Focal (Dhaka)} $\longrightarrow$ \textbf{Guardian Life Review (10 days)} $\longrightarrow$ \textbf{Disbursement (5 days)}
+\small\textbf{Death Confirmed at Branch} $\longrightarrow$ \textbf{Branch Focal Verifies (2 days)} $\longrightarrow$ \textbf{Regional Focal Review} $\longrightarrow$ \textbf{Central Focal (Dhaka)} $\longrightarrow$ \textbf{Guardian Life (10 days)} $\longrightarrow$ \textbf{Payout (5 days)}
 \end{center}
-While G~Banker records the eventual loan waiver, all supporting documents (death certificates, medical records, union parishad attestations) travel physically as paper dossiers between field branches and Dhaka. Digitizing this claim pipeline represents a significant efficiency opportunity.
+The physical folders of death certificates and medical notes and union parishad attestation are travelling from the remote branch to Dhaka. Paper is making everything slow. Scanning the claim files directly to G~Banker would save many days for settlement.
 
-\section{Regulatory Compliance Data Systems: AML/CFT}
-Under the Anti-Money Laundering (AML) and Combating the Financing of Terrorism (CFT) Policy (effective January 2022), RDRS maintains an internal compliance database tracking senior leaders, trustees, and high-value transactions. This system captures National ID numbers, tax identifiers (TIN), permanent addresses, and affiliated board positions, generating statutory filings for Bangladesh Bank and the Bangladesh Financial Intelligence Unit (BFIU). All cash transactions exceeding BDT~5,000,000 require automated compliance flagging.
+\section{Regulatory Recordkeeping: AML/CFT}
+Anti-Money Laundering and Combating the Financing of Terrorism Policy (since Jan-2022). As per this policy we keep in an internal register for trustees, higher management and huge financial transactions~\cite{aml}. Here we keep National ID, Tax Identifier (TIN), permanent address, photo and outside board roles. This information we use to make filing for Bangladesh Bank and BFIU, Bangladesh Financial Intelligence Unit. Cash transaction is filed for BFIU if the amount exceeds BDT 50,00,000. Threshold filing is made for BFIU.
 
 \section{Credit Governance and Approval Authority}
-Loan approval limits follow a clear hierarchical ladder:
+Loan approvals move up a clear chain based on loan size:
 \begin{center}
 \small\textbf{Credit Organizer (Recommends)} $\longrightarrow$ \textbf{Branch Manager ($\le$BDT 1.5L)} $\longrightarrow$ \textbf{Area Manager ($\le$BDT 3.0L)} $\longrightarrow$ \textbf{Regional Manager ($\le$BDT 5.0L)} $\longrightarrow$ \textbf{Head of Microfinance ($>$BDT 5.0L)}
 \end{center}
-Monitoring officers trace this hierarchy in reverse during branch audits: confirming that large loans carry appropriate managerial signatures before disbursement.
+When our Monitoring officers do branch audit, they go up the same ladder in reverse to see that if actually huge loans are made with signature of Area or Regional (before loan disbursement).
 
 \section{Case Study: Access to Justice for Women (A2J)}\label{sec:a2j}
-To evaluate how monitoring functions in legal and social sectors, I reviewed the Access to Justice for Women (A2J) project \cite{a2jdoc}, implemented jointly with GIZ and the Law and Justice Division (Ministry of Law, Justice and Parliamentary Affairs).
+I went to Access to Justice for Women (A2J) team, Rangpur to learn monitoring beyond credit and survey~\cite{a2jdoc}. This is a bilateral (G2G) project by Law and Justice Division (MoLJPA) and Germany through GIZ. Project duration 1 March 2024 to 31 December 2026. With extension up to March 2027. Budget in Rangpur is BDT 1,82,25,931. I went to the room where I found a Project Focal (who has been in RDRS for over 28 years) District Project Officer, two paralegals. If I calculate people (as per list of team member role they mentioned), we have 12 people (6 paralegals, 1 DPO, 1 Finance/Admin officer, 3 support staff and 1 project focal). But in a handwritten note on their slide, we have 13 (I mentioned this to confirm from HR).
 
-\subsection{Institutional split: formal versus informal justice}
-A2J operates through a unique institutional partnership in Rangpur District:
-\begin{itemize}
-\item \textbf{Formal Justice System (RDRS Bangladesh):} RDRS paralegals operate inside the formal court complex, District Legal Aid Office (DLAO), police stations, and Rangpur Central Prison, managing formal litigation and court-annexed mediation.
-\item \textbf{Informal Justice System (Nijera Kori):} Partners facilitate Community Dispute Resolution (CDR) and village-level mediation.
-\end{itemize}
+Formally and informally justice system separated among two partner NGOs. RDRS on formal court, DLAO, Police station and Rangpur central prison. And, Nijera Kori at Community Dispute Resolution (CDR) at village level. RDRS has provided justice services to 6,092 (3,348 female and 2,744 male) justice seeker up to April 2025. Also, maintained a Legal Service Information Desk (LSID) in court premises. Coordinated DLAC, UZLAC and UPLAC committees. Achieved Office Order from Senior District and Sessions Judge (18 March 2025) to use the trained mediators for \textit{aposh-joggo} cases (compoundable cases) under the Code of Criminal Procedure (CrPC) in Rangpur district.
 
-Through April 2025, the project assisted 6,092 litigants (3,348 female, 2,744 male) and established a permanent Legal Service Information Desk (LSID) inside the Rangpur District Court. On 18 March 2025, the Senior District and Sessions Judge approved an official panel of trained mediators, institutionalizing court-annexed alternative dispute resolution (ADR) for compoundable offenses (\textit{aposh-joggo}) under the Code of Criminal Procedure.
-
-\subsection{The April 2025 physical court docket audit}
-Because Bangladesh's subordinate courts lack an integrated digital query system accessible to civil society, RDRS paralegals conducted a comprehensive physical docket audit in April 2025. Paralegals manually inspected courtroom registers (\textit{Ejlash}) and administrative clerk archives (\textit{Serestha}) across every bench in Rangpur.
+For district courts lack of digital query API to NGOs, then 06 nos RDRS paralegal has conducted physical case load counting. By physically visit at every bench of Rangpur in April 2025. For example physically visited court room Ejlash benches. And, clerk's Serestha rooms for case load counting. Total 77,849 number of pending cases found. Among them criminal cases 44,215 (56.8\%) and civil cases are 33,634 (43.2\%) (Figure~\ref{fig:court-caseload} and Table~\ref{tab:court-audit}).
 
 \begin{figure}[htbp]
 \centering
 \fcolorbox{RDRSBlue}{RDRSLight}{%
 \begin{minipage}{0.92\textwidth}
-\centering\textbf{\color{RDRSBlue}Rangpur District Court Caseload at a Glance (April 2025 Physical Audit)}\\[4pt]
+\centering\textbf{\color{RDRSBlue}Rangpur District Court Caseload (April 2025 Physical Count)}\\[4pt]
 \begin{tabular}{p{3.8cm}p{7.8cm}}
 \textbf{Total Active Cases:} & \textbf{77,849 cases counted across all benches} \\[2pt]
 \textbf{Criminal Cases (56.8\%):} & \textbf{44,215 files} {\color{RDRSBlue}\rule{4.8cm}{3mm}} \\
 $\bullet$ Judicial Magistracy: & 15,794 files {\color{RDRSTeal}\rule{3.4cm}{2.4mm}} \\
 $\bullet$ Metro Magistracy: & 9,818 files {\color{RDRSTeal}\rule{2.1cm}{2.4mm}} \\
 $\bullet$ District Sessions: & 8,936 files {\color{RDRSTeal}\rule{1.9cm}{2.4mm}} \\
-$\bullet$ Nari O Shishu Tribunals: & 6,068 files {\color{RDRSOrange}\rule{1.3cm}{2.4mm}} (heavy domestic violence docket) \\
+$\bullet$ Nari O Shishu Tribunals: & 6,068 files {\color{RDRSOrange}\rule{1.3cm}{2.4mm}} (heavy domestic violence load) \\
 $\bullet$ Metropolitan Sessions: & 2,403 files {\color{RDRSTeal}\rule{0.5cm}{2.4mm}} \\
 $\bullet$ Other Tribunals: & 1,196 files {\color{RDRSTeal}\rule{0.25cm}{2.4mm}} (ATT, CT, AHTT, ST) \\[4pt]
 \textbf{Civil Cases (43.2\%):} & \textbf{33,634 files} {\color{RDRSBlue}\rule{3.6cm}{3mm}} \\
-$\bullet$ Land Survey Tribunal: & 5,493 files {\color{RDRSOrange}\rule{1.2cm}{2.4mm}} (highest single civil load) \\
+$\bullet$ Land Survey Tribunal: & 5,493 files {\color{RDRSOrange}\rule{1.2cm}{2.4mm}} (highest civil load) \\
 \end{tabular}\\[4pt]
-{\scriptsize\color{RDRSGrey} Data manually enumerated by 6 A2J paralegals inspecting \textit{Ejlash} (bench registers) and \textit{Serestha} (clerk archives).\par}
+{\scriptsize\color{RDRSGrey} Manually counted by 6 A2J paralegals across \textit{Ejlash} and \textit{Serestha} records.\par}
 \end{minipage}}
-\caption{Distribution of active court cases in Rangpur District (April 2025 physical audit).}
+\caption{Rangpur District court caseload from the April 2025 manual audit.}
 \label{fig:court-caseload}
 \end{figure}
 
-The physical audit documented 77,849 pending cases across Rangpur District: 44,215 criminal cases (56.8\%) and 33,634 civil disputes (43.2\%). Table~\ref{tab:court-audit} breaks down the criminal caseload by jurisdiction.
-
 \begin{table}[htbp]
-\centering\small\caption{Criminal Caseload Breakdown: Rangpur District Courts (April 2025 Audit)}\label{tab:court-audit}
+\centering\small\caption{Criminal Caseload Breakdown in Rangpur Courts (April 2025)}\label{tab:court-audit}
 \begin{tabular}{|c|>{\raggedright\arraybackslash}p{2.4cm}|>{\raggedright\arraybackslash}p{6.4cm}|r|r|}
 \hline
 \rowcolor{RDRSBlue}\headercell{Sl} & \headercell{Jurisdiction} & \headercell{Court / Tribunal Category} & \headercell{Sub-total} & \headercell{Total Files} \\ \hline
@@ -780,150 +686,186 @@ The physical audit documented 77,849 pending cases across Rangpur District: 44,2
 \end{tabular}
 \end{table}
 
-This audit underscores the immense manual reporting burden placed on field staff: six paralegals had to manually count tens of thousands of paper dockets while simultaneously providing legal advice to indigent clients.
+For example, in the Nari O Shishu Tribunal-1 there were 3662 cases for criminal and only 9 cases in Anti Terrorism tribunal. For civil cases it was Land Survey tribunal 5,493 cases whereas Additional District and Sessions Judge-1 only 51. It is a bad paper registry, when 06 number of paralegal has physical count tens of thousands of paper folders. And, also, provide services to clients in prison, LSID desk in the court premises.
+
+\section{Building Dishari: Fixing the Manual Schedule and Reporting Problem}\label{sec:dishari}
+I saw an irony sitting within MEL Department in October and November right on the desk of the coordinator. The monitoring officers are going in field every month to detect the reporting errors of the branches. But the monthly calendar which is deploying the monitoring officers to the field is manually done within Microsoft Word tables. The yearly branch coverage report is calculated manually.
+
+\subsection{Problems in the manual Word schedule and reporting flow}
+The coordinator every month used to open the previous month's word file and change on a landscape table of six columns. The table had 9 permanent monitoring officers (Moyen Uddin, Md. Nuruzzaman, Kartick Bhowmik, Jamir Uddin, Sanchya Sarker, Mamunur Rashid, Rashedul Islam, Anwarul Islam, Md. Laku Mia) and few temporary managers (e.g., Maydul Islam, Iftekharul Islam, etc.). We had to face the following five headaches each and every cycle.
+
+\begin{enumerate}
+\item In Bangladesh, since the weekly off days are Friday/Saturday, and there are also government/moon-sighting holidays, it took some manual work to figure out the days you can work. A day off counting error caused a weekend visit.
+\item By having branch names typed off the top of our heads in more than 300 offices, we ended up introducing slight spelling differences which caused a later search in spreadsheets to fail.
+\item Word tables don't notify you if by mistake two officers are booked into the same branch during the same visit window or if an officer is being sent back to a branch they were just at last month.
+\item Manually have to painstakingly join all the 8 numbered monitoring activities (vertical in all the officer rows). Align column widths and fix page breaks to make it printable on A4 landscape.
+\item After the month was complete, the Word document was all alone in a folder. It wasn't easy to see at a glance how many branches we visited of the ones that we were cataloging, which of the northern districts were lagging, or how many field days the officers were having.
+\end{enumerate}
+
+\subsection{How I designed and built Dishari}
+To solve these problems for MEL team I developed a web application (\textbf{Dishari}, pathfinder/navigator) on the client side using React 19.2, TypeScript 6.0, Vite 8.3 and Tailwind CSS 4.3. Yes, fully browser based (deliberate). NGO dept should not have to pay monthly cloud server bills, should not have to remember DB logins. Planning should not stop because of Rangpur internet failure. All data is stored in browser's localStorage under msp:* keys (e.g., msp:settings, msp:holidays, msp:month:YYYY-MM, msp:meta at Schema Version 3) with protective adapter (src/lib/storage-adapter.ts). It falls back to in-memory if browser-storage is full. JSON full backup is exported for easy transfer between laptops.
+
+We broke monthly scheduling into 3 distinct phases (1 Plan, 2 Assign, 3 Review) with a specific Reports view to support them.
+
+\begin{figure}[htbp]
+\centering
+\fcolorbox{RDRSBlue}{white}{\includegraphics[width=0.92\textwidth]{figures/dishari-plan.png}}
+\caption{Dishari Step 1 (Plan): Sunday-first October 2026 calendar, draggable visit windows, and officer roster.}
+\label{fig:dishari-plan}
+\end{figure}
+
+Step 1 (Plan) (Figure~\ref{fig:Dishari-plan}): the coordinator will have 2-3 visit windows in a Sunday first calendar, with Friday and Saturday in the right gray columns. When window edge dragged over a holiday or weekend, it neatly snaps to the closest work day using pure calendar math (src/lib/working-days.ts, src/lib/schedule-ops.ts). The pill for each window shows a live count of work days (e.g., 04-13 Oct 8d, 14-27 Oct 10d). Clicking a date brings up a Day Overview popup with all officers active on that day. This could have custom ranges like Md. Nuruzzaman's extra-long 04-15 Oct window for the first window. I found early on that with regular JS Date.toISOString() and UTC conversions, dates would get skewed back 6 hours in Bangladesh's UTC+6 time zone. This could cause an officer to end up on the wrong day. I moved all date operations in src/lib/date.ts to pure YYYY-MM-DD local strings with strict overflow checks. No dates are ever converted to UTC. Side drawer holds 8 numbered monitoring tasks. Bangladesh Gazette or moon sighting holidays can be imported in English and Bengali with tolerant JSON parser (src/lib/holidays.ts).
+
+\begin{figure}[htbp]
+\centering
+\fcolorbox{RDRSBlue}{white}{\includegraphics[width=0.92\textwidth]{figures/dishari-assign.png}}
+\caption{Dishari Step 2 (Assign): 22 officer-window slots, searchable 332-branch catalog, and Unassigned Branches rail.}
+\label{fig:dishari-assign}
+\end{figure}
+
+In Step 2, Assign (see Figure~\ref{fig:Dishari-assign}) the officer's row is bound to a searchable branch combobox (src/components/branch-combobox.tsx) with 332 initial master branches from 32 district strings (src/lib/branch-master-data.ts, note normalization for spellings src/lib/branches.ts handles, eg Narsingdi, Narshingdi), with instant shortcut branching presets for "Issue-Based Monitoring", and "Special Visit at". An expandable right side column shows the remaining branches to choose from by district, each can be added by clicking it. Branches can be moved between rows by dragging-dropping a handle. I implemented Smart Assist, rule-based suggestAssignments, rotateFromLastMonth (src/lib/suggest.ts) to populate gaps for months quickly: prevent already chosen branches for the month; implement strict 3-month officer lockout: no one gets re-assigned to any branch in three months; provide 100 base points for not having been visited. +25 point bonus if no visits to any district within a timeframe.
+
+\begin{figure}[htbp]
+\centering
+\fcolorbox{RDRSBlue}{white}{\includegraphics[width=0.92\textwidth]{figures/dishari-review.png}}
+\caption{Dishari Step 3 (Review): 0 to 100 readiness checker, ignored exception tray, and live A4 Landscape Print Preview.}
+\label{fig:dishari-review}
+\end{figure}
+
+In Step 3 (Review) (Figure~\ref{fig:Dishari-review}), there's a diagnostic engine (assessScheduleReadiness in src/lib/readiness.ts) that evaluates the draft against 0-100 (60 for slot completion, 30 for zero blockers (duplicate branches, unassigned officers), 10 for zero warnings (window length less than 4 working days, overlapping windows, 3 month repeats of officers). Fix will take you directly to edit the row it's concerned about. If you purposefully set up two temp managers to "Issue-Based Monitoring" Window 1 (e.g. see RDRS's September sheet) Ignore will push that check to an audited IGNORED ISSUES tray (with Restore button) and get you up to 100\% Ready. Rather than duplicating layout code for screen preview, and pdf and word exports, we create a single canonical table matrix with vertical rowSpan merges for the document model (buildDocumentModel, src/lib/document-model.ts). The screen preview, the vector pdf exporter (jsPDF, jspdf-autotable in src/lib/export-pdf.ts) and editable .docx generator (docx in src/lib/export-docx.ts) all use the same document model. So screen and print won't diverge.
+
+\begin{figure}[htbp]
+\centering
+\fcolorbox{RDRSTeal}{white}{\includegraphics[width=0.92\textwidth]{figures/dishari-reports.png}}
+\caption{Dishari Reports view (shown on the illustrative 12-month 2026 demo dataset): KPI cards, SVG coverage donut, top branches, and Northern Bangladesh district tile map.}
+\label{fig:dishari-reports}
+\end{figure}
+
+The Reports tab (Figure~\ref{fig:Dishari-reports}) clears the multi-month reporting visibility gap. I added client-side parsers (src/lib/import-docx.ts with JSZip parsing Word XML and src/lib/import-pdf.ts with pdfjs-dist coordinate clustering) to reuse existing schedules. The coordinator can simply drag and drop existing .docx or .pdf files into Year Coverage panel to get the contents without retyping. buildReport (src/lib/report.ts) will calculate branch coverage, officer working days by field, unvisited branches, district percentages, month coverage matrix over the selected range (Full Year / half-year / quarter / custom months), and a Data Quality tab with detection of misspelled branch names. I produce 5 pure-SVG charts for numbers (src/components/reports/report-charts.tsx) with no 3rd party charting libraries. Clicking the buttons will export a 7-sheet .xlsx workbook for Excel (exceljs) or executive PDF. Figure~\ref{fig:Dishari-reports} shows 75\% coverage (249 of 332 branches over 264 visits) which is the demo data for 12-month Dishari's illustrative dataset for checking full-year reporting before closing all actuals in 2026.
+
+\begin{table}[htbp]
+\centering\small\caption{Manual Word Schedule Workflow Compared to Dishari}\label{tab:dishari-compare}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{5.2cm}|>{\raggedright\arraybackslash}p{5.4cm}|}
+\hline
+\rowcolor{RDRSBlue}\headercell{Task} & \headercell{Old Manual Word Process} & \headercell{With Dishari} \\ \hline
+Day \& holiday math & Counted by hand around Fri/Sat and holidays & Auto-snapping windows + English/Bengali holiday JSON import \\ \hline
+\rowcolor{RDRSLight} Branch picking & Typed from memory; spelling drift & Searchable 332-branch catalog + Smart Assist (3-mo cooldown) \\ \hline
+Error checks & Visual proofreading only & 0--100 readiness engine blocking same-window duplicates \\ \hline
+\rowcolor{RDRSLight} Print \& export & Manual Word \texttt{rowSpan} cell merging & Single \texttt{buildDocumentModel} generating A4 PDF and Word \texttt{.docx} \\ \hline
+Annual tracking & 12 isolated files; manual counting & Batch \texttt{.docx}/\texttt{.pdf} import, SVG charts, 7-sheet Excel export \\ \hline
+\end{tabular}
+\end{table}
+
+I used automated tests (Vitest 5.0.3 and React Testing Library) for Dishari's schedule math, timezone safety, parser leniency, readiness conditions, UI sequence, etc. so that at the end, I had 294 unit tests passing, 31 test files, 100\% success rate. No TypeScript or Oxlint error. Also, Coordinators can easily undo accidental edits because we have an undo-redo history stack of 50 steps each month (src/state/history.ts).
 
 \section{Observed Strengths of Current MIS Practices}
-RDRS demonstrates several clear strengths in its monitoring setup:
-\begin{itemize}
-\item \textbf{Single-Click MFI Reporting:} G~Banker delivers immediate branch financial statements and CO performance metrics, saving hundreds of hours of monthly manual compilation.
-\item \textbf{Disciplined Monthly Schedules:} The MEL Department operates from a transparent monthly calendar that explicitly links named officers to specific branches and projects.
-\item \textbf{Appropriate Tool Selection:} The division between Excel (for stable, standardized routines) and KoBo Toolbox (for rapid, offline mobile survey deployment) fits field realities.
-\end{itemize}
+We have some existing practices in RDRS that are good in real world. Eg., G~Banker can print out branch balance sheet, income statement and Credit Organizer sheets for all 288 offices at a single click of the mouse. It saves days of clerical jobs each month. Our MEL Department has transparent monthly schedule where we know exactly which officers, branches, what date, etc. Instead of adhoc-report-hunting. The routine jobs split to regular Excel sheets and the variable baseline surveys to KoBo Toolbox. Very good for field work.
 
 \section{Observed Gaps and Field-Level Data Discrepancies}
-Despite strong digital platforms, significant vulnerabilities persist at the point of field capture.
+We have major challenges in the transition from paper to numbers, i.e. digital. For example, when we looked at the May 2023 monitoring report of the PKSF funded Somriddhi Programme in Panchagarh and Kurigram, there were obvious gaps (Figure~\ref{fig:somriddhi}).
 
 \begin{figure}[htbp]
 \centering
 \fcolorbox{RDRSBlue}{RDRSLight}{%
 \begin{minipage}{0.92\textwidth}
-\centering\textbf{\color{RDRSBlue}Last-Mile Data Integrity Gaps (Somriddhi Program Audit, May 2023)}\\[4pt]
+\centering\textbf{\color{RDRSBlue}Last-Mile Data Gaps (Somriddhi Audit, May 2023)}\\[4pt]
 \begin{tabular}{p{3.4cm}p{8.2cm}}
 Student Attendance: & MIS entered: 100\% {\color{RDRSBlue}\rule{4.0cm}{3mm}} \newline Field register actual: 89\% {\color{RDRSOrange}\rule{3.56cm}{3mm}} \\[3pt]
 Rehabilitation Assets: & Valid records found: 35\% {\color{RDRSTeal}\rule{1.4cm}{3mm}} \newline Missing expense vouchers: 65\% {\color{RDRSOrange}\rule{2.6cm}{3mm}} \\[3pt]
 Tree Survival Rates: & Debiduba union: 49\% {\color{RDRSTeal}\rule{1.96cm}{3mm}} \newline Beruabari union: 35\% {\color{RDRSOrange}\rule{1.4cm}{3mm}} \\
 \end{tabular}\\[4pt]
-{\scriptsize\color{RDRSGrey} Archival review of PKSF-funded Somriddhi field monitoring report.\par}
+{\scriptsize\color{RDRSGrey} From internal review of the PKSF-funded Somriddhi field monitoring report.\par}
 \end{minipage}}
-\caption{Visual illustration of field-versus-MIS discrepancies observed in audit archives.}
+\caption{Field register versus central MIS gaps recorded in the Somriddhi audit.}
 \label{fig:somriddhi}
 \end{figure}
 
-An analysis of the May 2023 field monitoring report on the Somriddhi Programme (PKSF-funded, covering Panchagarh and Kurigram) revealed critical last-mile discrepancies (Figure~\ref{fig:somriddhi}):
-\begin{itemize}
-\item \textbf{Attendance Inflation:} In Beruabari union, central MIS reports recorded 100\% student attendance in non-formal education centers, but physical inspections of classroom registers showed actual attendance was only 89\%.
-\item \textbf{Missing Expenditure Records:} For ultra-poor rehabilitation asset grants (BDT~100,000 per household), 65\% of recipient expenditure receipts could not be traced in field files.
-\item \textbf{High Staff Turnover:} 11 out of 74 learning center teachers resigned within a four-month period, creating severe reporting disruptions that were not reflected in central KPI summaries.
-\end{itemize}
+For non formal education centers, the central MIS tables show 100\% attendance. Whereas the physical classroom roll books show 89\%. For 74 learning centers, 11 centers have changed teachers in 4 months which breaks the continuity of reporting. And for ultra poor households where rehabilitation assets of about 100,000 BDT were given. During field check, 65\% of expenditure vouchers cannot be traced. Survival rate of fruit tree is 35\% in Beruabari (vs 49\% in Debiduba). And it is important for the MIS data. Because, this is same reconciliation of attendance data like the passbook of borrower vs G~Banker but it is programme level reconciliation.
 
-In C-RANGPUR, I observed minor but telling survey inconsistencies: the project title is spelled ``C RANGPU'' in question 5.3.2 and ``C RANGPUR'' in question 5.4.1; several multi-select questions collapse into single codes in Word exports; and the HCVI vulnerability index requires error-prone manual file transfers between KoBo, Excel, and Power~BI.
+C-RANGPUR has some minor codebook issues. Title of the project is Q5.3.2: C RANGPU and Q5.4.1: C RANGPUR, typed. Also, there's a title "Indicator 3.2 Measurement Matrix" before Section 8 but Section 8 is measuring Indicator 3.1. Plus, many of the multi-selects also get collapsed into 1 option string exports (Word). So Power~BI scripts need to parse the 0/1 binary nice and clean for KoBo.
 
 \section{Summary Findings Matrix}
-Table~\ref{tab:findings} consolidates the operational findings, tool assessments, and data strengths and gaps identified across this evaluation.
+Table~\ref{tab:findings} gives a list of all the strengths/weaknesses/available tools.
 
 \begin{table}[htbp]
-\centering\small\caption{Consolidated Evaluation Findings: RDRS MIS and Monitoring Practices}\label{tab:findings}
+\centering\small\caption{Consolidated MIS Findings at RDRS Bangladesh}\label{tab:findings}
 \begin{tabular}{|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{5.6cm}|>{\raggedright\arraybackslash}p{4.4cm}|}
 \hline
-\rowcolor{RDRSBlue}\headercell{MIS System / Function} & \headercell{Field Observation \& Current Workflow} & \headercell{Operational Status} \\ \hline
-G~Banker Platform & Instant generation of CO-wise Changes, POMIS-4, and POMIS-5 statements & \strengthtag{} High speed, consistency, and automated PAR calculation \\ \hline
-\rowcolor{RDRSLight} Monthly Monitoring Plan & Transparent monthly schedule assigning named officers, branches, and dates & \strengthtag{} Clear accountability and structured field coverage \\ \hline
-KoBo Mobile Tools & Digital survey deployment with GPS capture and offline mobile capability & \strengthtag{} Fast deployment; eliminates manual paper survey re-entry \\ \hline
-\rowcolor{RDRSLight} Register-to-MIS Accuracy & Field audit revealed 89\% register attendance reported as 100\% in central MIS & \gaptag{} Critical last-mile data mismatch; lack of reconciliation gate \\ \hline
-Livelihood Asset Records & 65\% of asset grant expense vouchers missing during Somriddhi field inspections & \gaptag{} Weak paper record archiving at peripheral branch level \\ \hline
-\rowcolor{RDRSLight} C-RANGPUR HCVI Pipeline & Vulnerability calculation divided across KoBo, manual Excel, and Power~BI & \gaptag{} Manual file handoffs; lack of automated pipeline \\ \hline
-Credit Shield Insurance & Paper-based claim files transported through 4 administrative tiers & \gaptag{} Slow physical dossier routing; settlement lag \\ \hline
-\rowcolor{RDRSLight} A2J Court Docket Tracking & Six paralegals manually counted 77,849 active cases across court archives & \gaptag{} Heavy manual counting burden diverting staff from legal aid \\ \hline
-Microfinance Continuity & Successful transition from legacy Micro Bank to commercial G~Banker & \strengthtag{} Overcame single-person dependency; institutionalized rules \\ \hline
+\rowcolor{RDRSBlue}\headercell{System / Practice} & \headercell{What happens on the ground} & \headercell{Status} \\ \hline
+G~Banker Platform & Instant CO-wise Changes, POMIS-4, and POMIS-5 statements & \strengthtag{} Fast, consistent PAR and OTR reporting \\ \hline
+\rowcolor{RDRSLight} Monthly Schedule & Named officers, branches, and visit windows twice a month & \strengthtag{} Clear staff accountability \\ \hline
+KoBo Mobile Surveys & Offline Android/Enketo forms with GPS and quick Excel export & \strengthtag{} Cuts out paper questionnaire retyping \\ \hline
+\rowcolor{RDRSLight} Register-to-MIS Match & 89\% classroom register attendance entered as 100\% in MIS & \gaptag{} Last-mile inflation; no sign-off gate \\ \hline
+Asset Grant Files & 65\% of rehabilitation vouchers missing in Somriddhi check & \gaptag{} Weak paper filing at union level \\ \hline
+\rowcolor{RDRSLight} C-RANGPUR Pipeline & HCVI formula split across KoBo, Excel macros, and Power~BI & \gaptag{} Manual handoffs and small typos \\ \hline
+Credit Shield Claims & Paper death dossiers routed across 4 office tiers to Dhaka & \gaptag{} Slow manual transport lags payout \\ \hline
+\rowcolor{RDRSLight} A2J Docket Audit & 6 paralegals counted 77,849 paper files across court rooms & \gaptag{} Heavy manual count burden \\ \hline
+Jononni Field Check & ELCO/PW paper card updates checked manually during DQA visits & \gaptag{} Needs regular on-site reconciliation \\ \hline
+\rowcolor{RDRSLight} Dishari Scheduler App & Built offline React/TS planner for 332 branches and coverage & \strengthtag{} Replaces Word tables; 294 unit tests pass \\ \hline
+Microfinance Continuity & Moved from Micro Bank (1995) to South Tech to G~Banker & \strengthtag{} Removed key-person reporting risk \\ \hline
 \end{tabular}
 \end{table}
 
 \section{Placement Activity Log}\label{sec:dailylog}
-To document the empirical foundation of this study, Table~\ref{tab:log} details the chronological log of field visits, staff walkthroughs, system audits, and departmental rotations completed during my placement. This sequence directly reflects the official internship schedule approved by the Head of MEL (Appendix~\ref{sec:official-schedule}).
+Table~\ref{tab:log} summarizes my visits, sittings, file reviews, software changes over 3 months as per the official schedule at end of this report.
 
 {\small
 \begin{longtable}{|>{\raggedright\arraybackslash}p{1.8cm}|>{\raggedright\arraybackslash}p{3.8cm}|>{\raggedright\arraybackslash}p{3.6cm}|>{\raggedright\arraybackslash}p{5.0cm}|}
-\caption{Comprehensive Internship Activity and Fieldwork Log}\label{tab:log}\\
+\caption{Internship Fieldwork and Office Activity Log}\label{tab:log}\\
 \hline
-\rowcolor{RDRSBlue}\headercell{Date / Period} & \headercell{Placement Activity} & \headercell{Staff Contact / Source} & \headercell{Key MIS Insights \& Takeaways} \\ \hline
+\rowcolor{RDRSBlue}\headercell{Date} & \headercell{Activity} & \headercell{Who I worked with} & \headercell{Notes and takeaways} \\ \hline
 \endfirsthead
 \hline
-\rowcolor{RDRSBlue}\headercell{Date / Period} & \headercell{Placement Activity} & \headercell{Staff Contact / Source} & \headercell{Key MIS Insights \& Takeaways} \\ \hline
+\rowcolor{RDRSBlue}\headercell{Date} & \headercell{Activity} & \headercell{Who I worked with} & \headercell{Notes and takeaways} \\ \hline
 \endhead
 \hline
 \endfoot
 \hline
 \endlastfoot
-01 Sep 2026 & Departmental Induction \& Reporting Guidelines & Mr.~Mamunur Rashid (Head of MEL) \newline Dabasish Mahata (Coordinator) & Reviewed RDRS 6th Strategic Plan; mapped institutional reach: 406 Federations, 33 districts, 1.64M participants. \\ \hline
-\rowcolor{RDRSLight} 02--04 Sep 2026 & Overview of RDRS Programs \& MIS Toolchains & Mr.~Iftekharul Islam; Fahmida Mostafa (Senior MEL Officer) & Mapped three-tier data tools: physical registers/Excel for routine monitoring; KoBo on mobile; Power~BI dashboards. \\ \hline
-07--09 Sep 2026 & Historical Walkthrough of Microfinance Software & Mr.~Iftekharul Islam (Manager-Monitoring) & Traced 3 eras: manual ATMs $\to$ Micro Bank (1995--97, grandfather's team) $\to$ South Tech (2011) $\to$ G~Banker (2017/18). \\ \hline
-\rowcolor{RDRSLight} 10--11 Sep 2026 & Audit of Live G~Banker Microfinance Outputs & Udayan Branch Office System Exports & Evaluated CO-wise Changes Report (member balances, OTR, PAR, write-offs); audited POMIS-4 and POMIS-5 statements. \\ \hline
-13--17 Sep 2026 & C-RANGPUR Baseline Data Collection Rotation & Moushumi Akter (MDO, C-RANGPU Project, 01745761900) & Observed field enumeration; tested KoBo Enketo web application; reviewed respondent consent protocols. \\ \hline
-\rowcolor{RDRSLight} 20--24 Sep 2026 & Branch Office Visits \& Field Verification & Maydul Islam (01730328212); Md.~Ziaur Rahman (01730328234) & Inspected passbooks against ledgers; audited loan disbursement receipts; followed up overdue recovery entries. \\ \hline
-27 Sep 2026 & Human Resource Management Rotation & Md.~Ziaur Rahman (Sr.~Coordinator-HR, 01730328011) & Reviewed HR database systems, staff performance metrics, biometric attendance logs, and field leave tracking. \\ \hline
-\rowcolor{RDRSLight} 28 Sep 2026 & Agriculture Dept.\ \& Rupantar Project Briefing & Dr.~Salah Uddin (01716263216); Pallab Goswami (01738 375951) & Analyzed Climate Smart Agriculture (CSA) monitoring; reviewed homestead gardening and flood-resilient crop data. \\ \hline
-29 Sep 2026 & Social Development \& Federation Review & Rashedul Arefeen (Team Leader SD, 01730328044) & Mapped governance of 406 Union Federations; examined civic claims tracking and local dispute settlement logs. \\ \hline
-\rowcolor{RDRSLight} 30 Sep 2026 & Safeguarding Policy \& Incident Workflow & Rumana Azim Ansari (Coordinator, 01730328039) & Reviewed safeguarding complaint registers, whistleblower protection mechanisms, and confidential reporting paths. \\ \hline
-01 Oct 2026 & Admin \& General Service Dept.\ Rotation & Maj Shammita Kabir (Retd) (Head of Admin \& GS) & Inspected procurement registers, warehouse inventory records, vehicle logbooks, and fixed-asset tagging files. \\ \hline
-\rowcolor{RDRSLight} 04--16 Oct 2026 & Intensive MIS Practice: Survey Design \& HCVI & Dabasish Mahata; Md.~Ajazul Haque (Manager, MEL) & Conducted KII on C-RANGPUR pipeline; analyzed HCVI formula weighting (30/30/40); mapped F01-112 indicator matrix. \\ \hline
-19--26 Oct 2026 & Access to Justice (A2J) Project Walkthrough & Project Focal; DPO; Project Paralegals & Evaluated formal/informal justice split; audited April 2025 Rangpur court docket count (77,849 cases across Ejlash/Serestha). \\ \hline
-\rowcolor{RDRSLight} 28 Oct -- 05 Nov 2026 & Archival Audit: Somriddhi Monitoring Report & MEL Department Internal Archives & Documented last-mile data gaps: 89\% register vs.\ 100\% MIS attendance; 11/74 teacher turnover; 65\% missing grant vouchers. \\ \hline
-08--12 Nov 2026 & Risk \& Compliance Systems Walkthrough & Microfinance Operations \& Compliance Staff & Evaluated Credit Shield Insurance workflow with Guardian Life; audited AML/CFT database parameters under BFIU rules. \\ \hline
-\rowcolor{RDRSLight} 15--25 Nov 2026 & Report Synthesis \& Learning Consultation & Mr.~Mamunur Rashid (Head of MEL) & Synthesized field findings; drafted strategic recommendations; presented draft report for departmental review. \\ \hline
-26 Nov 2026 & Formal Internship Presentation Session & MEL Department Leadership \& Staff & Delivered formal presentation on MIS evaluation findings at Rangpur Central Coordination Office. \\ \hline
-\rowcolor{RDRSLight} 30 Nov 2026 & Final Report Submission & Academic Supervisor \& RDRS Management & Formally submitted final internship report to BRUR faculty and RDRS MEL leadership. \\ \hline
+01 Sep 2026 & Induction and reporting rules & Mr.~Mamunur Rashid; Dabasish Mahata & Got my placement plan and read the 6th Strategic Plan; wrote down 406 Federations and 1.64M reach. \\ \hline
+\rowcolor{RDRSLight} 02--04 Sep 2026 & Overview of MEL tools and projects & Mr.~Iftekharul Islam; Fahmida Mostafa & Learned how routine Excel sheets, KoBo mobile forms, and Power~BI fit together across five areas. \\ \hline
+07--09 Sep 2026 & Microfinance MIS history talk & Mr.~Iftekharul Islam & Traced Micro Bank (1995--97, Boro Abbu's 27-dev team) to South Tech (2011) and G~Banker (2017/18). \\ \hline
+\rowcolor{RDRSLight} 10--11 Sep 2026 & Checking live G~Banker reports & Udayan Branch Office exports & Read CO-wise Changes Report, POMIS-4, and POMIS-5; saw how one-click OTR and PAR work. \\ \hline
+13--17 Sep 2026 & C-RANGPUR baseline fieldwork & Moushumi Akter (MDO, 01745761900) & Watched household enumeration on Enketo forms and checked consent screens in the field. \\ \hline
+\rowcolor{RDRSLight} 20--24 Sep 2026 & Branch visits and ledger checks & Maydul Islam (01730328212); Md.~Ziaur Rahman (01730328234) & Matched borrower passbooks against branch loan books and checked overdue collection notes. \\ \hline
+27 Sep 2026 & HR policy rotation & Md.~Ziaur Rahman (01730328011) & Saw HR staff records, biometric attendance logs, and how leave tracking runs. \\ \hline
+\rowcolor{RDRSLight} 28 Sep 2026 & Agriculture and Rupantar briefing & Dr.~Salah Uddin (01716263216); Pallab Goswami (01738 375951) & Looked at Climate Smart Agriculture plots, homestead gardening, and flood-tolerant crop data. \\ \hline
+29 Sep 2026 & Social Development briefing & Rashedul Arefeen (01730328044) & Learned how 406 Union Federations track civic claims and local mediation logs. \\ \hline
+\rowcolor{RDRSLight} 30 Sep 2026 & Safeguarding policy walkthrough & Rumana Azim Ansari (01730328039) & Reviewed safeguarding complaint registers and confidential incident escalation paths. \\ \hline
+01 Oct 2026 & Admin and General Service visit & Maj Shammita Kabir (Retd) & Checked procurement registers, store inventory sheets, vehicle logs, and asset tags. \\ \hline
+\rowcolor{RDRSLight} 04--16 Oct 2026 & Deep MIS practice and Dishari start & Dabasish Mahata; Md.~Ajazul Haque & Discussed HCVI 30/30/40 weights and F01-112 formulas; started coding Dishari calendar math. \\ \hline
+18--22 Oct 2026 & Jononni field trip to Lalmonirhat & Jononni Project Head; Assoc.~Prof.~Omar Faruque (BRUR) & Met the Jononni head, watched ELCO/PW and DQA checks in Lalmonirhat, and spoke with Omar Faruque sir on site. \\ \hline
+\rowcolor{RDRSLight} 24--28 Oct 2026 & A2J project and court audit review & Project Focal; DPO; Paralegals & Studied formal/informal justice split and the April 2025 manual count of 77,849 court cases. \\ \hline
+29 Oct -- 05 Nov 2026 & Somriddhi file review & MEL Department Archives & Found the 89\% vs.\ 100\% attendance gap, 11/74 teacher exits, and 65\% missing grant vouchers. \\ \hline
+\rowcolor{RDRSLight} 06--12 Nov 2026 & Dishari completion and compliance check & Microfinance staff; MEL team & Checked Credit Shield and AML/CFT rules; finished Dishari 3-step workflow, Reports view, and 294 unit tests. \\ \hline
+15--25 Nov 2026 & Report drafting and review & Mr.~Mamunur Rashid & Put together chapters, tables, and recommendations for internal MEL feedback. \\ \hline
+\rowcolor{RDRSLight} 26 Nov 2026 & Internship presentation & MEL Leadership \& Staff & Presented MIS findings and walked staff through Dishari at Rangpur CCO. \\ \hline
+30 Nov 2026 & Final report submission & Academic Supervisor \& Head of MEL & Handed in bound report to BRUR MIS department and RDRS MEL office. \\ \hline
 \end{longtable}
 }
 
 % ================= CHAPTER 5 =================
 \chapter{Recommendations}
 
-\chapterglance{Actionable Strategic Interventions}{Three prioritized, operational improvements for RDRS monitoring: (1) mandatory register reconciliation sign-off, (2) unified KoBo single-capture pipeline, and (3) institutional knowledge continuity.}
+Following 3 changes are what I have directly incorporated due to problems/slowdowns encountered in my placement.
 
-The following recommendations arise directly from the empirical gaps identified in Chapter~\ref{chap:analysis}. They are prioritized by operational urgency.
+\section{Require a Physical Register Sign-Off Before Monthly Lock}
+Biggest problem is discrepancy of paper data (say 89\% classroom attendance, but Somriddhi MIS shows 100\%) with center tables. Or 65\% of grant receipts are not available in files. My suggestion is that Monitoring officer should check at least 10\% of basic paper data (passbooks/school roll books/ELCO or PW cards/payment receipts) line by line with digital data, before branch manager/project officer closes a monthly G~Banker or Excel. Both of them must sign a one-page document before upload. If discrepancies are more than 5\% then monthly file should not be locked until resolution.
 
-\section{Recommendation 1: Institute a Mandatory Register-to-MIS Reconciliation Sign-off}
-\textbf{The Problem:} The most critical data gap observed at RDRS is the divergence between physical field registers and digital monthly reports (such as the 89\% register attendance entered as 100\% in central MIS).
+\section{Automate the KoBo-to-Power~BI Link for Development Projects}
+Right now, we export C-RANGPUR data from KoBo to Excel. This is where it lives. Someone will run macros for HCVI in Excel. Then we will import this into Power~BI. In all this manual copying, you risk errors with formulas and version control. Instead, RDRS should integrate KoBo Toolbox directly to Power~BI (or centralized mini-PostgreSQL database) with API webhooks. Then do the $\mathrm{HCVI} = 0.30\,\mathrm{EI} + 0.30\,\mathrm{SI} + 0.40\,(100 - \mathrm{ACI})$ calculations once in Power Query or DAX. Then do a basic validation check to catch typos like "C RANGPU" at the time of submission.
 
-\textbf{Actionable Solution:}
-\begin{enumerate}
-\item Introduce a standardized, one-page ``Data Reconciliation Sign-Off Sheet'' into the monthly branch monitoring routine.
-\item Before any branch manager or credit organizer can digitally close their monthly G~Banker or project workbook, an independent Monitoring Officer or Area Manager must physically sample at least 10\% of primary field registers (savings passbooks, school roll books, training registers) and compare them line-by-line against digital entries.
-\item Both the recording officer and the reviewing monitoring officer must physically sign and timestamp this reconciliation certificate. If a discrepancy exceeds 5\%, the digital record cannot be locked.
-\end{enumerate}
+\section{Adopt Rule-Checked Scheduling with Dishari and Digitize Paper Dossiers}
+Our current manual monthly schedule making in Word is costing staff time and is blind to annual branch blind spots. MEL Department can make Dishari a regular practice for microfinance monitoring schedule to automatically calculate working days, 3 month cooldown per officer for 332 branches, double check duplicates, and annual district coverage charts without server costs. In addition to scheduling, RDRS should also maintain double-trained owners for all recurring report families to eliminate key-man risks again. Plus scanning and uploading PDFs for death certificate to directly to G~Banker. No more waiting for weeks for death certificates to be Dhaka mail pouches for Credit Shield claims.
 
-\section{Recommendation 2: Automate an End-to-End KoBo-to-Power~BI Pipeline}
-\textbf{The Problem:} In development projects like C-RANGPUR, survey data is exported from KoBo into intermediate Excel sheets where formulas and weights are manually copied before being loaded into Power~BI. This creates multiple opportunities for human calculation error.
-
-\textbf{Actionable Solution:}
-\begin{enumerate}
-\item Configure direct API webhooks from KoBo Toolbox directly into Microsoft Power~BI or an intermediate cloud database (such as PostgreSQL).
-\item Embed the Household Climate Vulnerability Index formula ($\mathrm{HCVI} = 0.30\mathrm{EI} + 0.30\mathrm{SI} + 0.40[100-\mathrm{ACI}]$) and indicator calculation logic directly into the automated Power~BI transformation pipeline (using Power Query/DAX).
-\item Establish an automated data-cleaning validation script that automatically flags incomplete responses, contradictory inputs, and codebook anomalies (such as inconsistent project naming) upon submission.
-\end{enumerate}
-
-\section{Recommendation 3: Codify Institutional Knowledge and Enforce Dual Ownership}
-\textbf{The Problem:} While G~Banker has minimized the extreme key-person dependency of the 1990s Micro Bank era, knowledge of complex indicator algorithms and custom queries remains concentrated among a few senior officers.
-
-\textbf{Actionable Solution:}
-\begin{enumerate}
-\item Develop and publish formal Standard Operating Procedures (SOPs) defining every indicator, ratio numerator, denominator, and calculation rule across all five program areas.
-\item Implement a mandatory ``Dual-Ownership Policy'' for every recurring MIS report family, ensuring that at least two trained staff members possess full operational competency to extract, verify, and publish those metrics.
-\item Digitize the Credit Shield Insurance dossier transmission, replacing slow physical paper mailing with secure scanned PDF uploads in G~Banker to compress settlement times from weeks to days.
-\end{enumerate}
-
-\keybox{\small\textbf{\color{RDRSTeal}Strategic Priority:} If organizational resources permit only one intervention, RDRS should prioritize \textbf{Recommendation 1}. Implementing a physical register-to-system reconciliation sign-off directly eliminates the largest data-integrity risk observed in the field.}
+\keybox{\small\textbf{\color{RDRSTeal}If resources allow only one change first} First of all, do your physical register signoff. In that way you ensure that if there are any bad entries they're not written to the central tables. That saves everything down the line, in terms of dashboards etc.}
 
 % ================= CHAPTER 6 =================
 \chapter{Conclusion}
 
-\chapterglance{Concluding Synthesis}{Reflections on information systems in rural development: why human verification, supervisory routines, and institutional discipline matter more than software brand names.}
+I assumed that an internship with BBA MIS in RDRS Bangladesh was all about SQL queries and servers and software windows. However, after spending three months in Rangpur and field towns (e.g. Lalmonirhat) my thinking has changed a bit. Software is only useful for good data (in field/districts) if good data checking habits have been established.
 
-My three months inside the MEL Department of RDRS Bangladesh provided a compelling education in how management information systems operate in the development sector. I entered the placement expecting to evaluate software code, database schemas, and server configurations. I emerged realizing that in rural development, MIS is fundamentally about organizational plumbing and human discipline.
-
-The most sophisticated cloud platforms and mobile applications are useless if a field worker fails to verify a passbook, or if an enumerator skips a household in a flood-prone char. RDRS has demonstrated impressive technical progress: its transition from the single-developer fragility of Micro Bank to the centralized automation of G~Banker is a textbook example of successful system evolution. Today, microfinance managers can evaluate credit performance across 288 branches with unprecedented speed and consistency.
-
-The remaining frontier lies at the boundary where software meets the field. Closing the gap between what physical registers say and what central dashboards report requires institutional safeguards: mandatory reconciliation sign-offs, automated data pipelines, and clear procedural ownership. By reinforcing these supervisory checks, RDRS Bangladesh can ensure that its management decisions remain grounded in the true, unvarnished realities of the communities it serves.
+RDRS Microfinance is pretty much sorted out on the hard bit. Switching from Micro Bank (1990s) to South Tech and then G~Banker for 288 branches gave managers quick access to balance sheets and PAR ratios. There's no need to fear that the formulas for the ledger are lost forever if one programmer retires. The problems we still have are pretty much where paper meets software. - Where samity passbooks and maternal health cards line up with monthly tables. - Reducing manual excel steps from KoBo surveys. - Scanning paper files from Credit Shield. - Moving officer monthly roster off of Word tables into software like Dishari. And seeing actual work in ICPS and C-RANGPUR and Jononni and A2J (as well as older audit reports) showed me both sides of the equation.
 
 % ================= REFERENCES =================
 \begin{thebibliography}{99}
@@ -947,85 +889,58 @@ The remaining frontier lies at the boundary where software meets the field. Clos
 \appendix
 \chapter{Appendices}
 
-\section{Official Internship Program Schedule at RDRS Bangladesh}\label{sec:official-schedule}
-The internship followed a structured three-month placement plan prepared and sanctioned by the Monitoring, Evaluation, and Learning (MEL) Department at RDRS Bangladesh Central Coordination Office, Rangpur. The complete program is reproduced below.
+\section{Semi-Structured Field Interview Guide}\label{sec:interview-guide}
+For my interviews with MEL officers and project coordinators and branch people, I had 5 basic questions (no fixed script): - Which paper forms/excel spreadsheets/phone apps are they using to gather primary numbers. - Who checks raw sheets before they go further up, and what is signed. - Which offices the data flows through, from branch to Rangpur to Dhaka. - Which software does the calculation itself vs. what needs to be manually calculated in excel. - Which paper records / software totals have the most discrepancies.
 
+\section{Glossary of Local and Court Terms}\label{sec:glossary}
+The standard general monitoring abbreviations are in the first abbreviations box. The following are a few Bengali, field, and court specific words that were used a lot in interviews: \textit{Aposh-joggo} - (compounded offenses per Bangladesh Code of Criminal Procedure (CrPC) which are legally able to be compromised/settled by parties or in court annexed mediation). \textit{Ejlash} - open courtroom and elevated bench where judge/magistrate hold court. \textit{Serestha} - court clerk's office with physical case files, cause list, and dockets. \textit{Federation} - (an independent community group formed by RDRS at the union level to lobby for local rights and government allowances). \textit{Monga} - (traditional lean season in northwestern Bangladesh between planting and harvest (usually Sep-Nov) where farm work slows down). \textit{Samity} - (village microcredit group (15-30 women) meeting weekly for savings and loan repayments).
+
+\section{C-RANGPUR Verification Notes}\label{sec:crangpur-notes}
+I noticed three items to check when reviewing the C-RANGPUR word questionnaire and the matrix \texttt{F01-112} with Md. Ajazul Haque. One, be sure project documents will show the exact number of Upazila and Unions in each of the 6 target districts (Rangpur, Lalmonirhat, Kurigram, Sirajganj, Gaibandha, and Jamalpur). Two, matrix file \texttt{F01-112} shows 'semi-annual' and 'annual' beside Indicator 1.1. Staff need to confirm if semi-annual is being used in internal dashboards and annual is used for donors, etc. Three, staff could avoid copy/paste issues if they could move HCVI scoring to Power~BI queries and not do it manually in Excel workbooks.
+
+\section{Access to Justice (A2J) Field Notes}\label{sec:a2j-notes}
+In the A2J presentation deck and court walkthrough, 2 items on my pad that needed to be confirmed. (1) the team indicated 12 active posts (6 paralegals; 1 District Project Officer; 1 Finance/Admin Officer; 3 support staff; 1 Project Focal). The handwritten figure on the slide indicates 13. Should verify against HR sheet. (2) it should be monitored how many cases move out of formal court queue. Staff should be tracking referrals made to panel of mediators (as approved by Senior District and Sessions Judge on 18 March 2025)
+
+\clearpage
+\section*{Schedule for the Internship Program at RDRS Bangladesh}\label{sec:official-schedule}
+\addcontentsline{toc}{section}{Schedule for the Internship Program at RDRS Bangladesh}
+
+\begin{center}
+{\Large\bfseries Schedule for the Internship Program at RDRS Bangladesh}\\[6pt]
+{\bfseries Participant: Student of BBA, Begum Rokeya University, Rangpur}\\
+{\bfseries Duration: 01 September 2026 to 30 November 2026}
+\end{center}
 \vspace{0.2cm}
-\highlightbox{
-\small
-\textbf{\color{RDRSBlue}Schedule for the Internship Program at RDRS Bangladesh}\\[2pt]
-\textbf{Participant:} Student of BBA, Department of Management Information Systems, Begum Rokeya University, Rangpur\\
-\textbf{Duration:} 01 September 2026 to 30 November 2026\\[4pt]
+
 \textbf{Purpose:} The purpose of this internship program is to provide practical exposure to MIS practices in project monitoring for RDRS Bangladesh. The program aims to bridge the gap between theoretical knowledge and real-world practice.
-}
-\vspace{0.2cm}
 
-{\small\setlength{\tabcolsep}{4pt}
-\begin{longtable}{|>{\raggedright\arraybackslash}p{1.9cm}|>{\raggedright\arraybackslash}p{2.3cm}|>{\raggedright\arraybackslash}p{3.8cm}|>{\raggedright\arraybackslash}p{3.5cm}|>{\raggedright\arraybackslash}p{2.2cm}|}
-\caption{Official RDRS Internship Program Schedule (01 Sept -- 30 Nov 2026)}\label{tab:official-schedule}\\
+\vspace{0.2cm}
+{\small\setlength{\tabcolsep}{4.5pt}\renewcommand{\arraystretch}{1.35}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{2.0cm}|>{\raggedright\arraybackslash}p{2.4cm}|>{\raggedright\arraybackslash}p{3.75cm}|>{\raggedright\arraybackslash}p{4.15cm}|>{\raggedright\arraybackslash}p{1.9cm}|}
 \hline
-\rowcolor{RDRSBlue}\headercell{Date} & \headercell{Location} & \headercell{Main Activities} & \headercell{Responsible / Contact Person} & \headercell{Remarks / Output} \\ \hline
+\rowcolor{ScheduleHead}\textbf{Date} & \textbf{Location} & \textbf{Main Activities} & \textbf{Responsible/Contact Person} & \textbf{Remarks} \\ \hline
 \endfirsthead
 \hline
-\rowcolor{RDRSBlue}\headercell{Date} & \headercell{Location} & \headercell{Main Activities} & \headercell{Responsible / Contact Person} & \headercell{Remarks / Output} \\ \hline
+\rowcolor{ScheduleHead}\textbf{Date} & \textbf{Location} & \textbf{Main Activities} & \textbf{Responsible/Contact Person} & \textbf{Remarks} \\ \hline
 \endhead
 \hline
 \endfoot
 \hline
 \endlastfoot
-01 September 2026 & Central Coordination Office, Rangpur & Orientation and Reporting Guidelines & Mr.~Mamunur Rashid, Head of MEL \newline Dabasish Mahata, Coordinator-Monitoring & Induction completed; placement scope mapped \\ \hline
-\rowcolor{RDRSLight} 02--10 September 2026 & Central Coordination Office, Rangpur & Overview of RDRS Bangladesh Programs and Projects & Mr.~Iftekharul Islam, Manager-Monitoring \newline Fahmida Mostafa, Senior MEL Officer & Five thematic areas and MIS toolchains reviewed \\ \hline
-13--17 September 2026 & C-RANGPU Project & Baseline Data Collection of C-RANGPU Project & Moushumi Akter, MDO, CRANGPU Project \newline Phone: 01745761900 & Field questionnaire and KoBo setup inspected \\ \hline
-\rowcolor{RDRSLight} 20--24 September 2026 & Rangpur Region & Branch Office Visit, Observe Data Verification, and Documentation Process & Maydul Islam, Senior Monitoring Officer (01730328212) \newline Md.~Ziaur Rahman, Senior Officer, Admin \& MIS (01730328234) & Passbook checks; manual-to-digital loan reconciliation \\ \hline
-27 September 2026 & HR Department, Rangpur & Know about HRM Policy and Process & Md.~Ziaur Rahman, Sr.~Coordinator-HR \newline Phone: 01730328011 & HR database, attendance, and staffing files \\ \hline
-\rowcolor{RDRSLight} 28 September 2026 & Rupantar Project, Rangpur & Activities of Agriculture Department and Rupantar Project & Dr.~Salah Uddin, Team Leader, Environment \& Climate Change (01716263216) \newline Pallab Goswami, Research Associate (01738 375951) & Climate-smart agriculture and homestead monitoring \\ \hline
-29 September 2026 & Social Development, Rangpur & Briefing on Social Empowerment Activities and the Federation Concept & Rashedul Arefeen, Team Leader (SD) \newline Phone: 01730328044 & 406 Union Federations governance reviewed \\ \hline
-\rowcolor{RDRSLight} 30 September 2026 & Safeguarding Department, Rangpur & RDRS Safeguarding Policy and Practice & Rumana Azim Ansari, Coordinator-Safeguarding \newline Phone: 01730328039 & Safeguarding registers and incident tracking \\ \hline
-01 October 2026 & Admin and General Service Dept., Rangpur & RDRS Administrative and General Service activities (Procurement, GH, Store \& GS) & Maj Shammita Kabir (Retd), Head of Admin \& General Service & Asset registers, inventory, and procurement records \\ \hline
-\rowcolor{RDRSLight} 04 October -- 12 November 2026 & Rangpur Central Coordination Office & MIS practice in MEL Department & Dabasish Mahata, Coordinator-Monitoring \newline Ajazul Haque, MEL Department & Deep practice: KoBo forms, HCVI scoring, Power~BI, G~Banker, and A2J court data \\ \hline
-15--25 November 2026 & Rangpur Central Coordination Office & Report preparation and sharing of learning with RDRS Bangladesh & Mamunur Rashid, Head of MEL & Draft report compiled and reviewed with MEL team \\ \hline
-\rowcolor{RDRSLight} 26 November 2026 & Rangpur Central Coordination Office & Internship Presentation Session & Mamunur Rashid, Head of MEL & Presentation delivered to MEL officers and management \\ \hline
-30 November 2026 & Rangpur Central Coordination Office & Final Report Submission & Mamunur Rashid, Head of MEL & Formal submission to RDRS and university supervisor \\ \hline
+\rowcolor{ScheduleRow} 01 September 2026 & Central Coordination Office, Rangpur & Orientation and Reporting Guidelines & Mr.~Mamunur Rashid, Head of MEL \newline Dabasish Mahata, Coordinator-Monitoring & \\ \hline
+02-10 September 2026 & Central Coordination Office, Rangpur & Overview of RDRS Bangladesh Programs and Projects & Mr.~Iftekharul Islam, Manager-Monitoring \newline Fahmida Mostafa, Senior MEL Officer & \\ \hline
+\rowcolor{ScheduleRow} 13-17 September 2026 & C-RANGPU Project & Baseline Data Collection of C-RANGPU Project & Moushumi Akter, MDO, CRANGPU Project \newline 01745761900 & \\ \hline
+20-24 September 2026 & Rangpur Region & Branch Office Visit, Observe Data Verification, and Documentation Process & Maydul Islam \newline Senior Monitoring Officer \newline 01730328212 \newline Md.~Ziaur Rahman \newline Senior Officer, Admin \& MIS \newline 01730328234 & \\ \hline
+\rowcolor{ScheduleRow} 27 September 2026 & HR Department Rangpur & Know about HRM Policy and Process & Md.~Ziaur Rahman, Sr.~Coordinator-HR \newline 01730328011 & \\ \hline
+28 September 2026 & Rupantar Project, Rangpur & Activities of Agriculture Department and Rupantar Project & Dr.~Salah Uddin, Team Leader Environment \& Climate Change \newline 01716263216 \newline Pallab Goswami, Research Associate, \newline 01738 375951 & \\ \hline
+\rowcolor{ScheduleRow} 29 September 2026 & Social Development, Rangpur & Briefing on Social Empowerment Activities and the Federation Concept & Rashedul Arefeen \newline Team Leader (SD) \newline 01730328044 & \\ \hline
+30 September 2026 & Safeguarding Department, Rangpur & RDRS Safeguarding Policy and Practice & Rumana Azim Ansari, Coordinator-Safeguarding \newline 01730328039 & \\ \hline
+\rowcolor{ScheduleRow} 1 October 2026 & Admin and General Service Department, Rangpur & RDRS Administrative and General Service activities (Procurement, GH, Store \& GS) & Maj Shammita Kabir (Retd), Head of Admin \& General Service & \\ \hline
+4 October - 12 November 2026 & Rangpur Central Coordination Office & MIS practice in MEL Department & Dabasish Mahata, \newline Ajazul Haque, MEL Department & \\ \hline
+\rowcolor{ScheduleRow} 15-25 November 2026 & Rangpur Central Coordination Office & Report preparation and sharing of learning with RDRS Bangladesh & Mamunur Rashid, Head of MEL & \\ \hline
+26 November 2026 & Rangpur Central Coordination Office & Internship Presentation Session & Mamunur Rashid \newline Head of MEL & \\ \hline
+\rowcolor{ScheduleRow} 30 November 2026 & Rangpur Central Coordination Office & Final Report Submission & Mamunur Rashid \newline Head of MEL & \\ \hline
 \end{longtable}
 }
-
-\section{Semi-Structured Field Interview Guide}\label{sec:interview-guide}
-The following core question checklist guided interviews and system walkthroughs with MEL officers, monitoring coordinators, and branch operations staff:
-\begin{enumerate}
-\setlength{\itemsep}{1.5pt}\setlength{\parskip}{0pt}
-\item \textbf{Data Capture Tools:} Which specific instruments (paper registers, Excel templates, mobile apps) are used to collect primary monitoring data in this project?
-\item \textbf{Verification and Validation:} Who inspects and cross-checks raw field data before it is aggregated? What documentary evidence is required for sign-off?
-\item \textbf{Information Flow:} Through which administrative tiers (Branch $\to$ Area $\to$ Region $\to$ Central Coordination Office $\to$ Executive Leadership) does monitoring information travel, and in what format?
-\item \textbf{Software Architecture and Automation:} What functions are performed automatically by central software platforms (e.g., G~Banker, Power~BI) versus manual spreadsheet calculations?
-\item \textbf{Data Integrity Bottlenecks:} What are the most common discrepancies observed between field registers and summary MIS reports? Where do reporting delays typically originate?
-\end{enumerate}
-
-\section{Glossary of Operational, Legal, and Bangla Terms}\label{sec:glossary}
-\begin{itemize}
-\setlength{\itemsep}{1.5pt}\setlength{\parskip}{0pt}
-\item \textbf{Aposh-joggo:} Offenses that are legally compoundable under the Bangladesh Code of Criminal Procedure (CrPC), allowing lawful settlement through mutual compromise, alternative dispute resolution (ADR), or court-annexed mediation.
-\item \textbf{Ejlash:} The open courtroom and elevated bench where formal judicial hearings and trials take place before a judge or magistrate.
-\item \textbf{Federation:} Union-level community-owned apex organizations established by RDRS, composed of grassroots village group representatives to manage local advocacy and dispute settlement.
-\item \textbf{Monga:} The traditional seasonal lean period in northwestern Bangladesh between crop planting and harvest (typically September to November), historically characterized by severe rural unemployment and food insecurity.
-\item \textbf{Samity:} A grassroots village microcredit group consisting of 15--30 female members who meet weekly for savings deposits and joint-liability loan repayments.
-\item \textbf{Serestha:} The court clerk's administrative office where physical court records, case dockets, cause lists, and historical case registers are archived.
-\end{itemize}
-
-\section{C-RANGPUR Verification Notes and Field Follow-up}\label{sec:crangpur-notes}
-The analysis of the C-RANGPUR baseline in Chapter~\ref{chap:analysis} was based on the MEL questionnaire file, the F01-112 matrix spreadsheet, and walkthroughs with Md.~Ajazul Haque. The following technical items are documented for ongoing operational verification:
-\begin{enumerate}
-\setlength{\itemsep}{1.5pt}\setlength{\parskip}{0pt}
-\item \textbf{Sampling Coverage:} Official project documentation should confirm final Upazila and Union breakdown across the six target districts (Rangpur, Lalmonirhat, Kurigram, Sirajganj, Gaibandha, and Jamalpur).
-\item \textbf{Reporting Frequency Reconciliation:} In matrix file F01-112, Indicator 1.1 lists both ``semi-annual'' and ``annual'' reporting frequencies; future revisions should clarify whether semi-annual data feeds internal dashboards while annual metrics are reserved for donor reporting.
-\item \textbf{Automated Index Calculation:} Transitioning HCVI scoring from manual Excel workbooks into an automated script within the KoBo--Power~BI pipeline will prevent formula transcription errors.
-\end{enumerate}
-
-\section{Access to Justice (A2J) Field Notes}\label{sec:a2j-notes}
-Data on the A2J for Women project was gathered from the project presentation deck, case audit records, and court walkthroughs. The following items are maintained on record:
-\begin{enumerate}
-\setlength{\itemsep}{1.5pt}\setlength{\parskip}{0pt}
-\item \textbf{Staffing Allocation:} The project employs 6 paralegals, 1 District Project Officer, 1 Finance/Admin Officer, 3 support staff, and 1 Project Focal (discussed headcount of 12 against a slide notation of 13, pending final HR master list confirmation).
-\item \textbf{Mediation Referrals:} Track court referrals to panel mediators approved under the Senior District and Sessions Judge's Office Order of 18 March 2025 to evaluate the caseload reduction impact on the formal court docket.
-\end{enumerate}
 
 \end{document}

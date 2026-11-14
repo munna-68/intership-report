@@ -169,6 +169,18 @@ Physical court case audit (April 2025): counted by inspecting Ejlash (bench reco
 
 Bottlenecks: 6 paralegals carrying both field service across 4 locations and manual file counts; institutional mindset in court administration.
 
+## Jononni field visit in Lalmonirhat
+
+I also got to visit the Jononni project in Lalmonirhat. Before going out, I met the head of the Jononni project at RDRS, though I forgot to write down his full name in my notebook that day. In Lalmonirhat, I watched how the field monitoring actually happens on site: checking Eligible Couple (ELCO) and Pregnant Women (PW) listings, looking at safe delivery registers, and running Data Quality Assessments (DQA) to see if community records match monthly summaries.
+
+One unexpected thing happened on that trip. I ran into one of my own university teachers there, Mr. Omar Faruque, Associate Professor in the Department of Accounting at Begum Rokeya University, Rangpur. He was involved with the Jononni project work in Lalmonirhat as well. We spent time talking in the field about how NGO reporting, cost records, and monitoring verification run on the ground compared to what we cover in university lectures.
+
+## Building Dishari (Monitoring Schedule Planner)
+
+While sitting in the MEL Department in October and November, I noticed that the monthly Monitoring Schedule for the Microfinance Program was still put together by hand in Microsoft Word tables, and annual branch coverage had to be counted manually across separate monthly files. Every month the coordinator had to count working days around Friday and Saturday weekly offs and government or moon-sighting holidays, type branch names by hand across more than 300 branches, watch visually for duplicate branches or officers revisiting the same branch too soon, and merge the 8-item activity column in Word.
+
+To fix those headaches for the monitoring officers and coordinator, I built a browser-based planning and reporting app called Dishari (`/Users/munna8/repos/Dishari`). It runs completely in the browser with `localStorage` (`msp:*` keys) and JSON backups, so it works offline without server costs. It splits scheduling into three steps (Plan on a Sunday-first calendar with timezone-safe `YYYY-MM-DD` dates, Assign across 332 master branches and 11 officers with a 3-month cooldown Smart Assist tool, and Review with a 0 to 100 readiness checker plus 1-click A4 PDF and Word `.docx` export) and adds a Reports view that imports historical `.docx` and `.pdf` schedules to track branch coverage, officer workload, and unvisited branches across the year.
+
 ## What is next
 
-I have a field visit planned, including an eye clinic. I want to watch how MEL collects data there and write it up as direct observation, alongside these interviews.
+The field visits, staff walkthroughs, Jononni trip to Lalmonirhat, and Dishari testing are all written up in `RDRS_MIS_Internship_Report.tex`, alongside the official internship schedule at the end of the report.
